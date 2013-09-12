@@ -50,10 +50,8 @@ char baseCmd[COMMAND_LENGTH+1];
 void setup() {
   resetBuffer();
   Serial.begin(115200);
-#ifdef TALKATIVE
-  Serial.println(F("cmd_response started"));
+  Serial.print(F("cmd_response started: "));
   Serial.println(freeRam());
-#endif
 }
 
 void loop() {

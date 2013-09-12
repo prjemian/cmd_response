@@ -173,7 +173,9 @@ This is a list of the possible error messages and their meanings.
 
 :ERROR_PIN_NOT_PWM:input:
   The specified pin is not supported for PWM on this Arduino hardware.
-  This is determined by calling ``digitalPinHasPWM(pin)``.
+  This is determined by calling the Arduino system macro 
+  ``digitalPinHasPWM(pin)`` which is defined for each different type 
+  of Arduino hardware variation.
 
 :ERROR_PWM_RANGE:input:
   The PWM value must be between 0 and 255, inclusive.
@@ -193,19 +195,19 @@ This is a list of the possible error messages and their meanings.
   At this time, if ``value`` is specified for a "?" (read) command,
   it is ignored.  In the future, this will generate an error message.
   
+..
+	Streams protocol
+	====================
 
-Streams protocol
-====================
+	========  ================================================
+	protocol  meaning
+	========  ================================================
+	ai(pin)   read analogRead(pin) into the record's RVAL
+	bi(pin)   read digitalRead(pin) into the record's VAL
+	bo(pin)   write digitalWrite(pin) from the record's VAL
+	pwm(pin)  write analogWrite(pin) from the record's RVAL
+	========  ================================================
 
-========  ================================================
-protocol  meaning
-========  ================================================
-ai(pin)   read analogRead(pin) into the record's RVAL
-bi(pin)   read digitalRead(pin) into the record's VAL
-bo(pin)   write digitalWrite(pin) from the record's VAL
-pwm(pin)  write analogWrite(pin) from the record's RVAL
-========  ================================================
-
-.. note:: For the ``bo`` and ``pwm`` protocols, the selected
-   pin will be configured by that protocol for output during
-   record initialization.
+	.. note:: For the ``bo`` and ``pwm`` protocols, the selected
+	   pin will be configured by that protocol for output during
+	   record initialization.
