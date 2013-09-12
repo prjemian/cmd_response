@@ -1,0 +1,64 @@
+# cmd_response: 
+#   simple command/response access via USB to Arduino's I/O capabilities
+#
+# soft link this file to the IOC's boot directory to be found at run time
+
+Terminator = CR LF;
+
+#  USB command interface
+#
+#  When present, "#" refers to the Arduino pin number used in the operation
+#  
+#  ============  ========  =====================================================================
+#  command       value     action
+#  ============  ========  =====================================================================
+#  ?ai pin       0..1023   returns current value of numbered analog input
+#  ?bi pin       0..1      returns current value of numbered digital input
+#  !bo pin v     0..1      sets numbered digital output to value v
+#  !pwm pin v    0..255    sets numbered PWM digital output to value v
+#  !pin pin v    0..1      sets mode of digital pin to value v (value: 1=OUTPUT, not 1=INPUT)
+#  other         ..        returns "ERROR_UNKNOWN_COMMAND:text"
+#  ============  ========  =====================================================================
+#
+# notes: must use lower case (as shown in table)
+#        integers must be specified in decimal (no octal or hex interpreted)
+
+
+# TODO: handle error response from Arduino
+
+# ai
+ai {
+    out "?ai \$1"; in "%d";
+}
+
+# bi
+bi {
+    out "?bi \$1"; in "%d";
+
+	# configure the digital pin for digital input
+	@init{ out "!pin \$1 0"; in "Ok"; }
+}
+
+# bo
+bo {
+    out "!bo \$1 %d"; in "Ok";
+
+	# configure the digital pin for PWM/digital output
+	@init{ out "!pin \$1 1"; in "Ok"; }
+}
+
+# longout
+pwm {
+    out "!pwm \$1 %d"; in "Ok";
+
+	# configure the digital pin for PWM/digital output
+	@init{ out "!pin \$1 1"; in "Ok"; }
+}
+
+########### SVN repository information ###################
+# $Date: 2013-07-20 09:13:52 -0500 (Sat, 20 Jul 2013) $
+# $Author: jemian $
+# $Revision: 1916 $
+# $URL: http://svn.jemian.org/svn/regitte/arduino/led_cascade/led_cascade.proto $
+# $Id: led_cascade.proto 1916 2013-07-20 14:13:52Z jemian $
+########### SVN repository information ###################

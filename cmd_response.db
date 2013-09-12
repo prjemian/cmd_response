@@ -1,0 +1,64 @@
+#
+# cmd_response: example EPICS database for cmd_response Arduino code
+#
+# ===== ============================
+# macro meaning
+# ===== ============================
+# P     prefix for this database
+# PORT  asyn port to be used
+# ===== ============================
+
+
+record(ai, "$(P)ai0") {
+    field(DESC, "analog input 0")
+    field(EGU,  "VDC")
+    field(DTYP, "stream")
+    field(INP,  "@cmd_response.proto ai(0) $(PORT)")
+    field(SCAN, ".1 second")
+    field(AOFF, "0")
+    field(ASLO, "0.004887585532746823069403714565")  # 5 VDC / 1023 ADC units
+    field(HOPR, "5")
+    field(LOPR, "0")
+}
+
+record(ai, "$(P)ai1") {
+    field(DESC, "analog input 1")
+    field(EGU,  "VDC")
+    field(DTYP, "stream")
+    field(INP,  "@cmd_response.proto ai(1) $(PORT)")
+    field(SCAN, ".1 second")
+    field(AOFF, "0")
+    field(ASLO, "0.004887585532746823069403714565")  # 5 VDC / 1023 ADC units
+    field(HOPR, "5")
+    field(LOPR, "0")
+}
+
+record(ao, "$(P)pwm6") {
+    field(DESC, "PWM output 6")
+    field(EGU,  "VDC")
+    field(DTYP, "stream")
+    field(OUT,  "@cmd_response.proto pwm(6) $(PORT)")
+    field(AOFF, "0")
+    field(ASLO, "0.01960784313725490196078431372549")  # 5 VDC / 255 ADC units
+    field(HOPR, "5")
+    field(LOPR, "0")
+}
+
+record(ao, "$(P)pwm11") {
+    field(DESC, "PWM output 11")
+    field(EGU,  "VDC")
+    field(DTYP, "stream")
+    field(OUT,  "@cmd_response.proto pwm(11) $(PORT)")
+    field(AOFF, "0")
+    field(ASLO, "0.01960784313725490196078431372549")  # 5 VDC / 255 ADC units
+    field(HOPR, "5")
+    field(LOPR, "0")
+}
+
+########### SVN repository information ###################
+# $Date: 2013-07-20 09:13:52 -0500 (Sat, 20 Jul 2013) $
+# $Author: jemian $
+# $Revision: 1916 $
+# $URL: http://svn.jemian.org/svn/regitte/arduino/led_cascade/led_cascade.db $
+# $Id: led_cascade.db 1916 2013-07-20 14:13:52Z jemian $
+########### SVN repository information ###################
