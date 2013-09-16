@@ -1,0 +1,1925 @@
+%PDF-1.4
+%“Œ‹ž ReportLab Generated PDF document http://www.reportlab.com
+% 'BasicFonts': class PDFDictionary 
+1 0 obj
+% The standard fonts dictionary
+<< /F1 2 0 R
+ /F2 3 0 R
+ /F3 4 0 R
+ /F4 5 0 R
+ /F5 7 0 R
+ /F6 9 0 R >>
+endobj
+% 'F1': class PDFType1Font 
+2 0 obj
+% Font Helvetica
+<< /BaseFont /Helvetica
+ /Encoding /WinAnsiEncoding
+ /Name /F1
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'F2': class PDFType1Font 
+3 0 obj
+% Font Helvetica-Bold
+<< /BaseFont /Helvetica-Bold
+ /Encoding /WinAnsiEncoding
+ /Name /F2
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'F3': class PDFType1Font 
+4 0 obj
+% Font Courier
+<< /BaseFont /Courier
+ /Encoding /WinAnsiEncoding
+ /Name /F3
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'F4': class PDFType1Font 
+5 0 obj
+% Font Helvetica-Oblique
+<< /BaseFont /Helvetica-Oblique
+ /Encoding /WinAnsiEncoding
+ /Name /F4
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'Page1': class PDFPage 
+6 0 obj
+% Page dictionary
+<< /Contents 24 0 R
+ /MediaBox [ 0
+ 0
+ 595.2756
+ 841.8898 ]
+ /Parent 23 0 R
+ /Resources << /Font 1 0 R
+ /ProcSet [ /PDF
+ /Text
+ /ImageB
+ /ImageC
+ /ImageI ] >>
+ /Rotate 0
+ /Trans <<  >>
+ /Type /Page >>
+endobj
+% 'F5': class PDFType1Font 
+7 0 obj
+% Font Helvetica-BoldOblique
+<< /BaseFont /Helvetica-BoldOblique
+ /Encoding /WinAnsiEncoding
+ /Name /F5
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'Page2': class PDFPage 
+8 0 obj
+% Page dictionary
+<< /Contents 25 0 R
+ /MediaBox [ 0
+ 0
+ 595.2756
+ 841.8898 ]
+ /Parent 23 0 R
+ /Resources << /Font 1 0 R
+ /ProcSet [ /PDF
+ /Text
+ /ImageB
+ /ImageC
+ /ImageI ] >>
+ /Rotate 0
+ /Trans <<  >>
+ /Type /Page >>
+endobj
+% 'F6': class PDFType1Font 
+9 0 obj
+% Font Courier-Bold
+<< /BaseFont /Courier-Bold
+ /Encoding /WinAnsiEncoding
+ /Name /F6
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'Page3': class PDFPage 
+10 0 obj
+% Page dictionary
+<< /Contents 26 0 R
+ /MediaBox [ 0
+ 0
+ 595.2756
+ 841.8898 ]
+ /Parent 23 0 R
+ /Resources << /Font 1 0 R
+ /ProcSet [ /PDF
+ /Text
+ /ImageB
+ /ImageC
+ /ImageI ] >>
+ /Rotate 0
+ /Trans <<  >>
+ /Type /Page >>
+endobj
+% 'Page4': class PDFPage 
+11 0 obj
+% Page dictionary
+<< /Contents 27 0 R
+ /MediaBox [ 0
+ 0
+ 595.2756
+ 841.8898 ]
+ /Parent 23 0 R
+ /Resources << /Font 1 0 R
+ /ProcSet [ /PDF
+ /Text
+ /ImageB
+ /ImageC
+ /ImageI ] >>
+ /Rotate 0
+ /Trans <<  >>
+ /Type /Page >>
+endobj
+% 'R12': class PDFCatalog 
+12 0 obj
+% Document Root
+<< /Outlines 14 0 R
+ /PageLabels 28 0 R
+ /PageMode /UseNone
+ /Pages 23 0 R
+ /Type /Catalog >>
+endobj
+% 'R13': class PDFInfo 
+13 0 obj
+<< /Author ()
+ /CreationDate (D:20130916141126+06'00')
+ /Creator (\(unspecified\))
+ /Keywords ()
+ /Producer (ReportLab PDF Library - www.reportlab.com)
+ /Subject (\(unspecified\))
+ /Title (cmd_response) >>
+endobj
+% 'R14': class PDFOutlines 
+14 0 obj
+<< /Count 9
+ /First 15 0 R
+ /Last 15 0 R
+ /Type /Outlines >>
+endobj
+% 'Outline.0': class OutlineEntryObject 
+15 0 obj
+<< /Count 7
+ /Dest [ 6 0 R
+ /XYZ
+ 62.69291
+ 599.0236
+ 0 ]
+ /First 16 0 R
+ /Last 22 0 R
+ /Parent 14 0 R
+ /Title (Arduino Interface) >>
+endobj
+% 'Outline.9.0': class OutlineEntryObject 
+16 0 obj
+<< /Dest [ 6 0 R
+ /XYZ
+ 62.69291
+ 194.0236
+ 0 ]
+ /Next 17 0 R
+ /Parent 15 0 R
+ /Title (?ai command) >>
+endobj
+% 'Outline.9.1': class OutlineEntryObject 
+17 0 obj
+<< /Dest [ 8 0 R
+ /XYZ
+ 62.69291
+ 664.0236
+ 0 ]
+ /Next 18 0 R
+ /Parent 15 0 R
+ /Prev 16 0 R
+ /Title (?bi command) >>
+endobj
+% 'Outline.9.2': class OutlineEntryObject 
+18 0 obj
+<< /Dest [ 8 0 R
+ /XYZ
+ 62.69291
+ 470.0236
+ 0 ]
+ /Next 19 0 R
+ /Parent 15 0 R
+ /Prev 17 0 R
+ /Title (!bo command) >>
+endobj
+% 'Outline.9.3': class OutlineEntryObject 
+19 0 obj
+<< /Dest [ 8 0 R
+ /XYZ
+ 62.69291
+ 252.0236
+ 0 ]
+ /Next 20 0 R
+ /Parent 15 0 R
+ /Prev 18 0 R
+ /Title (!pwm command) >>
+endobj
+% 'Outline.9.4': class OutlineEntryObject 
+20 0 obj
+<< /Dest [ 10 0 R
+ /XYZ
+ 62.69291
+ 753.0236
+ 0 ]
+ /Next 21 0 R
+ /Parent 15 0 R
+ /Prev 19 0 R
+ /Title (!pin command) >>
+endobj
+% 'Outline.9.5': class OutlineEntryObject 
+21 0 obj
+<< /Dest [ 10 0 R
+ /XYZ
+ 62.69291
+ 487.0236
+ 0 ]
+ /Next 22 0 R
+ /Parent 15 0 R
+ /Prev 20 0 R
+ /Title (Examples) >>
+endobj
+% 'Outline.9.6': class OutlineEntryObject 
+22 0 obj
+<< /Dest [ 10 0 R
+ /XYZ
+ 62.69291
+ 174.2236
+ 0 ]
+ /Parent 15 0 R
+ /Prev 21 0 R
+ /Title (Error messages) >>
+endobj
+% 'R23': class PDFPages 
+23 0 obj
+% page tree
+<< /Count 4
+ /Kids [ 6 0 R
+ 8 0 R
+ 10 0 R
+ 11 0 R ]
+ /Type /Pages >>
+endobj
+% 'R24': class PDFStream 
+24 0 obj
+% page stream
+<< /Length 10451 >>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 62.69291 729.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4 Tm /F2 20 Tf 24 TL 164.3649 0 Td (cmd_response) Tj T* -164.3649 0 Td ET
+Q
+Q
+q
+1 0 0 1 62.69291 681.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 21 Tm /F2 15 Tf 18 TL 22.67238 0 Td (simple command/response access via USB to Arduino's I/O) Tj T* 171.42 0 Td (capabilities) Tj T* -194.0924 0 Td ET
+Q
+Q
+q
+1 0 0 1 62.69291 611.0236 cm
+q
+BT 1 0 0 1 0 50 Tm 1.30152 Tw 12 TL /F1 10 Tf 0 0 0 rg (The Arduino family of microcontrollers possess a reasonable collection of input and output capabilities.) Tj T* 0 Tw .535984 Tw (While there are different versions, each with some unique capabilities, most controllers have a USB port,) Tj T* 0 Tw .979318 Tw (some digital input and output ports, a few pulse-width modulated \(PWM\) digital ports, and some analog) Tj T* 0 Tw .414983 Tw (input ports. This code module programs the Arduino with a simple command/response language via USB) Tj T* 0 Tw (providing access to Arduino's I/O capabilities.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 578.0236 cm
+q
+BT 1 0 0 1 0 3.5 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Arduino Interface) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 560.0236 cm
+q
+.545098 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 155.1999 0 Td (Table: Communications Parameters) Tj T* -155.1999 0 Td ET
+Q
+Q
+q
+1 0 0 1 62.69291 554.0236 cm
+Q
+q
+1 0 0 1 62.69291 500.0236 cm
+1 1 1 rg
+n 0 54 469.8898 -18 re f*
+.878431 .878431 .878431 rg
+n 0 36 469.8898 -18 re f*
+1 1 1 rg
+n 0 18 469.8898 -18 re f*
+.960784 .960784 .862745 rg
+n 0 54 469.8898 -18 re f*
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 39 cm
+q
+.960784 .960784 .862745 rg
+n 0 0 323.6355 12 re f*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 151.8178 0 Td (term) Tj T* -151.8178 0 Td ET
+Q
+Q
+q
+1 0 0 1 341.6355 39 cm
+q
+.960784 .960784 .862745 rg
+n 0 0 122.2542 12 re f*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 49.17711 0 Td (value) Tj T* -49.17711 0 Td ET
+Q
+Q
+0 0 0 rg
+q
+1 0 0 1 6 21 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (communications rate) Tj T* ET
+Q
+Q
+q
+1 0 0 1 341.6355 21 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (115200) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (line terminator) Tj T* ET
+Q
+Q
+q
+1 0 0 1 341.6355 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F3 10 Tf 12 TL (\\n) Tj T* ET
+Q
+Q
+q
+1 J
+1 j
+0 0 0 RG
+.25 w
+n 0 36 m 469.8898 36 l S
+n 0 18 m 469.8898 18 l S
+n 335.6355 0 m 335.6355 54 l S
+n 0 54 m 469.8898 54 l S
+n 0 0 m 469.8898 0 l S
+n 0 0 m 0 54 l S
+n 469.8898 0 m 469.8898 54 l S
+Q
+Q
+q
+1 0 0 1 62.69291 500.0236 cm
+Q
+q
+1 0 0 1 62.69291 482.0236 cm
+q
+.545098 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 165.4749 0 Td (Table: USB command interface) Tj T* -165.4749 0 Td ET
+Q
+Q
+q
+1 0 0 1 62.69291 464.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (When present, "#" refers to the Arduino pin number used in the operation) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 458.0236 cm
+Q
+q
+1 0 0 1 62.69291 332.0236 cm
+1 1 1 rg
+n 0 126 469.8898 -18 re f*
+.878431 .878431 .878431 rg
+n 0 108 469.8898 -18 re f*
+1 1 1 rg
+n 0 90 469.8898 -18 re f*
+.878431 .878431 .878431 rg
+n 0 72 469.8898 -18 re f*
+1 1 1 rg
+n 0 54 469.8898 -18 re f*
+.878431 .878431 .878431 rg
+n 0 36 469.8898 -18 re f*
+1 1 1 rg
+n 0 18 469.8898 -18 re f*
+.960784 .960784 .862745 rg
+n 0 126 469.8898 -18 re f*
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 111 cm
+q
+.960784 .960784 .862745 rg
+n 0 0 68.84125 12 re f*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 12.47062 0 Td (command) Tj T* -12.47062 0 Td ET
+Q
+Q
+q
+1 0 0 1 86.84125 111 cm
+q
+.960784 .960784 .862745 rg
+n 0 0 28.42062 12 re f*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 2.260312 0 Td (value) Tj T* -2.260312 0 Td ET
+Q
+Q
+q
+1 0 0 1 127.2619 111 cm
+q
+.960784 .960784 .862745 rg
+n 0 0 336.6279 12 re f*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 154.9739 0 Td (action) Tj T* -154.9739 0 Td ET
+Q
+Q
+0 0 0 rg
+q
+1 0 0 1 6 93 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F3 10 Tf 0 0 0 rg (?ai) Tj ( ) Tj (pin) Tj T* ET
+Q
+Q
+q
+1 0 0 1 86.84125 93 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (0..1023) Tj T* ET
+Q
+Q
+q
+1 0 0 1 127.2619 93 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (returns current value of numbered analog input) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 75 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F3 10 Tf 0 0 0 rg (?bi) Tj ( ) Tj (pin) Tj T* ET
+Q
+Q
+q
+1 0 0 1 86.84125 75 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (0..1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 127.2619 75 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (returns current value of numbered digital input) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 57 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F3 10 Tf 0 0 0 rg (!bo) Tj ( ) Tj (pin) Tj ( ) Tj (v) Tj T* ET
+Q
+Q
+q
+1 0 0 1 86.84125 57 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (0..1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 127.2619 57 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (sets numbered digital output to value v) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 39 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F3 10 Tf 0 0 0 rg (!pwm) Tj ( ) Tj (pin) Tj ( ) Tj (v) Tj T* ET
+Q
+Q
+q
+1 0 0 1 86.84125 39 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (0..255) Tj T* ET
+Q
+Q
+q
+1 0 0 1 127.2619 39 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (sets numbered PWM digital output to value v) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 21 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F3 10 Tf 0 0 0 rg (!pin) Tj ( ) Tj (pin) Tj ( ) Tj (v) Tj T* ET
+Q
+Q
+q
+1 0 0 1 86.84125 21 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (0..1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 127.2619 21 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (sets mode of digital pin to value v \(value: 1=OUTPUT, not 1=INPUT\)) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (other) Tj T* ET
+Q
+Q
+q
+1 0 0 1 127.2619 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (returns "ERROR_UNKNOWN_COMMAND:text") Tj T* ET
+Q
+Q
+q
+1 J
+1 j
+0 0 0 RG
+.25 w
+n 0 108 m 469.8898 108 l S
+n 0 90 m 469.8898 90 l S
+n 0 72 m 469.8898 72 l S
+n 0 54 m 469.8898 54 l S
+n 0 36 m 469.8898 36 l S
+n 0 18 m 469.8898 18 l S
+n 80.84125 0 m 80.84125 126 l S
+n 121.2619 0 m 121.2619 126 l S
+n 0 126 m 469.8898 126 l S
+n 0 0 m 469.8898 0 l S
+n 0 0 m 0 126 l S
+n 469.8898 0 m 469.8898 126 l S
+Q
+Q
+q
+1 0 0 1 62.69291 332.0236 cm
+Q
+q
+1 0 0 1 62.69291 314.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (notes:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 308.0236 cm
+Q
+q
+1 0 0 1 62.69291 308.0236 cm
+Q
+q
+1 0 0 1 62.69291 296.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 5.66 0 Td (1.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (must use lower case \(as shown in table\)) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 290.0236 cm
+Q
+q
+1 0 0 1 62.69291 278.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 5.66 0 Td (2.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (integers must be specified in decimal \(no octal or hex interpreted\)) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 272.0236 cm
+Q
+q
+1 0 0 1 62.69291 260.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 5.66 0 Td (3.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (pin numbers are not checked for correctness in the current version) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 254.0236 cm
+Q
+q
+1 0 0 1 62.69291 242.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 5.66 0 Td (4.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL ("?" commands return an integer) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 236.0236 cm
+Q
+q
+1 0 0 1 62.69291 224.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 5.66 0 Td (5.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL ("!" commands return "Ok") Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 218.0236 cm
+Q
+q
+1 0 0 1 62.69291 206.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 5.66 0 Td (6.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (Errors, starting with ") Tj 1 0 0 rg (ERROR_) Tj 0 0 0 rg (" will substitute for expected output) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 206.0236 cm
+Q
+q
+1 0 0 1 62.69291 176.0236 cm
+q
+BT 1 0 0 1 0 3 Tm 18 TL /F2 15 Tf 0 0 0 rg (?ai command) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 164.0236 cm
+Q
+q
+1 0 0 1 62.69291 149.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL 38.59937 0 Td (format:) Tj T* -38.59937 0 Td ET
+Q
+Q
+q
+1 0 0 1 91.03937 3 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F3 10 Tf 0 0 0 rg (?ai) Tj ( ) Tj (pin) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 134.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL 29.68937 0 Td (example:) Tj T* -29.68937 0 Td ET
+Q
+Q
+q
+1 0 0 1 91.03937 3 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F3 10 Tf 0 0 0 rg (?ai) Tj ( ) Tj (0) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 119.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL 35.25937 0 Td (returns:) Tj T* -35.25937 0 Td ET
+Q
+Q
+q
+1 0 0 1 91.03937 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F3 10 Tf 12 TL (601) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 89.02362 cm
+q
+BT 1 0 0 1 0 14 Tm 1.449986 Tw 12 TL /F1 10 Tf 0 0 0 rg (Reads the analog input ) Tj /F4 10 Tf (pin ) Tj /F1 10 Tf (specified in the first argument. The returned value is between 0 and 1023) Tj T* 0 Tw (\(10-bit ADC\) which represents a measured voltage between 0 and 5 VDC.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 88.86614 cm
+Q
+q
+1 0 0 1 56.69291 773.1969 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 181.1949 0 Td (cmd_response 2013-09-16) Tj T* -181.1949 0 Td ET
+Q
+Q
+q
+1 0 0 1 56.69291 56.69291 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 225.0999 0 Td (Page 1) Tj T* -225.0999 0 Td ET
+Q
+Q
+ 
+endstream
+endobj
+% 'R25': class PDFStream 
+25 0 obj
+% page stream
+<< /Length 7272 >>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 62.69291 682.0236 cm
+.960784 .960784 .862745 rg
+n 0 71 469.8898 -71 re f*
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 6 45 Tm  T* ET
+q
+1 0 0 1 16 40 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2.5 Tm /F5 12.5 Tf 15 TL (Note) Tj T* ET
+Q
+Q
+q
+1 0 0 1 16 16 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (pin number is not checked but will be in a future version \() Tj /F3 10 Tf (0..NUM_ANALOG_INPUTS) Tj /F1 10 Tf (\)) Tj T* ET
+Q
+Q
+q
+1 J
+1 j
+.662745 .662745 .662745 RG
+.5 w
+n 0 71 m 469.8898 71 l S
+n 0 0 m 469.8898 0 l S
+n 0 0 m 0 71 l S
+n 469.8898 0 m 469.8898 71 l S
+Q
+Q
+q
+1 0 0 1 62.69291 676.0236 cm
+Q
+q
+1 0 0 1 62.69291 646.0236 cm
+q
+BT 1 0 0 1 0 3 Tm 18 TL /F2 15 Tf 0 0 0 rg (?bi command) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 634.0236 cm
+Q
+q
+1 0 0 1 62.69291 619.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL 38.59937 0 Td (format:) Tj T* -38.59937 0 Td ET
+Q
+Q
+q
+1 0 0 1 91.03937 3 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F3 10 Tf 0 0 0 rg (?bi) Tj ( ) Tj (pin) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 604.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL 29.68937 0 Td (example:) Tj T* -29.68937 0 Td ET
+Q
+Q
+q
+1 0 0 1 91.03937 3 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F3 10 Tf 0 0 0 rg (?bi) Tj ( ) Tj (3) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 589.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL 35.25937 0 Td (returns:) Tj T* -35.25937 0 Td ET
+Q
+Q
+q
+1 0 0 1 91.03937 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F3 10 Tf 12 TL (1) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 571.0236 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (Reads the digital input ) Tj /F4 10 Tf (pin ) Tj /F1 10 Tf (specified in the first argument. The returned value is either 0 or 1.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 559.0236 cm
+Q
+q
+1 0 0 1 62.69291 488.0236 cm
+.960784 .960784 .862745 rg
+n 0 71 469.8898 -71 re f*
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 6 45 Tm  T* ET
+q
+1 0 0 1 16 40 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2.5 Tm /F5 12.5 Tf 15 TL (Note) Tj T* ET
+Q
+Q
+q
+1 0 0 1 16 16 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (pin number is not checked but will be in a future version \() Tj /F3 10 Tf (0..NUM_DIGITAL_PINS) Tj /F1 10 Tf (\)) Tj T* ET
+Q
+Q
+q
+1 J
+1 j
+.662745 .662745 .662745 RG
+.5 w
+n 0 71 m 469.8898 71 l S
+n 0 0 m 469.8898 0 l S
+n 0 0 m 0 71 l S
+n 469.8898 0 m 469.8898 71 l S
+Q
+Q
+q
+1 0 0 1 62.69291 482.0236 cm
+Q
+q
+1 0 0 1 62.69291 452.0236 cm
+q
+BT 1 0 0 1 0 3 Tm 18 TL /F2 15 Tf 0 0 0 rg (!bo command) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 440.0236 cm
+Q
+q
+1 0 0 1 62.69291 425.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL 38.59937 0 Td (format:) Tj T* -38.59937 0 Td ET
+Q
+Q
+q
+1 0 0 1 91.03937 3 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F3 10 Tf 0 0 0 rg (!bo) Tj ( ) Tj (pin) Tj ( ) Tj (value) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 410.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL 29.68937 0 Td (example:) Tj T* -29.68937 0 Td ET
+Q
+Q
+q
+1 0 0 1 91.03937 3 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F3 10 Tf 0 0 0 rg (!bo) Tj ( ) Tj (6) Tj ( ) Tj (0) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 395.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL 35.25937 0 Td (returns:) Tj T* -35.25937 0 Td ET
+Q
+Q
+q
+1 0 0 1 91.03937 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F3 10 Tf 12 TL (Ok) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 353.0236 cm
+q
+BT 1 0 0 1 0 26 Tm .504987 Tw 12 TL /F1 10 Tf 0 0 0 rg (Sets the digital output ) Tj /F4 10 Tf (pin ) Tj /F1 10 Tf (specified in the first argument to the ) Tj /F4 10 Tf (value ) Tj /F1 10 Tf (specified in the second argument. If) Tj T* 0 Tw .492093 Tw (the syntax is correct and the value is within range, returns ) Tj /F3 10 Tf (Ok) Tj /F1 10 Tf (. The pin must first be configured for output) Tj T* 0 Tw (by calling ) Tj /F3 10 Tf (!pin) Tj ( ) Tj (pin) Tj ( ) Tj (1) Tj /F1 10 Tf (.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 341.0236 cm
+Q
+q
+1 0 0 1 62.69291 270.0236 cm
+.960784 .960784 .862745 rg
+n 0 71 469.8898 -71 re f*
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 6 45 Tm  T* ET
+q
+1 0 0 1 16 40 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2.5 Tm /F5 12.5 Tf 15 TL (Note) Tj T* ET
+Q
+Q
+q
+1 0 0 1 16 16 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (pin number is not checked but will be in a future version \() Tj /F3 10 Tf (0..NUM_DIGITAL_PINS) Tj /F1 10 Tf (\)) Tj T* ET
+Q
+Q
+q
+1 J
+1 j
+.662745 .662745 .662745 RG
+.5 w
+n 0 71 m 469.8898 71 l S
+n 0 0 m 469.8898 0 l S
+n 0 0 m 0 71 l S
+n 469.8898 0 m 469.8898 71 l S
+Q
+Q
+q
+1 0 0 1 62.69291 264.0236 cm
+Q
+q
+1 0 0 1 62.69291 234.0236 cm
+q
+BT 1 0 0 1 0 3 Tm 18 TL /F2 15 Tf 0 0 0 rg (!pwm command) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 222.0236 cm
+Q
+q
+1 0 0 1 62.69291 207.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL 38.59937 0 Td (format:) Tj T* -38.59937 0 Td ET
+Q
+Q
+q
+1 0 0 1 91.03937 3 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F3 10 Tf 0 0 0 rg (!pwm) Tj ( ) Tj (pin) Tj ( ) Tj (value) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 192.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL 29.68937 0 Td (example:) Tj T* -29.68937 0 Td ET
+Q
+Q
+q
+1 0 0 1 91.03937 3 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F3 10 Tf 0 0 0 rg (!pwm) Tj ( ) Tj (11) Tj ( ) Tj (127) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 177.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL 35.25937 0 Td (returns:) Tj T* -35.25937 0 Td ET
+Q
+Q
+q
+1 0 0 1 91.03937 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F3 10 Tf 12 TL (Ok) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 135.0236 cm
+q
+BT 1 0 0 1 0 26 Tm 2.132485 Tw 12 TL /F1 10 Tf 0 0 0 rg (Sets the PWM-enabled digital output ) Tj /F4 10 Tf (pin ) Tj /F1 10 Tf (specified in the first argument to the ) Tj /F4 10 Tf (value ) Tj /F1 10 Tf (specified in the) Tj T* 0 Tw .667882 Tw (second argument. If the syntax is correct and the value is within range, returns ) Tj /F3 10 Tf (Ok) Tj /F1 10 Tf (. The pin must first be) Tj T* 0 Tw (configured for output by calling ) Tj /F3 10 Tf (!pin) Tj ( ) Tj (pin) Tj ( ) Tj (1) Tj /F1 10 Tf (.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 93.02362 cm
+q
+BT 1 0 0 1 0 26 Tm 2.136136 Tw 12 TL /F1 10 Tf 0 0 0 rg (The pin number is checked for PWM hardware-support by a call to the ) Tj /F3 10 Tf (digitalPinHasPWM\(pin\)) Tj T* 0 Tw 9.808443 Tw /F1 10 Tf (macro \(which is defined by the Arduino SDK for each supported board type in) Tj T* 0 Tw (<) Tj (Arduino) Tj (>) Tj (/hardware/arduino/variants/) Tj 1 0 0 rg (*) Tj 0 0 0 rg (/pins_arduino.h\).) Tj T* ET
+Q
+Q
+q
+1 0 0 1 56.69291 773.1969 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 181.1949 0 Td (cmd_response 2013-09-16) Tj T* -181.1949 0 Td ET
+Q
+Q
+q
+1 0 0 1 56.69291 56.69291 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 225.0999 0 Td (Page 2) Tj T* -225.0999 0 Td ET
+Q
+Q
+ 
+endstream
+endobj
+% 'R26': class PDFStream 
+26 0 obj
+% page stream
+<< /Length 7386 >>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 62.69291 735.0236 cm
+q
+BT 1 0 0 1 0 3 Tm 18 TL /F2 15 Tf 0 0 0 rg (!pin command) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 723.0236 cm
+Q
+q
+1 0 0 1 62.69291 708.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL 38.59937 0 Td (format:) Tj T* -38.59937 0 Td ET
+Q
+Q
+q
+1 0 0 1 91.03937 3 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F3 10 Tf 0 0 0 rg (!pin) Tj ( ) Tj (pin) Tj ( ) Tj (value) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 693.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL 29.68937 0 Td (example:) Tj T* -29.68937 0 Td ET
+Q
+Q
+q
+1 0 0 1 91.03937 3 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F3 10 Tf 0 0 0 rg (!pin) Tj ( ) Tj (11) Tj ( ) Tj (1) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 678.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL 35.25937 0 Td (returns:) Tj T* -35.25937 0 Td ET
+Q
+Q
+q
+1 0 0 1 91.03937 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F3 10 Tf 12 TL (Ok) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 648.0236 cm
+q
+BT 1 0 0 1 0 14 Tm 1.18881 Tw 12 TL /F1 10 Tf 0 0 0 rg (Configures the digital output ) Tj /F4 10 Tf (pin ) Tj /F1 10 Tf (specified in the first argument for output as a binary digital output and) Tj T* 0 Tw (also as a PWM digital output if the hardware enables this.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 642.0236 cm
+Q
+q
+1 0 0 1 62.69291 588.0236 cm
+1 1 1 rg
+n 0 54 469.8898 -18 re f*
+.878431 .878431 .878431 rg
+n 0 36 469.8898 -18 re f*
+1 1 1 rg
+n 0 18 469.8898 -18 re f*
+.960784 .960784 .862745 rg
+n 0 54 469.8898 -18 re f*
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 39 cm
+q
+.960784 .960784 .862745 rg
+n 0 0 110.5799 12 re f*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 43.33997 0 Td (value) Tj T* -43.33997 0 Td ET
+Q
+Q
+q
+1 0 0 1 128.5799 39 cm
+q
+.960784 .960784 .862745 rg
+n 0 0 335.3098 12 re f*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 148.4799 0 Td (meaning) Tj T* -148.4799 0 Td ET
+Q
+Q
+0 0 0 rg
+q
+1 0 0 1 6 21 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (0) Tj T* ET
+Q
+Q
+q
+1 0 0 1 128.5799 21 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (use pin as input) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 128.5799 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (use pin as output) Tj T* ET
+Q
+Q
+q
+1 J
+1 j
+0 0 0 RG
+.25 w
+n 0 36 m 469.8898 36 l S
+n 0 18 m 469.8898 18 l S
+n 122.5799 0 m 122.5799 54 l S
+n 0 54 m 469.8898 54 l S
+n 0 0 m 469.8898 0 l S
+n 0 0 m 0 54 l S
+n 469.8898 0 m 469.8898 54 l S
+Q
+Q
+q
+1 0 0 1 62.69291 588.0236 cm
+Q
+q
+1 0 0 1 62.69291 576.0236 cm
+Q
+q
+1 0 0 1 62.69291 505.0236 cm
+.960784 .960784 .862745 rg
+n 0 71 469.8898 -71 re f*
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 6 45 Tm  T* ET
+q
+1 0 0 1 16 40 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2.5 Tm /F5 12.5 Tf 15 TL (Note) Tj T* ET
+Q
+Q
+q
+1 0 0 1 16 16 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (pin number is not checked but will be in a future version \() Tj /F3 10 Tf (0..NUM_DIGITAL_PINS) Tj /F1 10 Tf (\)) Tj T* ET
+Q
+Q
+q
+1 J
+1 j
+.662745 .662745 .662745 RG
+.5 w
+n 0 71 m 469.8898 71 l S
+n 0 0 m 469.8898 0 l S
+n 0 0 m 0 71 l S
+n 469.8898 0 m 469.8898 71 l S
+Q
+Q
+q
+1 0 0 1 62.69291 499.0236 cm
+Q
+q
+1 0 0 1 62.69291 469.0236 cm
+q
+BT 1 0 0 1 0 3 Tm 18 TL /F2 15 Tf 0 0 0 rg (Examples) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 457.0236 cm
+Q
+q
+1 0 0 1 62.69291 457.0236 cm
+Q
+q
+1 0 0 1 62.69291 445.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 5.66 0 Td (1.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Read analog input from pin 0:) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 445.0236 cm
+Q
+q
+1 0 0 1 62.69291 399.8236 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 36 re B*
+Q
+q
+BT 1 0 0 1 0 14 Tm 12 TL /F3 10 Tf 0 0 0 rg (>) Tj (>) Tj (>) Tj ( ?ai 0) Tj T* (41) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 385.8236 cm
+Q
+q
+1 0 0 1 62.69291 385.8236 cm
+Q
+q
+1 0 0 1 62.69291 373.8236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 5.66 0 Td (2.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Set digital pin 11 for PWM output:) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 373.8236 cm
+Q
+q
+1 0 0 1 62.69291 328.6236 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 36 re B*
+Q
+q
+BT 1 0 0 1 0 14 Tm 12 TL /F3 10 Tf 0 0 0 rg (>) Tj (>) Tj (>) Tj ( !pin 11 1) Tj T* (Ok) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 314.6236 cm
+Q
+q
+1 0 0 1 62.69291 314.6236 cm
+Q
+q
+1 0 0 1 62.69291 302.6236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 5.66 0 Td (3.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Set PWM output pin 11 to 128:) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 302.6236 cm
+Q
+q
+1 0 0 1 62.69291 257.4236 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 36 re B*
+Q
+q
+BT 1 0 0 1 0 14 Tm 12 TL /F3 10 Tf 0 0 0 rg (>) Tj (>) Tj (>) Tj ( !pwm 11 128) Tj T* (Ok) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 243.4236 cm
+Q
+q
+1 0 0 1 62.69291 243.4236 cm
+Q
+q
+1 0 0 1 62.69291 231.4236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 5.66 0 Td (4.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Show how a bad command \(no space between baseCmd and pin\) is handled:) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 231.4236 cm
+Q
+q
+1 0 0 1 62.69291 186.2236 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 36 re B*
+Q
+q
+BT 1 0 0 1 0 14 Tm 12 TL /F3 10 Tf 0 0 0 rg (>) Tj (>) Tj (>) Tj ( !pwm11 128) Tj T* (ERROR_UNKNOWN_COMMAND:!pwm11 128) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 156.2236 cm
+q
+BT 1 0 0 1 0 3 Tm 18 TL /F2 15 Tf 0 0 0 rg (Error messages) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 114.2236 cm
+q
+BT 1 0 0 1 0 26 Tm 1.002765 Tw 12 TL /F1 10 Tf 0 0 0 rg (This is a list of the possible error messages and their meanings. All error messages begin with the text) Tj T* 0 Tw 1.65528 Tw /F3 10 Tf (ERROR_ ) Tj /F1 10 Tf (and then some terse descriptor of the error. In most cases, the input that triggered the error) Tj T* 0 Tw (message is returned. A single ":" is used as the delimiter when the input is appended.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 98.22362 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F6 10 Tf 12 TL (ERROR_BINARY_RANGE:input) Tj T* ET
+Q
+Q
+q
+1 0 0 1 56.69291 773.1969 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 181.1949 0 Td (cmd_response 2013-09-16) Tj T* -181.1949 0 Td ET
+Q
+Q
+q
+1 0 0 1 56.69291 56.69291 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 225.0999 0 Td (Page 3) Tj T* -225.0999 0 Td ET
+Q
+Q
+ 
+endstream
+endobj
+% 'R27': class PDFStream 
+27 0 obj
+% page stream
+<< /Length 4245 >>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 62.69291 738.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 0 2 Tm  T* ET
+q
+1 0 0 1 20 0 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (The value must be either ) Tj /F3 10 Tf (0 ) Tj /F1 10 Tf (or ) Tj /F3 10 Tf (1) Tj /F1 10 Tf (.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 722.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F6 10 Tf 12 TL (ERROR_BUFFER_OVERFLOW) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 677.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 0 32 Tm  T* ET
+q
+1 0 0 1 20 18 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL .797318 Tw (Too many characters were received before the line terminator. All characters received so far will be) Tj T* 0 Tw (discarded.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 20 0 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Some Arduinos do not have much available RAM. The current buffer length is 40 characters.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 661.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F6 10 Tf 12 TL (ERROR_COMMAND_FORMAT:input) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 634.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 0 14 Tm  T* ET
+q
+1 0 0 1 20 0 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL 1.721318 Tw (All commands must have at least one space separating the baseCmd from the pin number. This) Tj T* 0 Tw (command is generated when no space is detected in the input.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 618.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F6 10 Tf 12 TL (ERROR_PIN_NOT_PWM:input) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 579.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 0 26 Tm  T* ET
+q
+1 0 0 1 20 0 cm
+q
+BT 1 0 0 1 0 26 Tm .81561 Tw 12 TL /F1 10 Tf 0 0 0 rg (The specified pin is not supported for PWM on this Arduino hardware. This is determined by calling) Tj T* 0 Tw 1.433314 Tw (the Arduino system macro ) Tj /F3 10 Tf (digitalPinHasPWM\(pin\) ) Tj /F1 10 Tf (which is defined for each different type of) Tj T* 0 Tw (Arduino hardware variation.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 563.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F6 10 Tf 12 TL (ERROR_PWM_RANGE:input) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 536.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 0 14 Tm  T* ET
+q
+1 0 0 1 20 0 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL .897633 Tw (The PWM value must be between 0 and 255, inclusive. This error is reported for any value outside) Tj T* 0 Tw (this range.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 520.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F6 10 Tf 12 TL (ERROR_UNKNOWN_COMMAND:input) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 493.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 0 14 Tm  T* ET
+q
+1 0 0 1 20 0 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL 1.154987 Tw (The input was not recognized as a valid command. One reason for this might be the use of upper) Tj T* 0 Tw (case. Other possibilities exist.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 477.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F6 10 Tf 12 TL (ERROR_TOO_MANY_ARGUMENTS:input) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 408.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 0 56 Tm  T* ET
+q
+1 0 0 1 20 30 cm
+q
+BT 1 0 0 1 0 26 Tm .748651 Tw 12 TL /F1 10 Tf 0 0 0 rg (The general form for input commands is ) Tj /F3 10 Tf (baseCmd) Tj ( ) Tj (pin) Tj ( ) Tj ([value] ) Tj /F1 10 Tf (where ) Tj /F3 10 Tf (baseCmd ) Tj /F1 10 Tf (is given in the) Tj T* 0 Tw 1.313318 Tw (table above, ) Tj /F3 10 Tf (pin ) Tj /F1 10 Tf (is an integer appropriate for the chosen hardware interface, and ) Tj /F3 10 Tf (value ) Tj /F1 10 Tf (is only) Tj T* 0 Tw (used for "!" \(set\) commands.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 20 0 cm
+q
+BT 1 0 0 1 0 14 Tm 1.782619 Tw 12 TL /F1 10 Tf 0 0 0 rg (At this time, if ) Tj /F3 10 Tf (value ) Tj /F1 10 Tf (is specified for a "?" \(read\) command, it is ignored. In the future, this will) Tj T* 0 Tw (generate an error message.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 56.69291 773.1969 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 181.1949 0 Td (cmd_response 2013-09-16) Tj T* -181.1949 0 Td ET
+Q
+Q
+q
+1 0 0 1 56.69291 56.69291 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 225.0999 0 Td (Page 4) Tj T* -225.0999 0 Td ET
+Q
+Q
+ 
+endstream
+endobj
+% 'R28': class PDFPageLabels 
+28 0 obj
+% Document Root
+<< /Nums [ 0
+ 29 0 R
+ 1
+ 30 0 R
+ 2
+ 31 0 R
+ 3
+ 32 0 R ] >>
+endobj
+% 'R29': class PDFPageLabel 
+29 0 obj
+% None
+<< /S /D
+ /St 1 >>
+endobj
+% 'R30': class PDFPageLabel 
+30 0 obj
+% None
+<< /S /D
+ /St 2 >>
+endobj
+% 'R31': class PDFPageLabel 
+31 0 obj
+% None
+<< /S /D
+ /St 3 >>
+endobj
+% 'R32': class PDFPageLabel 
+32 0 obj
+% None
+<< /S /D
+ /St 4 >>
+endobj
+xref
+0 33
+0000000000 65535 f
+0000000113 00000 n
+0000000269 00000 n
+0000000434 00000 n
+0000000609 00000 n
+0000000770 00000 n
+0000000949 00000 n
+0000001230 00000 n
+0000001417 00000 n
+0000001698 00000 n
+0000001867 00000 n
+0000002147 00000 n
+0000002428 00000 n
+0000002587 00000 n
+0000002847 00000 n
+0000002972 00000 n
+0000003178 00000 n
+0000003351 00000 n
+0000003539 00000 n
+0000003727 00000 n
+0000003916 00000 n
+0000004106 00000 n
+0000004292 00000 n
+0000004451 00000 n
+0000004584 00000 n
+0000015135 00000 n
+0000022506 00000 n
+0000029991 00000 n
+0000034339 00000 n
+0000034471 00000 n
+0000034548 00000 n
+0000034625 00000 n
+0000034702 00000 n
+trailer
+<< /ID 
+ % ReportLab generated PDF document -- digest (http://www.reportlab.com) 
+ [(\350\231\307\375\355&\213\261\253C\260\346\012\016\035\347) (\350\231\307\375\355&\213\261\253C\260\346\012\016\035\347)] 
+
+ /Info 13 0 R
+ /Root 12 0 R
+ /Size 33 >>
+startxref
+34749
+%%EOF

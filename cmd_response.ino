@@ -246,6 +246,8 @@ void setPinMode(char* in) {
   // TODO: check 0..NUM_DIGITAL_PINS
   argValue = (argValue == 1) ? OUTPUT : INPUT;
   pinMode(pin, argValue);
+    // TODO: range check the pin first and make sure it is OK for output!   NUM_DIGITAL_PINS
+	// TODO: check 0..NUM_DIGITAL_PINS
 #ifdef TALKATIVE
   Serial.print(F("pin "));
   Serial.print(pin);

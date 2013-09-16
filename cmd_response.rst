@@ -8,6 +8,11 @@ cmd_response
 simple command/response access via USB to Arduino's I/O capabilities
 ----------------------------------------------------------------------
 
+.. rst2pdf -o cmd_response.pdf \
+   --header="cmd_response 2013-09-16" \
+   --footer="Page ###Page###" \
+   cmd_response.rst
+
 The Arduino family of microcontrollers possess a reasonable
 collection of input and output capabilities.  While there are
 different versions, each with some unique capabilities, most
@@ -20,29 +25,45 @@ Arduino's I/O capabilities.
 Arduino Interface
 ====================
 
-.. rubric:: Communications Parameters
+.. rubric:: Table: Communications Parameters
 
 ====================   ========
 term                   value
 ====================   ========
 communications rate    115200
-line terminator        \n
+line terminator        ``\n``
 ====================   ========
 
-.. rubric:: USB command interface
+.. rubric:: Table: USB command interface
 
 When present, "#" refers to the Arduino pin number used in the operation
   
-============  ========  =====================================================================
-command       value     action
-============  ========  =====================================================================
-?ai pin       0..1023   returns current value of numbered analog input
-?bi pin       0..1      returns current value of numbered digital input
-!bo pin v     0..1      sets numbered digital output to value v
-!pwm pin v    0..255    sets numbered PWM digital output to value v
-!pin pin v    0..1      sets mode of digital pin to value v (value: 1=OUTPUT, not 1=INPUT)
-other         ..        returns "ERROR_UNKNOWN_COMMAND:text"
-============  ========  =====================================================================
+================  ========  =====================================================================
+command           value     action
+================  ========  =====================================================================
+``?ai pin``       0..1023   returns current value of numbered analog input
+``?bi pin``       0..1      returns current value of numbered digital input
+``!bo pin v``     0..1      sets numbered digital output to value v
+``!pwm pin v``    0..255    sets numbered PWM digital output to value v
+``!pin pin v``    0..1      sets mode of digital pin to value v (value: 1=OUTPUT, not 1=INPUT)
+other             ..        returns "ERROR_UNKNOWN_COMMAND:text"
+================  ========  =====================================================================
+
+.. possible new commands
+   ``?#ai``      returns   NUM_ANALOG_INPUTS
+   ``?#bi``      returns   NUM_DIGITAL_PINS
+   ``!t``        sets      averaging time, ms
+   ``?t``        returns   averaging time, ms
+   ``?t:min``    returns   minimum allowed averaging time, ms
+   ``?t:max``    returns   maximum allowed averaging time, ms
+   ``!k``        sets      averaging factor (k)
+   ``?k``        returns   averaging factor (k)
+   ``?k:min``    returns   minimum allowed averaging factor (k)
+   ``?k:max``    returns   maximum allowed averaging factor (k)
+   ``!ai:mean``  sets      Sets up ai pin for averaging
+   ``?ai:mean``  returns   <ai>*k
+   ``?v``        returns   version number
+   ``ID``        returns   identification string
 
 notes: 
 
@@ -64,7 +85,8 @@ Reads the analog input *pin* specified in the first argument.
 The returned value is between 0 and 1023 (10-bit ADC) which represents
 a measured voltage between 0 and 5 VDC.
 
-.. note:: pin number is not checked
+.. note:: pin number is not checked but will be 
+   in a future version (``0..NUM_ANALOG_INPUTS``)
 
 ?bi command
 ----------------
@@ -76,7 +98,8 @@ a measured voltage between 0 and 5 VDC.
 Reads the digital input *pin* specified in the first argument.
 The returned value is either 0 or 1.
 
-.. note:: pin number is not checked
+.. note:: pin number is not checked but will be 
+   in a future version (``0..NUM_DIGITAL_PINS``)
 
 !bo command
 ----------------
@@ -88,10 +111,10 @@ The returned value is either 0 or 1.
 Sets the digital output *pin* specified in the first argument 
 to the *value* specified in the second argument.  If the syntax
 is correct and the value is within range, returns ``Ok``.  
-The pin must first be configured 
-for output by calling ``!pin pin 1``.
+The pin must first be configured for output by calling ``!pin pin 1``.
 
-.. note:: pin number is not checked
+.. note:: pin number is not checked but will be 
+   in a future version (``0..NUM_DIGITAL_PINS``)
 
 !pwm command
 ----------------
@@ -103,10 +126,11 @@ for output by calling ``!pin pin 1``.
 Sets the PWM-enabled digital output *pin* specified in the first argument 
 to the *value* specified in the second argument.  If the syntax
 is correct and the value is within range, returns ``Ok``.  
-The pin must first be configured 
-for output by calling ``!pin pin 1``.
+The pin must first be configured for output by calling ``!pin pin 1``.
 
-.. note:: pin number is not checked
+The pin number is checked for PWM hardware-support by a call to the
+``digitalPinHasPWM(pin)`` macro (which is defined by the Arduino SDK 
+for each supported board type in <Arduino>/hardware/arduino/variants/*/pins_arduino.h).
 
 !pin command
 ----------------
@@ -126,9 +150,11 @@ value   meaning
 1       use pin as output
 ======  =================
 
-.. note:: pin number is not checked
+.. note:: pin number is not checked but will be in a 
+   future version (``0..NUM_DIGITAL_PINS``)
 
 Examples
+--------------------
 
 1. Read analog input from pin 0:
 
@@ -145,7 +171,7 @@ Ok
 >>> !pwm 11 128
 Ok
 
-4. Send a bad command (no space between baseCmd and pin):
+4. Show how a bad command (no space between baseCmd and pin) is handled:
 
 >>> !pwm11 128
 ERROR_UNKNOWN_COMMAND:!pwm11 128
@@ -155,38 +181,42 @@ Error messages
 --------------------
 
 This is a list of the possible error messages and their meanings.
+All error messages begin with the text ``ERROR_`` and then some 
+terse descriptor of the error.
+In most cases, the input that triggered the error message is 
+returned.  A single ":" is used as the delimiter when the input is appended.
 
-:ERROR_BINARY_RANGE:input:
+``ERROR_BINARY_RANGE:input``
   The value must be either ``0`` or ``1``.
 
-:ERROR_BUFFER_OVERFLOW:
+``ERROR_BUFFER_OVERFLOW``
   Too many characters were received before the line terminator.
   All characters received so far will be discarded.
   
   Some Arduinos do not have much available RAM.
   The current buffer length is 40 characters.
 
-:ERROR_COMMAND_FORMAT:input:
+``ERROR_COMMAND_FORMAT:input``
   All commands must have at least one space separating the baseCmd from 
   the pin number.  This command is generated when no space is detected
   in the input.
 
-:ERROR_PIN_NOT_PWM:input:
+``ERROR_PIN_NOT_PWM:input``
   The specified pin is not supported for PWM on this Arduino hardware.
   This is determined by calling the Arduino system macro 
   ``digitalPinHasPWM(pin)`` which is defined for each different type 
   of Arduino hardware variation.
 
-:ERROR_PWM_RANGE:input:
+``ERROR_PWM_RANGE:input``
   The PWM value must be between 0 and 255, inclusive.
   This error is reported for any value outside this range.
 
-:ERROR_UNKNOWN_COMMAND:input:
+``ERROR_UNKNOWN_COMMAND:input``
   The input was not recognized as a valid command.
   One reason for this might be the use of upper case.
   Other possibilities exist.
 
-:ERROR_TOO_MANY_ARGUMENTS:input:
+``ERROR_TOO_MANY_ARGUMENTS:input``
   The general form for input commands is ``baseCmd pin [value]``
   where ``baseCmd`` is given in the table above, ``pin`` is an 
   integer appropriate for the chosen hardware interface, and
@@ -196,8 +226,8 @@ This is a list of the possible error messages and their meanings.
   it is ignored.  In the future, this will generate an error message.
   
 ..
-	Streams protocol
-	====================
+	EPICS Streams protocol
+	=======================
 
 	========  ================================================
 	protocol  meaning
