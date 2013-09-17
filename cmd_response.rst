@@ -9,7 +9,7 @@ simple command/response access via USB to Arduino's I/O capabilities
 ----------------------------------------------------------------------
 
 .. rst2pdf -o cmd_response.pdf \
-   --header="cmd_response 2013-09-16" \
+   --header="$Id$" \
    --footer="Page ###Page###" \
    cmd_response.rst
 
@@ -30,9 +30,23 @@ short introduction here
 Theory of Operations
 +++++++++++++++++++++
 
-.. TODO:
+.. note:: TODO: this section needs to be written, for now, here are some notes
 
 basic reads and writes are very short
+
+USB commands have this form::
+
+	//  USB command interface of form: baseCmd [arg1 [arg2]]
+	//
+	// char* baseCmd (lower case)
+	// long arg1, arg2 (no octal or hex interpreted)
+
+
+Commands are either **get** (begins with ``?``) or **set** (begins with ``!``)
+
+All **set** commands return "Ok" or an error message.
+
+All **get** commands return a value or an error message.
 
 ADC signal averaging requires some more setup
 
@@ -60,73 +74,7 @@ the user can query the min and max of this range
 
 an ID and a version number are available to be read
 
-Tables
-+++++++++
 
-.. rubric:: Table: Communications Parameters
-
-======================   ========
-term                     value
-======================   ========
-communications rate      115200
-line terminator          ``\n``
-buffer length (chars)    40
-command length (chars)   16
-======================   ========
-
-.. rubric:: Table: USB command interface
-
-When present, "#" refers to the Arduino pin number used in the operation
-  
-================  ========  =====================================================================
-command           value     action
-================  ========  =====================================================================
-``?ai pin``       0..1023   returns current value of numbered analog input
-``?bi pin``       0..1      returns current value of numbered digital input
-``!bo pin v``     0..1      sets numbered digital output to value v
-``!pwm pin v``    0..255    sets numbered PWM digital output to value v
-``!pin pin v``    0..1      sets mode of digital pin to value v (value: 1=OUTPUT, not 1=INPUT)
-``?#ai``	  int	    returns NUM_ANALOG_INPUTS
-``?#bi``	  int 	    returns NUM_DIGITAL_PINS
-``!t``		  long 	    sets averaging time, ms
-``?t``		  long 	    returns averaging time, ms
-``?t:min``	  long 	    returns minimum allowed averaging time, ms
-``?t:max``	  long 	    returns maximum allowed averaging time, ms
-``!k``		  long 	    sets averaging factor (``k``)
-``?k``		  long 	    returns averaging factor (``k``)
-``?k:min``	  long 	    returns minimum allowed averaging factor (``k``)
-``?k:max``	  long 	    returns maximum allowed averaging factor (``k``)
-``!ai:mean``	  0..1 	    sets up ai pin for averaging
-``?ai:mean``	  long 	    returns ``<ai>*k``
-``?v``		  long 	    returns version number
-``ID``		  0 	    returns identification string
-other             ..        returns "ERROR_UNKNOWN_COMMAND:text"
-================  ========  =====================================================================
-
-.. possible new commands
-   ``?#ai``      returns NUM_ANALOG_INPUTS
-   ``?#bi``      returns NUM_DIGITAL_PINS
-   ``!t``        sets averaging time, ms
-   ``?t``        returns averaging time, ms
-   ``?t:min``    returns minimum allowed averaging time, ms
-   ``?t:max``    returns maximum allowed averaging time, ms
-   ``!k``        sets averaging factor (``k``)
-   ``?k``        returns averaging factor (``k``)
-   ``?k:min``    returns minimum allowed averaging factor (``k``)
-   ``?k:max``    returns maximum allowed averaging factor (``k``)
-   ``!ai:mean``  sets up ai pin for averaging
-   ``?ai:mean``  returns ``<ai>*k``
-   ``?v``        returns version number
-   ``ID``        returns identification string
-
-notes: 
-
-#. must use lower case (as shown in table)
-#. integers must be specified in decimal (no octal or hex interpreted)
-#. pin numbers are not checked for correctness in the current version
-#. "?" commands return an integer
-#. "!" commands return "Ok"
-#. Errors, starting with "ERROR_" will substitute for expected output
 
 Commands
 +++++++++++
@@ -212,10 +160,11 @@ value   meaning
    ?k	     long      returns averaging factor (``k``)
    ?k:min    long      returns minimum allowed averaging factor (``k``)
    ?k:max    long      returns maximum allowed averaging factor (``k``)
-   !ai:mean  0..1      sets up ai pin for averaging
+   !ai:watch 0..1      sets up ai pin for averaging
    ?ai:mean  long      returns ``<ai>*k``
    ?v	     long      returns version number
-   ID	     0         returns identification string
+   ?id	     0         returns identification string
+   ?rate     long      returns number of updates (technically: loops) per microsecond
 
 Examples
 +++++++++++
@@ -311,6 +260,62 @@ returned.  A single ":" is used as the delimiter when the input is appended.
   The input was not recognized as a valid command.
   One reason for this might be the use of upper case.
   Other possibilities exist.
+
+  
+
+Tables
++++++++++
+
+.. rubric:: Table: Communications Parameters
+
+======================   ========
+term                     value
+======================   ========
+communications rate      115200
+line terminator          ``\n``
+buffer length (chars)    40
+command length (chars)   16
+======================   ========
+
+.. rubric:: Table: USB command interface
+
+When present, "#" refers to the Arduino pin number used in the operation
+  
+================  ========  =====================================================================
+command           value     action
+================  ========  =====================================================================
+``?ai pin``       0..1023   returns current value of numbered analog input
+``?bi pin``       0..1      returns current value of numbered digital input
+``!bo pin v``     0..1      sets numbered digital output to value v
+``!pwm pin v``    0..255    sets numbered PWM digital output to value v
+``!pin pin v``    0..1      sets mode of digital pin to value v (value: 1=OUTPUT, not 1=INPUT)
+``?#ai``          int       returns NUM_ANALOG_INPUTS
+``?#bi``          int       returns NUM_DIGITAL_PINS
+``!t``            long      sets averaging time, ms
+``?t``            long      returns averaging time, ms
+``?t:min``        long 	    returns minimum allowed averaging time, ms
+``?t:max``        long 	    returns maximum allowed averaging time, ms
+``!k``            long 	    sets averaging factor (``k``)
+``?k``            long 	    returns averaging factor (``k``)
+``?k:min``        long 	    returns minimum allowed averaging factor (``k``)
+``?k:max``        long 	    returns maximum allowed averaging factor (``k``)
+``!ai:watch``     0..1 	    sets up ai pin for averaging
+``?ai:mean``      long 	    returns ``<ai>*k``
+``?v``            long 	    returns version number
+``?id``           0         returns identification string
+``?rate``         long 	    returns number of updates (technically: loops) per microsecond
+other             ..        returns "ERROR_UNKNOWN_COMMAND:text"
+================  ========  =====================================================================
+
+notes: 
+
+#. must use lower case (as shown in table)
+#. integers must be specified in decimal (no octal or hex interpreted)
+#. pin numbers are not checked for correctness in the current version
+#. "?" commands return an integer
+#. "!" commands return "Ok"
+#. Errors, starting with "ERROR_" will substitute for expected output
+
 
 ..
 	EPICS Streams protocol

@@ -18,7 +18,7 @@
 #define PWM_MAX_VALUE 255
 #define PWM_MIN_VALUE 0
 
-#define PERIOD_DEFAULT_ms  100
+#define PERIOD_DEFAULT_ms  1000
 #define PERIOD_MIN_ms      5
 #define PERIOD_MAX_ms      10000
 
@@ -29,8 +29,8 @@
 char inputString[BUFFER_LENGTH+1];
 char strPtr;
 boolean stringComplete;
-int pin;
-long argValue;
+long arg1;
+long arg2;
 char baseCmd[COMMAND_LENGTH+1];
 
 long period = PERIOD_DEFAULT_ms;
@@ -38,7 +38,7 @@ long multiplier = MULTIPLIER_DEFAULT;
 int ai_watched[NUM_ANALOG_INPUTS];
 long ai_sums[NUM_ANALOG_INPUTS];
 float ai_mean[NUM_ANALOG_INPUTS];
-long count;
+long count, rate;
 long nextUpdate;
 
 void setup() {
@@ -50,9 +50,10 @@ void setup() {
     ai_watched[i] = 0;    // by default, do not monitor
     ai_sums[i] = 0;
     ai_mean[i] = 0;
-    count = 0;
   }
-  nextUpdate = millis();
+  count = 0;
+  rate = 0;
+  nextUpdate = millis() + period;
 }
 
 void loop() {
@@ -64,19 +65,22 @@ void loop() {
 void signalGathering() {
   // periodically, average the watched ADC channels
   if (millis() >= nextUpdate) {
+    // Serial.print("count"); Serial.print("  "); Serial.println(count);
     for (int i = 0; i < NUM_ANALOG_INPUTS; i++) {
       if (ai_watched[i] && count > 0) {    // if monitoring
+        // Serial.print(i); Serial.print("  "); Serial.println(float(ai_sums[i]));
         ai_mean[i] = float(ai_sums[i]) / count;
         ai_sums[i] = 0;
       }
     }
     nextUpdate = millis() + period;
+    rate = 1000 * count / period;    // loops per microsecond
     count = 0;
   }
   // this is where the ADC channels are read
   for (int i = 0; i < NUM_ANALOG_INPUTS; i++) {
     if (ai_watched[i])    // if monitoring
-      ai_sums[i] = analogRead(i);
+      ai_sums[i] += analogRead(i);
   }
   count++;
 }
@@ -112,7 +116,7 @@ void readBuffer() {
 
 void processCmd() {
   if (stringComplete) {
-    parseBuffer();    // process the command
+    executeCommand();    // process the command
     resetBuffer();    // clear for the next command
   }
 }
@@ -122,61 +126,48 @@ void resetBuffer() {
   strPtr = 0;
   stringComplete = false;
   baseCmd[0] = 0;
-  pin = UNDEFINED;
-  argValue = UNDEFINED;
+  arg1 = UNDEFINED;
+  arg2 = UNDEFINED;
 }
 
-//  USB command interface
+//  USB command interface of form: baseCmd [arg1 [arg2]]
 //
-//  When present, "#" refers to the Arduino pin number used in the operation
-//  
-//  ============  ========  =====================================================================
-//  command       value     action
-//  ============  ========  =====================================================================
-//  ?ai pin       0..1023   returns current value of numbered analog input
-//  ?bi pin       0..1      returns current value of numbered digital input
-//  !bo pin v     0..1      sets numbered digital output to value v
-//  !pwm pin v    0..255    sets numbered PWM digital output to value v
-//  !pin pin v    0..1      sets mode of digital pin to value v (value: 1=OUTPUT, not 1=INPUT)
-//  other         ..        returns "ERROR_UNKNOWN_COMMAND:text"
-//  ============  ========  =====================================================================
-//
-// notes: must use lower case (as shown in table)
-//        integers must be specified in decimal (no octal or hex interpreted)
-//
-void parseBuffer() {
+// char* baseCmd (lower case)
+// long arg1, arg2 (no octal or hex interpreted)
+
+void executeCommand() {
   dissectCommand(inputString);
   if (strlen(baseCmd)) {
-    if      (0 == strcmp(baseCmd, "?ai"))      readAI(inputString);
-    else if (0 == strcmp(baseCmd, "?bi"))      readBI(inputString);
-    else if (0 == strcmp(baseCmd, "!bo"))      writeBO(inputString);
-    else if (0 == strcmp(baseCmd, "!pwm"))     writePWM(inputString);
-    else if (0 == strcmp(baseCmd, "!pin"))     setPinMode(inputString);
-    else if (0 == strcmp(baseCmd, "?#ai"))     get_num_ai_channels(inputString);
-    else if (0 == strcmp(baseCmd, "?#bi"))     get_num_bi_channels(inputString);
-    else if (0 == strcmp(baseCmd, "!t"))       set_period(inputString);
-    else if (0 == strcmp(baseCmd, "?t"))       get_period(inputString);
-    else if (0 == strcmp(baseCmd, "?t:min"))   get_period_min(inputString);
-    else if (0 == strcmp(baseCmd, "?t:max"))   get_period_max(inputString);
-    else if (0 == strcmp(baseCmd, "!k"))       set_multiplier(inputString);
-    else if (0 == strcmp(baseCmd, "?k"))       get_multiplier(inputString);
-    else if (0 == strcmp(baseCmd, "?k:min"))   get_multiplier_min(inputString);
-    else if (0 == strcmp(baseCmd, "?k:max"))   get_multiplier_max(inputString);
-    else if (0 == strcmp(baseCmd, "!ai:mean")) watch_ai_channel(inputString);
-    else if (0 == strcmp(baseCmd, "?ai:mean")) readAI_mean(inputString);
-    else if (0 == strcmp(baseCmd, "?v"))       get_software_version(inputString);
-    else if (0 == strcmp(baseCmd, "ID"))       get_software_id(inputString);
+    if      (0 == strcmp(baseCmd, "?ai"))       readAI(inputString);
+    else if (0 == strcmp(baseCmd, "?bi"))       readBI(inputString);
+    else if (0 == strcmp(baseCmd, "!bo"))       writeBO(inputString);
+    else if (0 == strcmp(baseCmd, "!pwm"))      writePWM(inputString);
+    else if (0 == strcmp(baseCmd, "!pin"))      setPinMode(inputString);
+    else if (0 == strcmp(baseCmd, "?#ai"))      get_num_ai_channels(inputString);
+    else if (0 == strcmp(baseCmd, "?#bi"))      get_num_bi_channels(inputString);
+    else if (0 == strcmp(baseCmd, "!t"))        set_period(inputString);
+    else if (0 == strcmp(baseCmd, "?t"))        get_period(inputString);
+    else if (0 == strcmp(baseCmd, "?t:min"))    get_period_min(inputString);
+    else if (0 == strcmp(baseCmd, "?t:max"))    get_period_max(inputString);
+    else if (0 == strcmp(baseCmd, "!k"))        set_multiplier(inputString);
+    else if (0 == strcmp(baseCmd, "?k"))        get_multiplier(inputString);
+    else if (0 == strcmp(baseCmd, "?k:min"))    get_multiplier_min(inputString);
+    else if (0 == strcmp(baseCmd, "?k:max"))    get_multiplier_max(inputString);
+    else if (0 == strcmp(baseCmd, "!ai:watch")) watch_ai_channel(inputString);
+    else if (0 == strcmp(baseCmd, "?ai:mean"))  readAI_mean(inputString);
+    else if (0 == strcmp(baseCmd, "?v"))        get_software_version(inputString);
+    else if (0 == strcmp(baseCmd, "?id"))       get_software_id(inputString);
+    else if (0 == strcmp(baseCmd, "?rate"))     get_loop_rate(inputString);
     else {
-      Serial.print(F("ERROR_UNKNOWN_COMMAND:"));
-      Serial.println(inputString);
-      resetBuffer();
+      Serial.print(F("ERROR_ _COMMAND:"));
+      finalizeError(inputString);
     }
   }
 }
 
 /** dissectCommand
  *
- * parse the input "baseCmd pin [argValue]"
+ * parse the input "baseCmd arg1 [arg2]"
  */
 void dissectCommand(char *source_string) {
   char *cmd;
@@ -189,11 +180,11 @@ void dissectCommand(char *source_string) {
   
   cmd = strtok(NULL, " ");
   if (cmd) {
-    pin = atoi(cmd);
+    arg1 = atoi(cmd);
 
     cmd = strtok(NULL, " ");
     if (cmd) {
-      argValue = atoi(cmd);
+      arg2 = atoi(cmd);
       
       cmd = strtok(NULL, " ");
       if (cmd) {
@@ -202,10 +193,6 @@ void dissectCommand(char *source_string) {
         resetBuffer();
       }
     }
-  } else {
-    Serial.print(F("ERROR_COMMAND_FORMAT:"));
-    Serial.println(source_string);
-    resetBuffer();
   }
 }
 
@@ -216,47 +203,47 @@ void finalizeError(char *in) {
 }
 
 void readAI(char* in) {
-  if (pin < 0 || pin > NUM_ANALOG_INPUTS) {
+  if (arg1 < 0 || arg1 > NUM_ANALOG_INPUTS) {
     Serial.print(F("ERROR_AI_PIN_NOT_AVAILABLE:"));
     finalizeError(in);
   } else {
-    Serial.println(analogRead(pin));
+    Serial.println(analogRead(arg1));
   }
 }
 
 void readBI(char* in) {
-  if (pin < 0 || pin > NUM_DIGITAL_PINS) {
+  if (arg1 < 0 || arg1 > NUM_DIGITAL_PINS) {
     Serial.print(F("ERROR_BI_PIN_NOT_AVAILABLE:"));
     finalizeError(in);
   } else {
-    Serial.println(digitalRead(pin));
+    Serial.println(digitalRead(arg1));
   }
 }
 
 void writeBO(char* in) {
-  if (argValue < 0 || argValue > 1) {
+  if (arg2 < 0 || arg2 > 1) {
     Serial.print(F("ERROR_BINARY_RANGE:"));
     finalizeError(in);
-  } else if (pin < 0 || pin > NUM_DIGITAL_PINS) {
+  } else if (arg1 < 0 || arg1 > NUM_DIGITAL_PINS) {
     // TODO: but did we set the pin for output?
     Serial.print(F("ERROR_BO_PIN_NOT_AVAILABLE:"));
     finalizeError(in);
   } else {
-    digitalWrite(pin, argValue);
+    digitalWrite(arg1, arg2);
     Serial.println(F("Ok"));
   }
 }
 
 void writePWM(char* in) {
-  if (argValue < PWM_MIN_VALUE || argValue > PWM_MAX_VALUE) {
+  if (arg2 < PWM_MIN_VALUE || arg2 > PWM_MAX_VALUE) {
     Serial.print(F("ERROR_PWM_RANGE:"));
     finalizeError(in);
-  } else if (!digitalPinHasPWM(pin)) {
+  } else if (!digitalPinHasPWM(arg1)) {
     // TODO: but did we set the pin for output?
     Serial.print(F("ERROR_PIN_NOT_PWM:"));
     finalizeError(in);
   } else {
-    analogWrite(pin, argValue);
+    analogWrite(arg1, arg2);
     Serial.println(F("Ok"));
   }
 }
@@ -270,11 +257,11 @@ void get_num_bi_channels(char* in) {
 }
 
 void set_period(char* in) {
-  if (argValue < PERIOD_MIN_ms || argValue > PERIOD_MAX_ms) {
+  if (arg1 < PERIOD_MIN_ms || arg1 > PERIOD_MAX_ms) {
     Serial.print(F("ERROR_PERIOD_RANGE:"));
     finalizeError(in);
   } else {
-    period = argValue;
+    period = arg1;
     Serial.println(F("Ok"));
   }
 }
@@ -292,11 +279,11 @@ void get_period_max(char* in) {
 }
 
 void set_multiplier(char* in) {
-  if (argValue < MULTIPLIER_MIN || argValue > MULTIPLIER_MAX) {
+  if (arg1 < MULTIPLIER_MIN || arg1 > MULTIPLIER_MAX) {
     Serial.print(F("ERROR_MULTIPLIER_RANGE:"));
     finalizeError(in);
   } else {
-    multiplier = argValue;
+    multiplier = arg1;
     Serial.println(F("Ok"));
   }
 }
@@ -322,26 +309,30 @@ void get_software_id(char* in) {
   Serial.println(F(SOFTWARE_ID));
 }
 
+void get_loop_rate(char* in) {
+  Serial.println(rate);
+}
+
 void watch_ai_channel(char* in) {
-  // configure pin to be averaged (or not depending on argValue)
-  if (pin < 0 || pin > NUM_ANALOG_INPUTS) {
+  // configure pin to be averaged (or not depending on arg2)
+  if (arg1 < 0 || arg1 > NUM_ANALOG_INPUTS) {
     Serial.print(F("ERROR_AI_PIN_NOT_AVAILABLE:"));
     finalizeError(in);
   } else {
-    ai_watched[pin] = (argValue == 0 ? 0 : 1);
+    ai_watched[arg1] = (arg2 == 0 ? 0 : 1);
     Serial.println(F("Ok"));
   }
 }
 
 void readAI_mean(char* in) {
-  if (pin < 0 || pin > NUM_ANALOG_INPUTS) {
+  if (arg1 < 0 || arg1 > NUM_ANALOG_INPUTS) {
     Serial.print(F("ERROR_AI_PIN_NOT_AVAILABLE:"));
     finalizeError(in);
-  } else if (!ai_watched[pin]) {
+  } else if (!ai_watched[arg1]) {
     Serial.print(F("ERROR_AI_PIN_NOT_WATCHED:"));
     finalizeError(in);
   } else {
-    Serial.println(long(ai_mean[pin] * multiplier));
+    Serial.println(long(ai_mean[arg1] * multiplier));
   }
 }
 
@@ -351,13 +342,12 @@ void not_implemented_yet(char* in) {
 }
 
 void setPinMode(char* in) {
-  argValue = (argValue == 1) ? OUTPUT : INPUT;
-  if (pin < 0 || pin > NUM_DIGITAL_PINS) {
+  if (arg1 < 0 || arg1 > NUM_DIGITAL_PINS) {
     // TODO: but did we set the pin for output?
     Serial.print(F("ERROR_DIGITAL_PIN_NOT_AVAILABLE:"));
     finalizeError(in);
   } else {
-    pinMode(pin, argValue);
+    pinMode(arg1, (arg2 == 1) ? OUTPUT : INPUT);
     Serial.println(F("Ok"));
   }
 }
