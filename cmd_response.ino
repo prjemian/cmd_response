@@ -74,7 +74,7 @@ void signalGathering() {
       }
     }
     nextUpdate = millis() + period;
-    rate = 1000 * count / period;    // loops per microsecond
+    rate = 1000 * count / period;    // loops per second
     count = 0;
   }
   // this is where the ADC channels are read

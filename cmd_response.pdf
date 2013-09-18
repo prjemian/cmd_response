@@ -171,7 +171,7 @@ endobj
 % 'R14': class PDFInfo 
 14 0 obj
 << /Author ()
- /CreationDate (D:20130917122024+06'00')
+ /CreationDate (D:20130918175917+06'00')
  /Creator (\(unspecified\))
  /Keywords ()
  /Producer (ReportLab PDF Library - www.reportlab.com)
@@ -331,7 +331,7 @@ endobj
 % 'R28': class PDFStream 
 28 0 obj
 % page stream
-<< /Length 5336 >>
+<< /Length 5334 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
 q
@@ -538,7 +538,7 @@ q
 1 0 0 1 56.69291 773.1969 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 117.5499 0 Td (cmd_response.rst 1953 2013-09-17 04:47:21Z jemian $) Tj T* -117.5499 0 Td ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 121.7199 0 Td (cmd_response.rst 1954 2013-09-17 17:20:39Z jemian) Tj T* -121.7199 0 Td ET
 Q
 Q
 q
@@ -554,7 +554,7 @@ endobj
 % 'R29': class PDFStream 
 29 0 obj
 % page stream
-<< /Length 8360 >>
+<< /Length 8358 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
 q
@@ -954,7 +954,7 @@ q
 1 0 0 1 56.69291 773.1969 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 117.5499 0 Td (cmd_response.rst 1953 2013-09-17 04:47:21Z jemian $) Tj T* -117.5499 0 Td ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 121.7199 0 Td (cmd_response.rst 1954 2013-09-17 17:20:39Z jemian) Tj T* -121.7199 0 Td ET
 Q
 Q
 q
@@ -970,7 +970,7 @@ endobj
 % 'R30': class PDFStream 
 30 0 obj
 % page stream
-<< /Length 7785 >>
+<< /Length 7783 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
 q
@@ -1399,7 +1399,7 @@ q
 1 0 0 1 56.69291 773.1969 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 117.5499 0 Td (cmd_response.rst 1953 2013-09-17 04:47:21Z jemian $) Tj T* -117.5499 0 Td ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 121.7199 0 Td (cmd_response.rst 1954 2013-09-17 17:20:39Z jemian) Tj T* -121.7199 0 Td ET
 Q
 Q
 q
@@ -1415,7 +1415,7 @@ endobj
 % 'R31': class PDFStream 
 31 0 obj
 % page stream
-<< /Length 9739 >>
+<< /Length 9643 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
 q
@@ -1798,47 +1798,49 @@ Q
 q
 1 0 0 1 6 57 cm
 q
-BT 1 0 0 1 0 2 Tm 12 TL /F4 10 Tf 0 0 0 rg (?ai) Tj ( ) Tj (pin) Tj T* ET
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F4 10 Tf 12 TL (?#ai) Tj T* ET
 Q
 Q
 q
 1 0 0 1 86.84125 57 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (0..1023) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (int) Tj T* ET
 Q
 Q
 q
 1 0 0 1 127.2619 57 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (returns current value of numbered analog input) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (returns NUM_ANALOG_INPUTS) Tj T* ET
 Q
 Q
 q
 1 0 0 1 6 39 cm
 q
-BT 1 0 0 1 0 2 Tm 12 TL /F4 10 Tf 0 0 0 rg (?bi) Tj ( ) Tj (pin) Tj T* ET
+BT 1 0 0 1 0 2 Tm 12 TL /F4 10 Tf 0 0 0 rg (?ai) Tj ( ) Tj (pin) Tj T* ET
 Q
 Q
 q
 1 0 0 1 86.84125 39 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (0..1) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (0..1023) Tj T* ET
 Q
 Q
 q
 1 0 0 1 127.2619 39 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (returns current value of numbered digital input) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (returns current value of numbered analog input) Tj T* ET
 Q
 Q
 q
 1 0 0 1 6 21 cm
 q
-BT 1 0 0 1 0 2 Tm 12 TL /F4 10 Tf 0 0 0 rg (!bo) Tj ( ) Tj (pin) Tj ( ) Tj (v) Tj T* ET
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F4 10 Tf 12 TL (!ai:watch) Tj T* ET
 Q
 Q
 q
@@ -1852,27 +1854,27 @@ q
 1 0 0 1 127.2619 21 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (sets numbered digital output to value v) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (sets up ai pin for averaging) Tj T* ET
 Q
 Q
 q
 1 0 0 1 6 3 cm
 q
-BT 1 0 0 1 0 2 Tm 12 TL /F4 10 Tf 0 0 0 rg (!pwm) Tj ( ) Tj (pin) Tj ( ) Tj (v) Tj T* ET
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F4 10 Tf 12 TL (?ai:mean) Tj T* ET
 Q
 Q
 q
 1 0 0 1 86.84125 3 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (0..255) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (long) Tj T* ET
 Q
 Q
 q
 1 0 0 1 127.2619 3 cm
 q
-0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (sets numbered PWM digital output to value v) Tj T* ET
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (returns ) Tj /F4 10 Tf (<) Tj (ai) Tj (>) Tj (*k) Tj T* ET
 Q
 Q
 q
@@ -1896,7 +1898,7 @@ q
 1 0 0 1 56.69291 773.1969 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 117.5499 0 Td (cmd_response.rst 1953 2013-09-17 04:47:21Z jemian $) Tj T* -117.5499 0 Td ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 121.7199 0 Td (cmd_response.rst 1954 2013-09-17 17:20:39Z jemian) Tj T* -121.7199 0 Td ET
 Q
 Q
 q
@@ -1912,7 +1914,7 @@ endobj
 % 'R32': class PDFStream 
 32 0 obj
 % page stream
-<< /Length 9707 >>
+<< /Length 9794 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
 q
@@ -1956,112 +1958,109 @@ BT /F1 10 Tf 12 TL ET
 q
 1 0 0 1 6 291 cm
 q
-BT 1 0 0 1 0 2 Tm 12 TL /F4 10 Tf 0 0 0 rg (!pin) Tj ( ) Tj (pin) Tj ( ) Tj (v) Tj T* ET
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F4 10 Tf 12 TL (?#bi) Tj T* ET
 Q
 Q
 q
 1 0 0 1 86.84125 291 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (0..1) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (int) Tj T* ET
 Q
 Q
 q
 1 0 0 1 127.2619 291 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (sets mode of digital pin to value v \(value: 1=OUTPUT, not 1=INPUT\)) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (returns NUM_DIGITAL_PINS) Tj T* ET
 Q
 Q
 q
 1 0 0 1 6 273 cm
 q
-0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F4 10 Tf 12 TL (?#ai) Tj T* ET
+BT 1 0 0 1 0 2 Tm 12 TL /F4 10 Tf 0 0 0 rg (?bi) Tj ( ) Tj (pin) Tj T* ET
 Q
 Q
 q
 1 0 0 1 86.84125 273 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (int) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (0..1) Tj T* ET
 Q
 Q
 q
 1 0 0 1 127.2619 273 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (returns NUM_ANALOG_INPUTS) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (returns current value of numbered digital input) Tj T* ET
 Q
 Q
 q
 1 0 0 1 6 255 cm
 q
-0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F4 10 Tf 12 TL (?#bi) Tj T* ET
+BT 1 0 0 1 0 2 Tm 12 TL /F4 10 Tf 0 0 0 rg (!bo) Tj ( ) Tj (pin) Tj ( ) Tj (v) Tj T* ET
 Q
 Q
 q
 1 0 0 1 86.84125 255 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (int) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (0..1) Tj T* ET
 Q
 Q
 q
 1 0 0 1 127.2619 255 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (returns NUM_DIGITAL_PINS) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (sets numbered digital output to value v) Tj T* ET
 Q
 Q
 q
 1 0 0 1 6 237 cm
 q
-0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F4 10 Tf 12 TL (!t) Tj T* ET
+BT 1 0 0 1 0 2 Tm 12 TL /F4 10 Tf 0 0 0 rg (!pwm) Tj ( ) Tj (pin) Tj ( ) Tj (v) Tj T* ET
 Q
 Q
 q
 1 0 0 1 86.84125 237 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (long) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (0..255) Tj T* ET
 Q
 Q
 q
 1 0 0 1 127.2619 237 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (sets averaging time, ms) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (sets numbered PWM digital output to value v) Tj T* ET
 Q
 Q
 q
 1 0 0 1 6 219 cm
 q
-0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F4 10 Tf 12 TL (?t) Tj T* ET
+BT 1 0 0 1 0 2 Tm 12 TL /F4 10 Tf 0 0 0 rg (!pin) Tj ( ) Tj (pin) Tj ( ) Tj (v) Tj T* ET
 Q
 Q
 q
 1 0 0 1 86.84125 219 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (long) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (0..1) Tj T* ET
 Q
 Q
 q
 1 0 0 1 127.2619 219 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (returns averaging time, ms) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (sets mode of digital pin to value v \(value: 1=OUTPUT, not 1=INPUT\)) Tj T* ET
 Q
 Q
 q
 1 0 0 1 6 201 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F4 10 Tf 12 TL (?t:min) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F4 10 Tf 12 TL (!t) Tj T* ET
 Q
 Q
 q
@@ -2075,14 +2074,14 @@ q
 1 0 0 1 127.2619 201 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (returns minimum allowed averaging time, ms) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (sets averaging time, ms) Tj T* ET
 Q
 Q
 q
 1 0 0 1 6 183 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F4 10 Tf 12 TL (?t:max) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F4 10 Tf 12 TL (?t) Tj T* ET
 Q
 Q
 q
@@ -2096,14 +2095,14 @@ q
 1 0 0 1 127.2619 183 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (returns maximum allowed averaging time, ms) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (returns averaging time, ms) Tj T* ET
 Q
 Q
 q
 1 0 0 1 6 165 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F4 10 Tf 12 TL (!k) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F4 10 Tf 12 TL (?t:min) Tj T* ET
 Q
 Q
 q
@@ -2116,14 +2115,15 @@ Q
 q
 1 0 0 1 127.2619 165 cm
 q
-BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (sets averaging factor \() Tj /F4 10 Tf (k) Tj /F1 10 Tf (\)) Tj T* ET
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (returns minimum allowed averaging time, ms) Tj T* ET
 Q
 Q
 q
 1 0 0 1 6 147 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F4 10 Tf 12 TL (?k) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F4 10 Tf 12 TL (?t:max) Tj T* ET
 Q
 Q
 q
@@ -2136,14 +2136,15 @@ Q
 q
 1 0 0 1 127.2619 147 cm
 q
-BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (returns averaging factor \() Tj /F4 10 Tf (k) Tj /F1 10 Tf (\)) Tj T* ET
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (returns maximum allowed averaging time, ms) Tj T* ET
 Q
 Q
 q
 1 0 0 1 6 129 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F4 10 Tf 12 TL (?k:min) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F4 10 Tf 12 TL (!k) Tj T* ET
 Q
 Q
 q
@@ -2156,14 +2157,14 @@ Q
 q
 1 0 0 1 127.2619 129 cm
 q
-BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (returns minimum allowed averaging factor \() Tj /F4 10 Tf (k) Tj /F1 10 Tf (\)) Tj T* ET
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (sets averaging factor \() Tj /F4 10 Tf (k) Tj /F1 10 Tf (\)) Tj T* ET
 Q
 Q
 q
 1 0 0 1 6 111 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F4 10 Tf 12 TL (?k:max) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F4 10 Tf 12 TL (?k) Tj T* ET
 Q
 Q
 q
@@ -2176,35 +2177,34 @@ Q
 q
 1 0 0 1 127.2619 111 cm
 q
-BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (returns maximum allowed averaging factor \() Tj /F4 10 Tf (k) Tj /F1 10 Tf (\)) Tj T* ET
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (returns averaging factor \() Tj /F4 10 Tf (k) Tj /F1 10 Tf (\)) Tj T* ET
 Q
 Q
 q
 1 0 0 1 6 93 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F4 10 Tf 12 TL (!ai:watch) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F4 10 Tf 12 TL (?k:min) Tj T* ET
 Q
 Q
 q
 1 0 0 1 86.84125 93 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (0..1) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (long) Tj T* ET
 Q
 Q
 q
 1 0 0 1 127.2619 93 cm
 q
-0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (sets up ai pin for averaging) Tj T* ET
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (returns minimum allowed averaging factor \() Tj /F4 10 Tf (k) Tj /F1 10 Tf (\)) Tj T* ET
 Q
 Q
 q
 1 0 0 1 6 75 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F4 10 Tf 12 TL (?ai:mean) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F4 10 Tf 12 TL (?k:max) Tj T* ET
 Q
 Q
 q
@@ -2217,7 +2217,7 @@ Q
 q
 1 0 0 1 127.2619 75 cm
 q
-BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (returns ) Tj /F4 10 Tf (<) Tj (ai) Tj (>) Tj (*k) Tj T* ET
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (returns maximum allowed averaging factor \() Tj /F4 10 Tf (k) Tj /F1 10 Tf (\)) Tj T* ET
 Q
 Q
 q
@@ -2280,7 +2280,7 @@ q
 1 0 0 1 127.2619 21 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (returns number of updates \(technically: loops\) per microsecond) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (returns number of updates \(technically: loops\) per second) Tj T* ET
 Q
 Q
 q
@@ -2489,7 +2489,7 @@ q
 1 0 0 1 56.69291 773.1969 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 117.5499 0 Td (cmd_response.rst 1953 2013-09-17 04:47:21Z jemian $) Tj T* -117.5499 0 Td ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 121.7199 0 Td (cmd_response.rst 1954 2013-09-17 17:20:39Z jemian) Tj T* -121.7199 0 Td ET
 Q
 Q
 q
@@ -2577,24 +2577,24 @@ xref
 0000005169 00000 n
 0000005320 00000 n
 0000005462 00000 n
-0000010897 00000 n
-0000019356 00000 n
-0000027240 00000 n
-0000037078 00000 n
-0000046888 00000 n
-0000047033 00000 n
-0000047110 00000 n
-0000047187 00000 n
-0000047264 00000 n
-0000047341 00000 n
+0000010895 00000 n
+0000019352 00000 n
+0000027234 00000 n
+0000036976 00000 n
+0000046873 00000 n
+0000047018 00000 n
+0000047095 00000 n
+0000047172 00000 n
+0000047249 00000 n
+0000047326 00000 n
 trailer
 << /ID 
  % ReportLab generated PDF document -- digest (http://www.reportlab.com) 
- [(\273\341\371u\002\200\016\307&;\362\217ra1\331) (\273\341\371u\002\200\016\307&;\362\217ra1\331)] 
+ [(;\263\(J\224\277\031\213\231F\0118\177\243\227\003) (;\263\(J\224\277\031\213\231F\0118\177\243\227\003)] 
 
  /Info 14 0 R
  /Root 13 0 R
  /Size 39 >>
 startxref
-47388
+47373
 %%EOF

@@ -9,6 +9,12 @@
 # ===== ============================
 
 
+# record(stringout, "$(P)cmd") {
+#     field(DESC, "command interface")
+#     field(DTYP, "stream")
+#     field(OUT,  "@cmd_response.proto debug $(PORT)")
+# }
+
 record(ai, "$(P)ai0") {
     field(DESC, "analog input 0")
     field(EGU,  "VDC")
@@ -21,17 +27,29 @@ record(ai, "$(P)ai0") {
     field(LOPR, "0")
 }
 
-record(ai, "$(P)ai1") {
-    field(DESC, "analog input 1")
-    field(EGU,  "VDC")
-    field(DTYP, "stream")
-    field(INP,  "@cmd_response.proto ai(1) $(PORT)")
-    field(SCAN, ".1 second")
-    field(AOFF, "0")
-    field(ASLO, "0.004887585532746823069403714565")  # 5 VDC / 1023 ADC units
-    field(HOPR, "5")
-    field(LOPR, "0")
-}
+# record(ai, "$(P)ai0:mean") {
+#     field(DESC, "average analog input 0")
+#     field(EGU,  "VDC")
+#     field(DTYP, "stream")
+#     field(INP,  "@cmd_response.proto ai_mean(0) $(PORT)")
+#     field(SCAN, ".1 second")
+#     field(AOFF, "0")
+#     field(ASLO, "0.000004887585532746823069403714565")  # 5 VDC / 1023 ADC units / 1000 multiplier
+#     field(HOPR, "5")
+#     field(LOPR, "0")
+# }
+#
+# record(ai, "$(P)ai1") {
+#     field(DESC, "analog input 1")
+#     field(EGU,  "VDC")
+#     field(DTYP, "stream")
+#     field(INP,  "@cmd_response.proto ai(1) $(PORT)")
+#     field(SCAN, ".1 second")
+#     field(AOFF, "0")
+#     field(ASLO, "0.004887585532746823069403714565")  # 5 VDC / 1023 ADC units
+#     field(HOPR, "5")
+#     field(LOPR, "0")
+# }
 
 record(ao, "$(P)pwm6") {
     field(DESC, "PWM output 6")
@@ -54,6 +72,47 @@ record(ao, "$(P)pwm11") {
     field(HOPR, "5")
     field(LOPR, "0")
 }
+
+# record(ai, "$(P)rate") {
+#     field(DESC, "update rate")
+#     field(EGU,  "1/us")
+#     field(DTYP, "stream")
+#     field(INP,  "@cmd_response.proto rate $(PORT)")
+#     field(SCAN, ".1 second")
+#     #field(AOFF, "0")feedback_controller
+#     #field(ASLO, "0.000001")  # raw: per microsecond
+# }
+
+record(ao, "$(P)period") {
+    field(DESC, "averaging period")
+    field(EGU,  "s")
+    field(DTYP, "stream")
+    field(OUT,  "@cmd_response.proto period $(PORT)")
+    field(AOFF, "0")
+    field(ASLO, "0.001")  # raw units are milliseconds
+    field(HOPR, "10")
+    field(LOPR, "0.005")
+}
+
+#  record(epid, "$(P)feedback_controller")
+#  {
+#	   field(DESC, "Keeps lighting constant")
+#	   field(DTYP, "Soft Channel")
+#
+#	   field(INP, "$(P)ai0")
+#	   field(STPL, "$(P)pwm11")
+#
+#	   field(SMSL, "closed_loop")
+#	   field(FBON, "0")
+#
+#	   field(KI, "0")
+#	   field(KD, "0")
+#	   field(KP, "0")
+#
+#	   field(DRVL, "-255")
+#	   field(DRVH, "255")
+#  }
+
 
 ########### SVN repository information ###################
 # $Date: 2013-07-20 09:13:52 -0500 (Sat, 20 Jul 2013) $

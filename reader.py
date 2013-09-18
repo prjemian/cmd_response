@@ -8,7 +8,7 @@ Arduino.  Print any output to stdout.
 import time
 import serial	# easy_install -U pyserial
 
-ARDUINO_SERIAL_PORT = '/dev/ttyUSB1'
+ARDUINO_SERIAL_PORT = '/dev/ttyUSB0'
 SERIAL_PORT_BAUD = 115200
 ARDUINO_PORT = None
 SLEEP_TIME_S = 0.05

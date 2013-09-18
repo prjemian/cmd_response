@@ -164,7 +164,7 @@ value   meaning
    ?ai:mean  long      returns ``<ai>*k``
    ?v	     long      returns version number
    ?id	     0         returns identification string
-   ?rate     long      returns number of updates (technically: loops) per microsecond
+   ?rate     long      returns number of updates (technically: loops) per second
 
 Examples
 +++++++++++
@@ -284,13 +284,15 @@ When present, "#" refers to the Arduino pin number used in the operation
 ================  ========  =====================================================================
 command           value     action
 ================  ========  =====================================================================
+``?#ai``          int       returns NUM_ANALOG_INPUTS
 ``?ai pin``       0..1023   returns current value of numbered analog input
+``!ai:watch``     0..1 	    sets up ai pin for averaging
+``?ai:mean``      long 	    returns ``<ai>*k``
+``?#bi``          int       returns NUM_DIGITAL_PINS
 ``?bi pin``       0..1      returns current value of numbered digital input
 ``!bo pin v``     0..1      sets numbered digital output to value v
 ``!pwm pin v``    0..255    sets numbered PWM digital output to value v
 ``!pin pin v``    0..1      sets mode of digital pin to value v (value: 1=OUTPUT, not 1=INPUT)
-``?#ai``          int       returns NUM_ANALOG_INPUTS
-``?#bi``          int       returns NUM_DIGITAL_PINS
 ``!t``            long      sets averaging time, ms
 ``?t``            long      returns averaging time, ms
 ``?t:min``        long 	    returns minimum allowed averaging time, ms
@@ -299,11 +301,9 @@ command           value     action
 ``?k``            long 	    returns averaging factor (``k``)
 ``?k:min``        long 	    returns minimum allowed averaging factor (``k``)
 ``?k:max``        long 	    returns maximum allowed averaging factor (``k``)
-``!ai:watch``     0..1 	    sets up ai pin for averaging
-``?ai:mean``      long 	    returns ``<ai>*k``
 ``?v``            long 	    returns version number
 ``?id``           0         returns identification string
-``?rate``         long 	    returns number of updates (technically: loops) per microsecond
+``?rate``         long 	    returns number of updates (technically: loops) per second
 other             ..        returns "ERROR_UNKNOWN_COMMAND:text"
 ================  ========  =====================================================================
 
