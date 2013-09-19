@@ -9,7 +9,7 @@
 
 # BEGIN serial.cmd for cmd_response  project ------------------------------------------------------------
 
-epicsEnvSet("CMD_RESPONSE","/home/oxygen/JEMIAN/sketchbook/cmd_response/")
+epicsEnvSet("CMD_RESPONSE","/home/prjemian/sketchbook/cmd_response/epics")
 cd $(CMD_RESPONSE)
 
 # Set up 1 local serial port(s)
@@ -34,6 +34,6 @@ dbLoadTemplate("asynRecord.substitutions")
 
 # send impromptu message to serial device, parse reply
 # (was serial_OI_block)
-dbLoadRecords("$(CMD_RESPONSE)/cmd_response.db","P=prj:cr:,PORT=usb0")
+dbLoadRecords("$(CMD_RESPONSE)/cmd_response.db","P=como:cr:,PORT=usb0")
 
 # END serial.cmd --------------------------------------------------------------
