@@ -10,8 +10,9 @@ import serial	# easy_install -U pyserial
 
 ARDUINO_SERIAL_PORT = '/dev/ttyUSB0'
 SERIAL_PORT_BAUD = 115200
-PERIOD_ms = 50
+PERIOD_ms = 100
 SLEEP_TIME_S = 0.003*PERIOD_ms
+REPETITIONS = 10
 
 class Cmd_Response(object):
 
@@ -20,16 +21,19 @@ class Cmd_Response(object):
     self.baud = baud
     self.port = serial.Serial(serial_port, baud)
 
-  def command(self, cmd):
+  def send(self, cmd):
     self.port.write('%s\n' % cmd)
 
-  def response(self):
+  def receive(self):
     return self.port.readline().strip()
   
-  def command_response(self, cmd):
-    self.command(cmd)
+  def request(self, cmd):
+    self.send(cmd)
+    return self.receive()
+  
+  def report(self, cmd):
     print "%s  " % cmd,
-    print self.response()
+    print self.request(cmd)
 
 
 def command(port, cmd):
@@ -46,29 +50,29 @@ def pwm11_ai0(port, pwm):
   command(port, '?ai:mean 0')
 
 
-#   port = serial.Serial(ARDUINO_SERIAL_PORT, SERIAL_PORT_BAUD)
-#
-#   for _ in ('id', 'v', 't', 'k', 'rate'):
-#     command(port, '?%s' %  _)
-#
-#   command(port, '!pin 11 1')
-#   command(port, '!ai:watch 0 1')
-#   command(port, '!t %d' % PERIOD_ms)
-#   command(port, '?rate')
-#   command(port, '?ai 0')
-#
-#   time.sleep(0.2)
-#   command(port, '?rate')
-#   command(port, '?ai 0')
-#   command(port, '?ai:mean 0')
-#
-#   for _ in (250, 2, 250, 2, 250, 2, 250):
-#     print ""
-#     pwm11_ai0(port, _)
-#     for i in range(3):
-#	time.sleep(SLEEP_TIME_S)
-#	command(port, '?ai 0')
-#	command(port, '?ai:mean 0')
-
 cr = Cmd_Response(ARDUINO_SERIAL_PORT, SERIAL_PORT_BAUD)
-cr.command_response('?id')
+cr.request('!t %d' % PERIOD_ms)
+cr.request('!ai:watch 0 1')
+cr.request('!pin 11 1')
+
+if False:
+  for _ in ('?id', '?v', '?t', '?k', '?rate'):
+    cr.report(_)
+ 
+  time.sleep(SLEEP_TIME_S)
+  rate = cr.request('?rate')
+  print rate
+  print cr.request('?t')
+  print cr.request('?ai 0')
+  print cr.request('?ai:mean 0')
+
+c = 0
+for pwm in range(0, 256, 5):
+  cr.request('!pwm 11 %d' % pwm)
+  time.sleep(SLEEP_TIME_S)
+  for _ in range(REPETITIONS):
+    c += 1
+    time.sleep(PERIOD_ms*0.0011)
+    ai = int(cr.request('?ai 0'))
+    mean = float(cr.request('?ai:mean 0'))/1000.
+    print "%d %d %d %.3f" % (c, pwm, ai, mean)
