@@ -20,7 +20,7 @@
 
 #define PERIOD_DEFAULT_ms  1000
 #define PERIOD_MIN_ms      5
-#define PERIOD_MAX_ms      10000
+#define PERIOD_MAX_ms      1000000
 
 #define MULTIPLIER_DEFAULT  1000
 #define MULTIPLIER_MIN      1
@@ -263,6 +263,7 @@ void set_period(char* in) {
   } else {
     period = arg1;
     Serial.println(F("Ok"));
+    nextUpdate = millis();    // trigger a new update immediately
   }
 }
 

@@ -9,6 +9,9 @@ Contents:
    :maxdepth: 2
    
    cmd_response
+   sequence
+   arduino_code
+   epics
 
 
 

@@ -22,87 +22,309 @@ input ports.  This code module programs the Arduino with a
 simple command/response language via USB providing access to 
 Arduino's I/O capabilities.
 
+This code was developed, tested, and is known 
+to operate properly using these Arduino boards:
+
+* Arduino Uno R3
+* Arduino Mega1280
+* Arduino Mega2560
+
 Arduino Interface
 ====================
 
-short introduction here
+The Arduino can contribute its collection of
+I/O capabilities to an external control system, 
+such as EPICS [#]_.  To EPICS (or some
+other control system), the Arduino appears to
+be an I/O controller.
+To interface with an external system, 
+a generic command language, independent of the 
+details of the external system, 
+can be programmed into the Arduino
+and the board can communicate over the USB port.
+This project is only useful for those Arduino boards
+which have the USB port.
+
+.. [#] http://www.aps.anl.gov/epics
 
 Theory of Operations
 +++++++++++++++++++++
 
-.. note:: TODO: this section needs to be written, for now, here are some notes
+The main goal of this project is to present
+the Arduino as an I/O controller using a 
+command-response communications language
+over the USB port.  The code should run on
+any Arduino with a USB port.  The code
+should provide access to the basic I/O 
+capabilities of the Arduino.
 
-basic reads and writes are very short
+To fit the code into the smaller SRAM space of 
+Arduino models such as the Uno R3 (a 2k space), 
+all strings were coded as ``char *`` rather
+than use ``String`` [#]_ objects.
 
-USB commands have this form::
+.. [#] http://arduino.cc/en/Reference/StringObject
 
-	//  USB command interface of form: baseCmd [arg1 [arg2]]
-	//
-	// char* baseCmd (lower case)
-	// long arg1, arg2 (no octal or hex interpreted)
+One objective was to make basic reads and writes
+very short, to simplify typing at some interactive
+terminal.  The USB commands have this form::
+
+  //  USB command interface of form: baseCmd [arg1 [arg2]]
+  //
+  // char* baseCmd (lower case)
+  // long arg1, arg2 (no octal or hex interpreted)
+
+Additionally, these rules were used to 
+build the interface:
+
+* Commands either **get** (start with ``?``) 
+  or **set** (start with ``!``) a value.
+  
+* All commands received should return a response.
+
+* No automatic command echo is provided.
+
+* All **set** commands return "Ok" or an error message.
+
+* All **get** commands return a value or an error message.
+
+* All :ref:`errors` start with the text: ``ERROR_``
+
+* Most error messages will return the command text as a diagnostic.
+
+* The device provides a useful message on startup.
+
+Startup
++++++++++
+
+On startup, the device will output a message such
+as this to the USB port::
+
+  cmd_response started: 7113
+
+This message (from an Arduino Mega2560) signifies 
+the device is *running* and the **cmd_response**
+interface code is ready to receive a 
+command and return a response.
+The number ``7113`` is the amount of free 
+SRAM available on startup.  On the Uno R3, the number
+is ca. 1700, meaning there is still plenty of
+SRAM available.
+
+If this startup message does not appear.
+the device is not ready for communications
+and something is wrong.  The logical list
+to check starts with the values in the 
+Communication Parameters (given
+in :ref:`tables`).  If the problem persists,
+check the external host's USB port,
+the FTDI driver on the external host, 
+read/write permissions to the USB port, and
+the USB cable.  If the problem still persists,
+question that the Arduino is running 
+the **cmd_response** code.
 
 
-Commands are either **get** (begins with ``?``) or **set** (begins with ``!``)
+.. _basics:
 
-All **set** commands return "Ok" or an error message.
+Basic Operations
+-----------------
 
-All **get** commands return a value or an error message.
+The basic capabilities common to all Arduino boards
+consist of:
 
-ADC signal averaging requires some more setup
+* a number of digital (binary) input/output (configurable) channels
+* some of the digital channels have pulse-width modulation output capability
+* a number of analog input channels (10-bit analog-to-digital converter)
 
-averaging all signals can make unit very slow
-
-optimize by watching only the channels to be averaged
-
-averaging occurs after each fixed-time period
-
-user can query and adjust the time period
-
-the time period can only be within a fixed range,
-the user can query the min and max of this range
-
-user can start or stop watching a channel for averaging
-
-reporting of average ADC value should be an integer 
-(so EPICS can use this as the RVAL)
-
-user can query and adjust a scaling factor (multiplier), as in: 
-multiplier * sum(ADC)/count
-
-the multiplier can only be within a fixed range,
-the user can query the min and max of this range
-
-an ID and a version number are available to be read
+The commands which support these basic operations are:
+:ref:`num_ai`, :ref:`num_bi`, :ref:`get_ai`, 
+:ref:`get_bi`, :ref:`set_pin`, :ref:`set_bo`,
+and :ref:`set_pwm`.
 
 
+.. _averaging:
+
+Signal Averaging
+----------------
+
+It takes a few dozen [#]_ microseconds to read each
+analog input channel, much faster than typical 
+communications over USB to request and retrieve 
+a value.  Averaging the analog values over a 
+fixed period makes sense.  
+
+.. [#] The actual time to convert the ADC signal
+   is dependent on several factors, including
+   the signal level itself.  For more information,
+   see: http://arduino.cc/en/Reference/AnalogRead
+   
+   On the Mega2560, the rate with no watched channels
+   was reported as 25841/s.  Watching just one 
+   channel, the reported rate dropped to 6567/s.  
+   For two channels, the reported rate was 3781/s.
+
+The signal averages are available from the
+command interface with :ref:`ai_mean`, 
+in addition to the 
+instantaneous values available with the 
+:ref:`get_ai` command.  However, since it takes
+valuable time to read these analog signals, 
+only the desired channels should be averaged, 
+to optimize for speed.  
+
+.. note:: A channel must be 
+   configured (with :ref:`watch_ai`) 
+   before calling :ref:`ai_mean`.
+
+The average for each channel is obtained by
+accumulating measurements of the analog input,
+:math:`a_i` until the update period has elapsed,
+
+:math:`(k/n) \sum_i^n a_i`.
+
+The total number of values accumulated during
+each period, :math:`n`, is combined with the
+period length, :math:`t` to compute the update
+rate (returned by :ref:`get_rate`),
+
+:math:`n / t`.
+
+The average value has higher precision than the
+instantaneous value.  Exactly how much higher
+is empirical.  Some external control systems
+expect *raw* (integer) values from I/O controllers.
+With such raw numbers, the external control system
+will apply automatically pre-configured scaling 
+factors to place the number into engineering units, 
+such as *VDC*.
+
+Here, a positive multiplier, :math:`k`, is used
+to scale the average value so that its limit 
+of precision can be expressed as a *long* integer.
+To request the value of :math:`k`, use :ref:`get_k`.
+To request the value of :math:`k`, use :ref:`set_k`.
+Limits of :math:`k` are found by requesting
+:ref:`get_k_min` and :ref:`get_k_max`.
+
+All *watched* channels are accumulated during each
+period.  The averages (for just the watched channels)
+and update rate are 
+recomputed at the end of each period.
+
+
+Configuration
+----------------
+
+It can be useful for an external control system 
+to verify which controller is communicating.
+Two commands are available to identify
+this software (:ref:`get_id`) and 
+version (:ref:`get_version`).
 
 Commands
 +++++++++++
 
-?ai command
+.. _num_ai:
+
+``?#ai``
+--------
+
+:format:  ``?#ai``
+:example: ``?#ai``
+:returns: ``16``  [#]_
+
+Returns the value of ``NUM_ANALOG_INPUTS`` as defined for
+this model of Arduino.
+
+.. [#] value reported by the Arduino Mega2560
+
+
+.. _get_ai:
+
+``?ai``
 ----------------
 
 :format:  ``?ai pin``
 :example: ``?ai 0``
-:returns: ``601``
+:returns: ``171``
 
-Reads the analog input *pin* specified in the first argument.
+Returns the analog input *pin* value specified.
 The returned value is between 0 and 1023 (10-bit ADC) which represents
 a measured voltage between 0 and 5 VDC.
 The pin must be within the range of ``0..NUM_ANALOG_INPUTS``
 
-?bi command
+
+.. _watch_ai:
+
+``!ai:watch``
+----------------
+
+:format:  ``!ai:watch pin 1|0``
+:example: ``!ai:watch 0 1``
+:returns: ``Ok``
+:default: by default, no ai pins are averaged
+
+Enables (or disables) signal averaging for
+the specified analog input pin.  Note that it is
+possible to turn this feature on and off at run time.
+
+
+.. _ai_mean:
+
+``?ai:mean``
+----------------
+
+:format:  ``?ai:mean pin``
+:example: ``?ai:mean 0``
+:returns: ``171000``
+
+Returns the average analog input *pin* value specified, 
+multiplied by a factor :math:`k`.  The factor is
+requested by the ``?k`` command and 
+set by the ``!k`` command.
+The returned value is between 0 and 1023 (10-bit ADC) which represents
+a measured voltage between 0 and 5 VDC.
+The *pin* must be within the range of 
+``0..NUM_ANALOG_INPUTS`` 
+(use ``?#ai`` to get ``NUM_ANALOG_INPUTS``)
+and must first be configured for signal averaging 
+by calling ``!ai:watch pin 1``.
+
+
+.. _num_bi:
+
+``?#bi``
+--------
+
+:format:  ``?#bi``
+:example: ``?#bi``
+:returns: ``70``  [#]_
+
+Returns the value of ``NUM_DIGITAL_PINS`` as defined for
+this model of Arduino.
+
+.. [#] value reported by the Arduino Mega2560
+
+
+.. _get_bi:
+
+``?bi``
 ----------------
 
 :format:  ``?bi pin``
 :example: ``?bi 3``
-:returns: ``1``
+:returns: ``0|1``
 
 Reads the digital input *pin* specified in the first argument.
 The returned value is either 0 or 1.
 The pin must be within the range of ``0..NUM_DIGITAL_PINS``.
+(Use ``?#bi`` to get ``NUM_DIGITAL_PINS``.)
 
-!bo command
+
+.. _set_bo:
+
+``!bo``
 ----------------
 
 :format:  ``!bo pin value``
@@ -114,8 +336,18 @@ to the *value* specified in the second argument.  If the syntax
 is correct and the value is within range, returns ``Ok``.  
 The pin must be within the range of ``0..NUM_DIGITAL_PINS``
 and must first be configured for output by calling ``!pin pin 1``.
+(Use ``?#bi`` to get ``NUM_DIGITAL_PINS``.)
 
-!pwm command
+.. note:: Selection of a digital pin as *INPUT* (``0``)
+   or *OUTPUT* (``1``) is based on the hardware wiring
+   for that channel.  While configurable at run time,
+   it is not expected to change this after its first
+   setting.
+
+
+.. _set_pwm:
+
+``!pwm``
 ----------------
 
 :format:  ``!pwm pin value``
@@ -129,14 +361,19 @@ The pin must first be configured for output by calling ``!pin pin 1``.
 
 The pin number is checked for PWM hardware-support by a call to the
 ``digitalPinHasPWM(pin)`` macro (which is defined by the Arduino SDK 
-for each supported board type in <Arduino>/hardware/arduino/variants/*/pins_arduino.h).
+for each supported board type in 
+``<Arduino>/hardware/arduino/variants/*/pins_arduino.h``).
 
-!pin command
+
+.. _set_pin:
+
+``!pin``
 ----------------
 
 :format:  ``!pin pin value``
 :example: ``!pin 11 1``
 :returns: ``Ok``
+:default: all pins are configured for input by default
 
 Configures the digital output *pin* specified in the first argument 
 for output as a binary digital output and also as a PWM digital
@@ -149,25 +386,196 @@ value   meaning
 1       use pin as output
 ======  =================
 
+.. note:: Selection of a digital pin as *INPUT* (``0``)
+   or *OUTPUT* (``1``) is based on the hardware wiring
+   for that channel.  While configurable at run time,
+   it is not expected to change this after its first
+   setting.
+
+
+.. _set_period:
+
+``!t``
+----------------
+
+:format:  ``!t period_ms``
+:example: ``!t 100``
+:returns: ``Ok``
+
+Sets the length of the averaging period (milliseconds).
+The argument ``period_ms`` (noted here as :math:`t`) 
+must satisfy :math:`t_l <= t <= t_h` or an error 
+is returned.
+Here :math:`t_l` is returned by ``?t:min``
+and :math:`t_h` is returned by ``?t:max``.
+
+The period can be changed at run time as fits the
+application.
+
+.. _get_period:
+
+``?t``
+----------------
+
+:format:  ``?t``
+:example: ``?t``
+:returns: ``Ok``
+:default: ``1000``
+
+Returns the length of the averaging period 
+(milliseconds).
+
+
+.. _get_period_min:
+
+``?t:min``
+----------------
+
+:format:  ``?t:min``
+:example: ``?t:min``
+:returns: ``Ok``
+:default: ``5``
+
+Returns the minimum permitted length of the 
+averaging period (milliseconds).  The minimum length
+is fixed, somewhat arbitrarily, to allow for at least
+a couple of updates if as many as 16 AI channels 
+are to be averaged.
+
+
+.. _get_period_max:
+
+``?t:max``
+----------------
+
+:format:  ``?t:max``
+:example: ``?t:max``
+:returns: ``Ok``
+:default: ``1000000``
+
+Returns the maximum permitted length of the 
+averaging period (milliseconds).  The maximum length
+is fixed, somewhat arbitrarily, to ~20 minutes.
+Is longer really necessary?
+
+
+.. _set_k:
+
+``!k``
+----------------
+
+:format:  ``!k multiplier``
+:example: ``!k 100``
+:returns: ``Ok``
+
+Sets the multiplier to use when reporting 
+averaged AI values.
+The argument ``multiplier`` (noted here as :math:`k`) 
+must satisfy :math:`k_l <= k <= k_h` or an error 
+is returned.
+Here :math:`k_l` is returned by ``?k:min``
+and :math:`k_h` is returned by ``?k:max``.
+
+
+.. _get_k:
+
+``?k``
+----------------
+
+:format:  ``?k``
+:example: ``?k``
+:returns: ``Ok``
+:default: ``1000``
+
+Returns the multiplier used when reporting 
+averaged AI values.
+
+
+.. _get_k_min:
+
+``?k:min``
+----------------
+
+:format:  ``?k:min``
+:example: ``?k:min``
+:returns: ``Ok``
+:default: ``1``
+
+Returns the minimum permitted multiplier used 
+when reporting averaged AI values.  
+The minimum multiplier is set, logically, at 1.
+
+
+.. _get_k_max:
+
+``?k:max``
+----------------
+
+:format:  ``?k:max``
+:example: ``?k:max``
+:returns: ``Ok``
+:default: ``1000000``
+
+Returns the maximum permitted multiplier used 
+when reporting averaged AI values.  
+The maximum length is fixed, somewhat arbitrarily, 
+tat some large number.
+
+
+.. _get_rate:
+
+``?rate``
+----------------
+
+:format:  ``?rate``
+:example: ``?rate``
+:returns: ``25867`` [#]_
+
+Returns the number of update loops per second.
+Each additional AI to be watched will decrease
+this number due to the operations of reading, 
+accumulating, and averaging the signal.
+
+.. [#] value for Arduino Mega2560 with no AI channels watched.
+
+The update rate serves no purpose to the operation
+of the Arduino as an I/O controller.  It is only
+provided as a diagnostic signal for the remote
+control system.
+
+.. _get_version:
+
+``?v``
+----------------
+
+:format:  ``?v``
+:example: ``?v``
+:returns: ``2``
+
+Returns the software version number.
+
+
+.. _get_id:
+
+``?id``
+----------------
+
+:format:  ``?id``
+:example: ``?id``
+:returns: ``cmd_response``
+
+Returns the software identifying string.
+
+
 .. document each of these commands
-   ?#ai	     int       returns NUM_ANALOG_INPUTS
-   ?#bi	     int       returns NUM_DIGITAL_PINS
-   !t	     long      sets averaging time, ms
-   ?t	     long      returns averaging time, ms
-   ?t:min    long      returns minimum allowed averaging time, ms
-   ?t:max    long      returns maximum allowed averaging time, ms
-   !k	     long      sets averaging factor (``k``)
-   ?k	     long      returns averaging factor (``k``)
-   ?k:min    long      returns minimum allowed averaging factor (``k``)
-   ?k:max    long      returns maximum allowed averaging factor (``k``)
-   !ai:watch 0..1      sets up ai pin for averaging
-   ?ai:mean  long      returns ``<ai>*k``
    ?v	     long      returns version number
    ?id	     0         returns identification string
    ?rate     long      returns number of updates (technically: loops) per second
 
 Examples
 +++++++++++
+
+.. TODO: need more
 
 1. Read analog input from pin 0:
 
@@ -189,6 +597,7 @@ Ok
 >>> !pwm11 128
 ERROR_UNKNOWN_COMMAND:!pwm11 128
 
+.. _errors:
 
 Error messages
 ++++++++++++++++++++++
@@ -261,7 +670,7 @@ returned.  A single ":" is used as the delimiter when the input is appended.
   One reason for this might be the use of upper case.
   Other possibilities exist.
 
-  
+.. _tables:
 
 Tables
 +++++++++
@@ -312,9 +721,9 @@ notes:
 #. must use lower case (as shown in table)
 #. integers must be specified in decimal (no octal or hex interpreted)
 #. pin numbers are not checked for correctness in the current version
-#. "?" commands return an integer
-#. "!" commands return "Ok"
-#. Errors, starting with "ERROR_" will substitute for expected output
+#. ``?`` commands return an integer
+#. ``!`` commands return ``Ok``
+#. Errors, starting with ``ERROR_`` will substitute for expected output
 
 
 ..
