@@ -159,7 +159,7 @@ void executeCommand() {
     else if (0 == strcmp(baseCmd, "?id"))       get_software_id(inputString);
     else if (0 == strcmp(baseCmd, "?rate"))     get_loop_rate(inputString);
     else {
-      Serial.print(F("ERROR_ _COMMAND:"));
+      Serial.print(F("ERROR_UNKNOWN_COMMAND:"));
       finalizeError(inputString);
     }
   }

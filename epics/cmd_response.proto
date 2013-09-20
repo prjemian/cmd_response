@@ -16,49 +16,59 @@ ai {
 
 # longout
 ai_mean {
-    out "?ai:mean \$1"; in "%d";
+  out "?ai:mean \$1"; in "%d";
 
-	# configure the digital pin for ADC signal averaging
-	@init{ 
-		out "!ai:watch \$1 1"; in "Ok"; 
-	}
+  # configure the digital pin for ADC signal averaging
+  @init{ 
+     #ExtraInput = Ignore;
+     out "!ai:watch \$1 1"; in "Ok"; 
+  }
 }
 
 # bi
 bi {
-    out "?bi \$1"; in "%d";
+  out "?bi \$1"; in "%d";
 
-	# configure the digital pin for digital input
-	@init{ out "!pin \$1 0"; in "Ok"; }
+  # configure the digital pin for digital input
+  @init{
+    #ExtraInput = Ignore;
+    out "!pin \$1 1"; in "Ok"; 
+  }
 }
 
 # bo
 bo {
-    out "!bo \$1 %d"; in "Ok";
+  out "!bo \$1 %d"; in "Ok";
 
-	# configure the digital pin for PWM/digital output
-	@init{ out "!pin \$1 1"; in "Ok"; }
+  # configure the digital pin for PWM/digital output
+  @init{
+    #ExtraInput = Ignore;
+    out "!pin \$1 1"; in "Ok"; 
+  }
 }
 
 # longout
 pwm {
-    out "!pwm \$1 %d"; in "Ok";
+  out "!pwm \$1 %d"; in "Ok";
 
-	# configure the digital pin for PWM/digital output
-	@init{ out "!pin \$1 1"; in "Ok"; }
+  # configure the digital pin for PWM/digital output
+  @init{
+    #ExtraInput = Ignore;
+    out "!pin \$1 1"; in "Ok"; 
+  }
 }
 
 # ao
 period {
-    out "!t %d"; in "Ok";
+  out "!t %d"; in "Ok";
 }
 
 # ai
 rate {
-    ExtraInput = Ignore;
-    out "?rate "; in "%f";
-	
-    @mismatch{ in "%*{ERROR_}%*" }
+  ExtraInput = Ignore;
+  out "?rate"; in "%d";
+
+  #@mismatch{ in "{ERROR_}%*" }
 }
 
 # debug
