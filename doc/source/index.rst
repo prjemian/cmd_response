@@ -7,11 +7,13 @@ Contents:
 
 .. toctree::
    :maxdepth: 2
+   :glob:
    
    cmd_response
    sequence
    arduino_code
    epics
+   examples/*
 
 
 
