@@ -1,15 +1,23 @@
 .. $Id$
 
+.. _epics:
+
 ==================================
 EPICS interface
 ==================================
 
-The EPICS interface consists of three files:
+.. index:: EPICS
+
+The EPICS [#]_ interface consists of three files:
 
 * :ref:`streams.protocol`
 * :ref:`pv.database`
 * :ref:`IOC.commands`
-  
+
+.. [#] EPICS: 
+   Experimental Physics and Industrial Control System,
+   http://www.aps.anl.gov/epics
+
 Configure the IOC by ...
 
 .. TODO: finish this

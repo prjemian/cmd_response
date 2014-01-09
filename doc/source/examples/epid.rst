@@ -12,13 +12,11 @@ from EPICS.  An additional sensor was connected to the Arduino to
 *control* (or modify) the first signal.
 
 Requirements:
+
 * Arduino system with specified electronics circuit [#]_
 * Linux computer with Arduino interface
 * EPICS IOC configured to communicate with Arduino
 * CSS BOY client for EPICS [#]_
-
-.. [#] refer to the circuit design
-.. [#] CSS BOY, http://ics-web.sns.ornl.gov/css/products.html
 
 The EPICS *epid* record [#epid]_ is used to continuously update the 
 *control* based on updates to the *signal* with the goal of 
@@ -29,30 +27,25 @@ Michigan: [#]_, [#]_, [#UMich]_) to a process configured by EPICS PVs.
 Additional equations are sketched out [#]_ that convert the terms 
 of the UMich documentation into terms of the *epid* record.
 
-.. [#epid] http://cars9.uchicago.edu/software/epics/epidRecord.html
-.. [#] https://controls.engin.umich.edu/wiki/index.php/Main_Page#PID_control
-.. [#] https://controls.engin.umich.edu/wiki/index.php/Main_Page
-.. [#UMich] https://controls.engin.umich.edu/wiki/index.php/PIDTuningClassical 
-.. [#] notes: :download:`131108115836_0001.pdf`
 
 Basic PID Theory
 ==================
 
 At its heart, PID control is implemented to maintain a time-dependent, 
-measured signal, :math:`M(t)`, at a desired value, :math:`\hat{M}(t)` 
+measured signal, :math:`M(t)`, at a desired value, :math:`D(t)` 
 by adjusting a control, :math:`Y(t)`.  The general PID equation is based
 on the concept of a *process error*, :math:`\epsilon(t)`, that is the 
 difference between the actual and desired values of the signal:
 
 .. math::
 
-   \epsilon(t) = M(t) - \hat{M}(t)
+   \epsilon(t) = M(t) - D(t)
 
 general PID equation ([#UMich]_):
 
 .. math::
 
-  Y(t) = K_c \left[ { \epsilon(t) + {1 \over T_i}\int_0^t \epsilon(t')dt' + T_d {d\epsilon(t) \over dt} } \right] + Y(t_0)
+  Y(t) = K_c \left[ { \epsilon(t) + {1 \over T_i}\int_0^t \epsilon(t_i)d{t_i} + T_d {d\epsilon(t) \over dt} } \right] + Y(t_0)
 
 *epid* record PID equation ([#epid]_):
 
@@ -77,9 +70,9 @@ term                   description
 ====================== =================================================================
 :math:`t`              time
 :math:`M(t)`           measured input **signal** as a function of time
-:math:`\hat{M}(t)`     **set point** (desired value of **signal**) as a function of time
+:math:`D(t)`           **set point** (desired value of **signal**) as a function of time
 :math:`Y(t)`           chosen **control** output as a function of time
-:math:`\epsilon(t)`    **following error**: :math:`\epsilon(t) = M(t) - \hat{M}(t)`
+:math:`\epsilon(t)`    **following error**: :math:`\epsilon(t) = M(t) - D(t)`
 :math:`K`              generalized process **gain**:  :math:`K = {\hbox{change in output} \over \hbox{change in input}}`
 :math:`K_c`            process **gain** constant (from theory, to be determined empirically)
 :math:`T_i`            process integral coefficient (from theory, to be determined empirically)
@@ -90,3 +83,15 @@ term                   description
 :math:`\tau`           time for response to complete
 :math:`\tau_d`         dead time before system starts to respond
 ====================== =================================================================
+
+
+References
+==========
+
+.. [#] refer to the circuit design
+.. [#] CSS BOY, http://ics-web.sns.ornl.gov/css/products.html
+.. [#epid] http://cars9.uchicago.edu/software/epics/epidRecord.html
+.. [#] https://controls.engin.umich.edu/wiki/index.php/Main_Page#PID_control
+.. [#] https://controls.engin.umich.edu/wiki/index.php/Main_Page
+.. [#UMich] https://controls.engin.umich.edu/wiki/index.php/PIDTuningClassical 
+.. [#] notes: :download:`131108115836_0001.pdf`
