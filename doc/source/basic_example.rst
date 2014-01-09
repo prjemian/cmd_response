@@ -1,5 +1,7 @@
 .. $Id$
 
+.. index:: example; Getting started
+
 =================================================
 Example: Getting started
 =================================================
@@ -17,6 +19,17 @@ the BAUD rate to 115200 baud.  (See :ref:`comm_parms`.
 If you don't do these two steps, 
 your Arduino will not respond to your typed commands.)
 
+.. note:: Note about examples
+
+   In all code examples below, command input to the Arduino
+   is shown as:: 
+   
+     >>> some command 
+   
+   Response from the Arduino appears on the next line.
+   When entering commands, do not type the ">>>" symbols.
+
+
 Is our sketch running?
 --------------------------
 
@@ -25,7 +38,7 @@ with the correct BAUD rate, then this message (or one very like it) appears::
 
   cmd_response started: 1581
 
-This output is produced by the **cmd_response** sketch.
+This output is produced by the **cmd_response** sketch (from an OSEPP Uno).
 It tells us the sketch name and the amount of free RAM available.
 Likely, this last number is only of interest to those wishing 
 to modify the **cmd_response** software for a larger vocabulary.
@@ -108,8 +121,10 @@ to the *(+)* end of the battery.  Hold these two wires firmly with one hand and 
 
 Using a little math, we divide the value returned by the full scale value of the
 analog input channel (1023) and then multiply by the full scale voltage of the
-analog inputs (5 VDC):  :math:`1.515 = (310/1023)*5`.  This, AA battery is 
-still "good" (it's voltage is close to the stated value of 1.5 VDC). 
+analog inputs (5 VDC):  :math:`1.515 = (310/1023) \times 5`.  
+
+At 1.515 VDC, this AA battery is still "good" 
+(its voltage is close to the stated value of 1.5 VDC). 
 
 .. [#] Any single cell battery under 5 VDC 
    (such as AA, AAA, AAAA, C, D, ...)
@@ -137,7 +152,7 @@ With no channels watched, the sampling rate of my board is:
 43907
 
 This means the main loop of the program is starting 
-every 23 microseconds (:math:`1/43907`),
+every 0.023 milliseconds (:math:`1/43907`),
 collecting data on any watched channels,
 averaging watched channels at the programmed interval,
 watching the input buffer (for user commands such as "``?ai 1``"), 
@@ -150,7 +165,7 @@ Ok
 >>> ?rate
 7327
 
-The the main loop of the program is starting every 136 microseconds 
+The the main loop of the program is starting every 0.136 milliseconds 
 now (:math:`1/7327`) as the sketch collects the analog signal and 
 periodically averages the values.
 
@@ -194,7 +209,7 @@ Ok
 >>> ?rate
 4030
 
-The the main loop of the program is starting every 248 microseconds 
+The main loop of the program is starting every 0.248 milliseconds 
 now (:math:`1/4030`) as the sketch collects two analog signals and 
 periodically averages their values.
 

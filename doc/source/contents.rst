@@ -1,26 +1,23 @@
 .. $Id$
 
-Welcome to cmd_response's documentation!
-========================================
+.. _contents:
 
-Contents:
+=================
+Table of Contents
+=================
 
 .. toctree::
    :maxdepth: 1
    :glob:
    
    theory
-   startup
    commands
    errors
-   tables
-   examples/basic
+   basic_example
    sequence
+   epics/index
+   epics/epid
    arduino_code
-   epics
-   examples/epid
-
-.. reorganize all the EPICS stuff into a subdirectory
 
 
 Indices and tables

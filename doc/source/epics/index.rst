@@ -8,6 +8,10 @@ EPICS interface
 
 .. index:: EPICS
 
+.. sidebar:: incomplete
+
+   This entire page is incomplete.
+
 The EPICS [#]_ interface consists of three files:
 
 * :ref:`streams.protocol`
@@ -28,9 +32,25 @@ Configure the IOC by ...
 Streams protocol
 --------------------
 
+=============  ================================================
+protocol       meaning
+=============  ================================================
+ai(pin)        read analogRead(pin) into the record's RVAL
+ai_mean(pin)   read average analogRead(pin) into RVAL
+bi(pin)        read digitalRead(pin) into the record's VAL
+bo(pin)        write digitalWrite(pin) from the record's VAL
+pwm(pin)       write analogWrite(pin) from the record's RVAL
+period         read the current averaging period, ms
+rate           read the number of samples/second
+=============  ================================================
+
+.. note:: For the ``bo`` and ``pwm`` protocols, the selected
+   pin will be configured by that protocol for output during
+   record initialization.
+
 * describe what to do with this (nothing)
 
-.. literalinclude:: ../../epics/cmd_response.proto
+.. literalinclude:: ../../../epics/cmd_response.proto
     :language: c++
     :linenos:
 
@@ -42,7 +62,7 @@ EPICS PV database
 
 * describe how to configure this
 
-.. literalinclude:: ../../epics/cmd_response.db
+.. literalinclude:: ../../../epics/cmd_response.db
     :linenos:
 
 
@@ -79,6 +99,6 @@ In the same file, modify the IOC prefix to fit, such as this changeset::
   +dbLoadRecords("$(CMD_RESPONSE)/cmd_response.db","P=como:cr:,PORT=usb0")
 
 
-.. literalinclude:: ../../epics/cmd_response.cmd
+.. literalinclude:: ../../../epics/cmd_response.cmd
     :language: bash
     :linenos:

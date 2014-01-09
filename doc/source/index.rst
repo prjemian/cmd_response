@@ -9,9 +9,8 @@ cmd_response
    
    contents
 
-----------------------------------------------------------------------
 simple command/response access via USB to Arduino's I/O capabilities
-----------------------------------------------------------------------
+====================================================================
 
 .. rst2pdf -o cmd_response.pdf \
    --header="$Id$" \
@@ -31,24 +30,27 @@ This code was developed, tested, and is known
 to operate properly using these Arduino boards:
 
 * Arduino Uno R3
+* OSEPP Uno R3
 * Arduino Mega1280
 * Arduino Mega2560
 
-Arduino Interface
+I/O System Interface
 ====================
+
+.. index:: EPICS
 
 The Arduino can contribute its collection of
 I/O capabilities to an external control system, 
 such as EPICS [#]_.  To EPICS (or some
-other control system), the Arduino appears to
-be an I/O controller.
+other control system), the Arduino appears as
+an I/O controller.
 To interface with an external system, 
 a generic command language, independent of the 
 details of the external system, 
-can be programmed into the Arduino
-and the board can communicate over the USB port.
+is programmed into the Arduino
+and the board communicates over USB.
 This project is only useful for those Arduino boards
-which have the USB port.
+which have an USB port.
 
 .. [#] http://www.aps.anl.gov/epics
 

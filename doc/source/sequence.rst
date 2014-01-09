@@ -1,15 +1,17 @@
 .. $Id$
 
-=================
-``sequence.py``
-=================
+.. index:: example; Python program
+
+===============================
+Example: ``sequence.py``
+===============================
 
 A Python program was written to demonstrate
 how to communicate with the Arduino as an
 I/O controller using the **cmd_response**
 interface.
 
-The hardware is wired:
+The hardware is wired (see the :ref:`EPID <fig.epid_circuit>` example):
 
   :AI:
     pin 0, photocell
@@ -44,3 +46,8 @@ The basics of this program are:
 
 .. automodule:: sequence
     :members: 
+
+Program Output
+----------------
+
+-tba-

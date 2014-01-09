@@ -1,10 +1,14 @@
 .. $Id$
 
+.. index:: example; EPICS epid record
+
 =================================================
 Example: Feedback using the ``epid`` record
 =================================================
 
 .. note: this page is under construction
+
+.. index:: EPICS
 
 This example builds on the previous example where a sensor 
 creating a *signal* was connected to the Arduino and monitored 
@@ -13,7 +17,7 @@ from EPICS.  An additional sensor was connected to the Arduino to
 
 Requirements:
 
-* Arduino system with specified electronics circuit [#]_
+* Arduino system with specified electronics circuit (:ref:`epid_circuit`)
 * Linux computer with Arduino interface
 * EPICS IOC configured to communicate with Arduino
 * CSS BOY client for EPICS [#]_
@@ -27,9 +31,12 @@ Michigan: [#]_, [#]_, [#UMich]_) to a process configured by EPICS PVs.
 Additional equations are sketched out [#]_ that convert the terms 
 of the UMich documentation into terms of the *epid* record.
 
+.. index:: PID theory
 
 Basic PID Theory
 ==================
+
+.. index:: process error
 
 At its heart, PID control is implemented to maintain a time-dependent, 
 measured signal, :math:`M(t)`, at a desired value, :math:`D(t)` 
@@ -78,17 +85,32 @@ term                   description
 :math:`T_i`            process integral coefficient (from theory, to be determined empirically)
 :math:`T_d`            process derivative coefficient (from theory, to be determined empirically)
 :math:`K_P`            proportional gain coefficient (EPICS user input):  :math:`K_P = K_C`
-:math:`K_I`            integral gain coefficient (EPICS user input):  :math:`K_I = {K_C \over T_i}`
+:math:`K_I`            integral gain coefficient (EPICS user input):  :math:`K_I = {K_C / T_i}`
 :math:`K_D`            derivative gain coefficient (EPICS user input):  :math:`K_D = K_C T_d`
 :math:`\tau`           time for response to complete
 :math:`\tau_d`         dead time before system starts to respond
 ====================== =================================================================
 
+.. _epid_circuit:
+
+Electronic Circuit
+=======================
+
+.. note:: under construction
+
+.. _fig.epid_circuit:
+
+.. figure:: LED_sensor_bb.png
+    :alt: fig.epid_circuit
+    :width: 80%
+    :align: center
+
+    Electronic Circuit: photocell and LED
+
 
 References
 ==========
 
-.. [#] refer to the circuit design
 .. [#] CSS BOY, http://ics-web.sns.ornl.gov/css/products.html
 .. [#epid] http://cars9.uchicago.edu/software/epics/epidRecord.html
 .. [#] https://controls.engin.umich.edu/wiki/index.php/Main_Page#PID_control
