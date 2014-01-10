@@ -12,7 +12,7 @@ SLEEP_TIME_S = 0.003*PERIOD_ms
 REPETITIONS = 10
 
 class Cmd_Response(object):
-  '''interface class'''
+  '''interface class with cmd_response Arduino sketch'''
 
   def __init__(self, serial_port, baud=115200, delimiter='\n'):
     self.serial_port = serial_port
@@ -40,7 +40,8 @@ class Cmd_Response(object):
     print self.request(cmd)
 
 
-def measure(port, pwm, reps):
+def measure(port, pwm, reps=1):
+  '''report reps reading(s): LED photocell  <photocell>'''
   port.request('!pwm 11 %d' % pwm)
   time.sleep(SLEEP_TIME_S)
   for _ in range(reps):
@@ -70,9 +71,9 @@ def main():
     print cr.request('?ai:mean 0')
 
   for pwm in range(0, 256, 5):
-    measure(cr, pwm, 1)
+    measure(cr, pwm)
   for pwm in range(255, 0, -5):
-    measure(cr, pwm, 1)
+    measure(cr, pwm)
   for pwm in range(0, 256, 5):
     measure(cr, pwm, REPETITIONS)
 
