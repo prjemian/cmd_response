@@ -13,12 +13,11 @@ Example: EPICS interface
    :glob:
    
    circuit
-   database
    streams
+   database
    ioc
+   cssboy
    epid
-
-.. TODO: this needs a CSS BOY screen!
 
 .. sidebar:: incomplete
 

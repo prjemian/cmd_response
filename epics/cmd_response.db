@@ -18,6 +18,7 @@
 record(ai, "$(P)ai0") {
     field(DESC, "analog input 0")
     field(EGU,  "VDC")
+    field(PREC, "3")
     field(DTYP, "stream")
     field(INP,  "@cmd_response.proto ai(0) $(PORT)")
     field(SCAN, ".1 second")
@@ -30,6 +31,7 @@ record(ai, "$(P)ai0") {
 record(ai, "$(P)ai0:mean") {
     field(DESC, "average analog input 0")
     field(EGU,  "VDC")
+    field(PREC, "5")
     field(DTYP, "stream")
     field(INP,  "@cmd_response.proto ai_mean(0) $(PORT)")
     field(SCAN, ".1 second")
@@ -42,6 +44,7 @@ record(ai, "$(P)ai0:mean") {
 record(ai, "$(P)ai1") {
     field(DESC, "analog input 1")
     field(EGU,  "VDC")
+    field(PREC, "3")
     field(DTYP, "stream")
     field(INP,  "@cmd_response.proto ai(1) $(PORT)")
     field(SCAN, ".1 second")
@@ -54,6 +57,7 @@ record(ai, "$(P)ai1") {
 record(ai, "$(P)ai1:mean") {
     field(DESC, "average analog input 1")
     field(EGU,  "VDC")
+    field(PREC, "5")
     field(DTYP, "stream")
     field(INP,  "@cmd_response.proto ai_mean(1) $(PORT)")
     field(SCAN, ".1 second")
@@ -66,6 +70,7 @@ record(ai, "$(P)ai1:mean") {
 # record(ao, "$(P)pwm6") {
 #     field(DESC, "PWM output 6")
 #     field(EGU,  "VDC")
+#     field(PREC, "2")
 #     field(DTYP, "stream")
 #     field(OUT,  "@cmd_response.proto pwm(6) $(PORT)")
 #     field(AOFF, "0")
@@ -79,6 +84,7 @@ record(ai, "$(P)ai1:mean") {
 record(ao, "$(P)pwm11") {
     field(DESC, "PWM output 11")
     field(EGU,  "VDC")
+    field(PREC, "2")
     field(DTYP, "stream")
     field(OUT,  "@cmd_response.proto pwm(11) $(PORT)")
     field(AOFF, "0")
