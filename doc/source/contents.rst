@@ -16,7 +16,6 @@ Table of Contents
    basic_example
    sequence
    epics/index
-   epics/epid
    arduino_code
 
 

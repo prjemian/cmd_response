@@ -2,16 +2,16 @@
 
 .. index:: example; Python program
 
-===============================
-Example: ``sequence.py``
-===============================
+========================================
+Example: Python program ``sequence.py``
+========================================
 
 A Python program was written to demonstrate
 how to communicate with the Arduino as an
 I/O controller using the **cmd_response**
 interface.
 
-The hardware is wired (see the :ref:`EPID <fig.epid_circuit>` example):
+The hardware is wired (see the :ref:`EPID <epid_circuit>` example):
 
   :AI:
     pin 0, photocell
@@ -50,4 +50,10 @@ The basics of this program are:
 Program Output
 ----------------
 
--tba-
+The full output (:download:`results.txt <../../python/results.txt>`), 
+more than 600 lines, is too long for this documentation.
+Here are the first few lines, to give you an idea:
+
+.. literalinclude:: ../../python/results.txt
+   :linenos:
+   :lines: 1-10

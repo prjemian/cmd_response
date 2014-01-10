@@ -91,22 +91,6 @@ term                   description
 :math:`\tau_d`         dead time before system starts to respond
 ====================== =================================================================
 
-.. _epid_circuit:
-
-Electronic Circuit
-=======================
-
-.. note:: under construction
-
-.. _fig.epid_circuit:
-
-.. figure:: LED_sensor_bb.png
-    :alt: fig.epid_circuit
-    :width: 80%
-    :align: center
-
-    Electronic Circuit: photocell and LED
-
 
 References
 ==========
