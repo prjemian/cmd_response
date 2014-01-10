@@ -50,10 +50,10 @@ The basics of this program are:
 Program Output
 ----------------
 
-The full output (:download:`results.txt <../../python/results.txt>`), 
+The full output (:download:`results.txt <../../../python/results.txt>`), 
 more than 600 lines, is too long for this documentation.
 Here are the first few lines, to give you an idea:
 
-.. literalinclude:: ../../python/results.txt
+.. literalinclude:: ../../../python/results.txt
    :linenos:
    :lines: 1-10

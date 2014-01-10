@@ -2,23 +2,29 @@
 
 '''Exercise the Arduino cmd_response interface'''
 
+
 import time
 import serial	# easy_install -U pyserial
+
 
 ARDUINO_SERIAL_PORT = '/dev/ttyUSB0'
 SERIAL_PORT_BAUD = 115200
 PERIOD_ms = 100
 SLEEP_TIME_S = 0.003*PERIOD_ms
 REPETITIONS = 10
+PORT_TIMEOUT = 2     # seconds
+
 
 class Cmd_Response(object):
   '''interface class with cmd_response Arduino sketch'''
 
-  def __init__(self, serial_port, baud=115200, delimiter='\n'):
+  def __init__(self, serial_port, baud=115200, 
+               delimiter='\n', timeout=PORT_TIMEOUT):
     self.serial_port = serial_port
     self.baud = baud
     self.delimiter = delimiter
-    self.port = serial.Serial(serial_port, baud)
+    self.timeout = timeout
+    self.port = serial.Serial(serial_port, baud, timeout=self.timeout)
     self.port.flushInput()
 
   def send(self, cmd):
@@ -41,9 +47,10 @@ class Cmd_Response(object):
 
 
 def measure(port, pwm, reps=1):
-  '''report reps reading(s): LED photocell  <photocell>'''
+  '''report reading(s): LED  photocell  <photocell>'''
   port.request('!pwm 11 %d' % pwm)
   time.sleep(SLEEP_TIME_S)
+  port.receive()
   for _ in range(reps):
     time.sleep(PERIOD_ms*0.0011)
     ai = int(port.request('?ai 0'))
@@ -78,6 +85,7 @@ def main():
     measure(cr, pwm, REPETITIONS)
 
   cr.request('!pwm 11 0')   # turn the pwm off
+
 
 if __name__ == '__main__':
   main()

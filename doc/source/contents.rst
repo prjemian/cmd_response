@@ -14,7 +14,7 @@ Table of Contents
    commands
    errors
    basic_example
-   sequence
+   python/sequence
    epics/index
    arduino_code
 
