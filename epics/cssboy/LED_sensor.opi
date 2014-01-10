@@ -9,7 +9,7 @@
   <boy_version>3.1.4.20121219</boy_version>
   <scripts />
   <show_ruler>true</show_ruler>
-  <height>380</height>
+  <height>336</height>
   <name>LED_sensor</name>
   <snap_to_geometry>true</snap_to_geometry>
   <show_grid>true</show_grid>
@@ -33,63 +33,6 @@
   <actions hook="false" hook_all="false" />
   <y>-1</y>
   <x>-1</x>
-  <widget typeId="org.csstudio.opibuilder.widgets.Rectangle" version="1.0">
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-    <visible>true</visible>
-    <fill_level>0.0</fill_level>
-    <line_color>
-      <color red="128" green="0" blue="255" />
-    </line_color>
-    <wuid>-852aef4:1437ad69c4f:-7ad5</wuid>
-    <bg_gradient_color>
-      <color red="255" green="255" blue="255" />
-    </bg_gradient_color>
-    <scripts />
-    <height>117</height>
-    <anti_alias>true</anti_alias>
-    <name>Rectangle</name>
-    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-    <alpha>255</alpha>
-    <scale_options>
-      <width_scalable>true</width_scalable>
-      <height_scalable>true</height_scalable>
-      <keep_wh_ratio>false</keep_wh_ratio>
-    </scale_options>
-    <transparent>false</transparent>
-    <pv_name></pv_name>
-    <background_color>
-      <color name="MEDM_COLOR_40" red="164" green="170" blue="255" />
-    </background_color>
-    <foreground_color>
-      <color red="255" green="0" blue="0" />
-    </foreground_color>
-    <widget_type>Rectangle</widget_type>
-    <enabled>true</enabled>
-    <fg_gradient_color>
-      <color red="255" green="255" blue="255" />
-    </fg_gradient_color>
-    <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-    <font>
-      <opifont.name fontName="Sans" height="9" style="0">Default</opifont.name>
-    </font>
-    <width>301</width>
-    <line_style>0</line_style>
-    <border_style>3</border_style>
-    <rules />
-    <pv_value />
-    <border_width>3</border_width>
-    <line_width>0</line_width>
-    <horizontal_fill>true</horizontal_fill>
-    <border_color>
-      <color name="MEDM_COLOR_14" red="0" green="0" blue="0" />
-    </border_color>
-    <actions hook="false" hook_all="false" />
-    <y>168</y>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-    <x>6</x>
-    <gradient>false</gradient>
-  </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0">
     <border_alarm_sensitive>true</border_alarm_sensitive>
     <visible>true</visible>
@@ -317,7 +260,7 @@ $(pv_value)</tooltip>
     </foreground_color>
     <widget_type>Label</widget_type>
     <enabled>true</enabled>
-    <text>channel 0</text>
+    <text>photocell</text>
     <font>
       <opifont.name fontName="Sans" height="9" style="0">Default</opifont.name>
     </font>
@@ -481,7 +424,7 @@ $(pv_value)</tooltip>
     </foreground_color>
     <widget_type>Label</widget_type>
     <enabled>true</enabled>
-    <text>ADC</text>
+    <text>sensor</text>
     <font>
       <opifont.name fontName="Sans" height="9" style="0">Default</opifont.name>
     </font>
@@ -585,11 +528,11 @@ $(pv_value)</tooltip>
     </border_color>
     <horizontal_alignment>1</horizontal_alignment>
     <actions hook="false" hook_all="false" />
-    <y>336</y>
+    <y>301</y>
     <wrap_words>false</wrap_words>
     <tooltip>$(pv_name)
 $(pv_value)</tooltip>
-    <x>12</x>
+    <x>162</x>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
     <visible>true</visible>
@@ -618,7 +561,7 @@ $(pv_value)</tooltip>
     <font>
       <opifont.name fontName="Sans" height="9" style="0">Default</opifont.name>
     </font>
-    <width>97</width>
+    <width>133</width>
     <border_style>0</border_style>
     <rules />
     <border_width>1</border_width>
@@ -627,10 +570,10 @@ $(pv_value)</tooltip>
     </border_color>
     <horizontal_alignment>1</horizontal_alignment>
     <actions hook="false" hook_all="false" />
-    <y>299</y>
+    <y>301</y>
     <wrap_words>true</wrap_words>
     <tooltip></tooltip>
-    <x>30</x>
+    <x>12</x>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.scaledslider" version="1.0">
     <level_lo>20.0</level_lo>
@@ -647,12 +590,12 @@ $(pv_value)</tooltip>
     <thumb_color>
       <color red="172" green="172" blue="172" />
     </thumb_color>
-    <height>91</height>
+    <height>115</height>
     <major_tick_step_hint>50</major_tick_step_hint>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <page_increment>10.0</page_increment>
     <background_color>
-      <color red="240" green="240" blue="240" />
+      <color name="MEDM_COLOR_55" red="235" green="241" blue="181" />
     </background_color>
     <enabled>true</enabled>
     <widget_type>Scaled Slider</widget_type>
@@ -660,9 +603,9 @@ $(pv_value)</tooltip>
     <font>
       <opifont.name fontName="Sans" height="9" style="0">Default</opifont.name>
     </font>
-    <width>277</width>
+    <width>283</width>
     <show_lolo>true</show_lolo>
-    <border_style>0</border_style>
+    <border_style>13</border_style>
     <effect_3d>true</effect_3d>
     <pv_value />
     <show_markers>true</show_markers>
@@ -679,7 +622,7 @@ $(pv_value)</tooltip>
     <color_lo>
       <color red="255" green="128" blue="0" />
     </color_lo>
-    <name>Scaled Slider</name>
+    <name>LED</name>
     <scale_options>
       <width_scalable>true</width_scalable>
       <height_scalable>true</height_scalable>
@@ -713,51 +656,10 @@ $(pv_value)</tooltip>
       <color red="0" green="128" blue="255" />
     </border_color>
     <level_lolo>10.0</level_lolo>
-    <y>186</y>
+    <y>174</y>
     <actions hook="false" hook_all="false" />
-    <x>18</x>
+    <x>12</x>
     <tooltip>$(pv_name)
 $(pv_value)</tooltip>
-  </widget>
-  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
-    <visible>true</visible>
-    <vertical_alignment>1</vertical_alignment>
-    <wuid>-852aef4:1437ad69c4f:-7ad1</wuid>
-    <auto_size>false</auto_size>
-    <scripts />
-    <height>25</height>
-    <name>Label_10</name>
-    <scale_options>
-      <width_scalable>true</width_scalable>
-      <height_scalable>true</height_scalable>
-      <keep_wh_ratio>false</keep_wh_ratio>
-    </scale_options>
-    <transparent>false</transparent>
-    <show_scrollbar>false</show_scrollbar>
-    <background_color>
-      <color name="MEDM_COLOR_41" red="135" green="147" blue="226" />
-    </background_color>
-    <foreground_color>
-      <color red="0" green="0" blue="0" />
-    </foreground_color>
-    <widget_type>Label</widget_type>
-    <enabled>true</enabled>
-    <text>LED</text>
-    <font>
-      <opifont.name fontName="Sans" height="9" style="0">Default</opifont.name>
-    </font>
-    <width>97</width>
-    <border_style>0</border_style>
-    <rules />
-    <border_width>1</border_width>
-    <border_color>
-      <color red="0" green="128" blue="255" />
-    </border_color>
-    <horizontal_alignment>1</horizontal_alignment>
-    <actions hook="false" hook_all="false" />
-    <y>168</y>
-    <wrap_words>true</wrap_words>
-    <tooltip></tooltip>
-    <x>6</x>
   </widget>
 </display>
