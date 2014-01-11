@@ -16,7 +16,7 @@
 # }
 
 record(ai, "$(P)ai0") {
-    field(DESC, "analog input 0")
+    field(DESC, "V_photocell, raw")
     field(EGU,  "VDC")
     field(PREC, "3")
     field(DTYP, "stream")
@@ -29,7 +29,7 @@ record(ai, "$(P)ai0") {
 }
 
 record(ai, "$(P)ai0:mean") {
-    field(DESC, "average analog input 0")
+    field(DESC, "V_photocell")
     field(EGU,  "VDC")
     field(PREC, "5")
     field(DTYP, "stream")
@@ -42,7 +42,7 @@ record(ai, "$(P)ai0:mean") {
 }
 
 record(ai, "$(P)ai1") {
-    field(DESC, "analog input 1")
+    field(DESC, "V_LED, raw")
     field(EGU,  "VDC")
     field(PREC, "3")
     field(DTYP, "stream")
@@ -55,11 +55,37 @@ record(ai, "$(P)ai1") {
 }
 
 record(ai, "$(P)ai1:mean") {
-    field(DESC, "average analog input 1")
+    field(DESC, "V_LED")
     field(EGU,  "VDC")
     field(PREC, "5")
     field(DTYP, "stream")
     field(INP,  "@cmd_response.proto ai_mean(1) $(PORT)")
+    field(SCAN, ".1 second")
+    field(AOFF, "0")
+    field(ASLO, "0.000004887585532746823069403714565")  # 5 VDC / 1023 ADC units / 1000 multiplier
+    field(HOPR, "5")
+    field(LOPR, "0")
+}
+
+record(ai, "$(P)ai2") {
+    field(DESC, "V_thermistor, raw")
+    field(EGU,  "VDC")
+    field(PREC, "3")
+    field(DTYP, "stream")
+    field(INP,  "@cmd_response.proto ai(2) $(PORT)")
+    field(SCAN, ".1 second")
+    field(AOFF, "0")
+    field(ASLO, "0.004887585532746823069403714565")  # 5 VDC / 1023 ADC units
+    field(HOPR, "5")
+    field(LOPR, "0")
+}
+
+record(ai, "$(P)ai2:mean") {
+    field(DESC, "V_thermistor")
+    field(EGU,  "VDC")
+    field(PREC, "5")
+    field(DTYP, "stream")
+    field(INP,  "@cmd_response.proto ai_mean(2) $(PORT)")
     field(SCAN, ".1 second")
     field(AOFF, "0")
     field(ASLO, "0.000004887585532746823069403714565")  # 5 VDC / 1023 ADC units / 1000 multiplier
@@ -82,7 +108,7 @@ record(ai, "$(P)ai1:mean") {
 # }
 
 record(ao, "$(P)pwm11") {
-    field(DESC, "PWM output 11")
+    field(DESC, "LED")
     field(EGU,  "VDC")
     field(PREC, "2")
     field(DTYP, "stream")
