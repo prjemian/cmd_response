@@ -61,10 +61,12 @@ def measure(port, pwm, reps=1):
 
 def main():
   '''test the Arduino cmd_response interface'''
+  global PERIOD_ms
   cr = Cmd_Response(ARDUINO_SERIAL_PORT, SERIAL_PORT_BAUD)
   time.sleep(2.0)
   cr.request('!t %d' % PERIOD_ms)
   cr.request('!ai:watch 0 1')
+  cr.request('!ai:watch 1 1')
   cr.request('!pin 11 1')
 
   if False:         # development use
@@ -83,6 +85,11 @@ def main():
     measure(cr, pwm)
   for pwm in range(255, 0, -5):
     measure(cr, pwm)
+
+  # change to a longer averaging period
+  PERIOD_ms = 1000
+  cr.request('!t ' + str(PERIOD_ms))
+
   for pwm in range(0, 256, 5):
     measure(cr, pwm, REPETITIONS)
 

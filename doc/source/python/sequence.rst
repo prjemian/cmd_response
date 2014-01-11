@@ -26,6 +26,13 @@ Use the circuit described previously (see :ref:`example_circuit`):
 The basics of this program are:
 
 * attach to the USB port
+
+  * On linux, confirm the USB connection using:
+  
+    >>> lsusb | grep FT232
+    Bus 005 Device 002: ID 0403:6001 Future Technology Devices International, Ltd FT232 USB-Serial (UART) IC
+
+
 * wait (arbitrary time) for the port to connect
 * configure the PWM and averaging for a 
   simple circuit, 0.1 s period, PWM on pin 11,

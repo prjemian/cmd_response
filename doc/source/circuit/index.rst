@@ -77,11 +77,13 @@ using pulse-width modulation and the ``analogWrite()`` function.  [#]_
 
 The current that flows through the LED, :math:`i_{LED}` is given by:
 
-.. math::  i_{LED} = {V_{LED} \over R1}
+.. math::  i_{LED} = {V_{LED} - V_{drop} \over R1}
 
 Only 10-30 mA should be given to :math:`i_{LED}`.  
+The forward drop voltage, :math:`V_{LED}`, is probably about 1.6 VDC.  
 With R1 = 330 Ohms and :math:`V_{LED}=5` VDC (full output from a DIGITAL pin),
-then :math:`i_{LED}=15` mA.
+then :math:`i_{LED}=10` mA.  We could choose a lower R1, 
+allowing more current through the LED.  Try this for yourself.
 
 .. note::  The intensity of light from LED1 is not linear with PWM value.
 
@@ -122,6 +124,11 @@ will make it easy to build.
 
     Electronic Circuit Breadboard: Arduino, photocell, and LED
     (:download:`LED_sensor_bb.png`)
+
+.. tip:: LEDs are polarized devices.  If you install them
+   backwards, they won't produce light.  Review
+   how they look at this web site:
+   http://www.bcae1.com/led.htm
 
 Since we want to measure the light intensity from the LED
 using the photocell, it makes some sense to position them 
