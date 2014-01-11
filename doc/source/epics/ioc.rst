@@ -34,13 +34,11 @@ In the same file, modify the IOC prefix to fit, such as this changeset::
   +dbLoadRecords("$(CMD_RESPONSE)/cmd_response.db","P=como:cr:,PORT=usb0")
 
 
-------
+
+file: ``cmd_reponse.cmd``
+------------------------------
+
+The file is too large for this documentation.
 
 :EPICS IOC startup commands:
    :download:`cmd_response.cmd <../../../epics/cmd_response.cmd>`
-   
-..
-  .. literalinclude:: ../../../epics/cmd_response.cmd
-      :language: bash
-      :linenos:
-

@@ -477,3 +477,13 @@ line terminator          ``\n``
 buffer length (chars)    40
 command length (chars)   16
 ======================   ========
+
+
+file: ``cmd_reponse.ino``
+------------------------------
+
+The full Arduino ``cmd_response.ino``
+code listing is too large for this documentation.
+
+:EPICS Streams protocol:
+   :download:`cmd_response.ino <../../cmd_response.ino>`

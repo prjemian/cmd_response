@@ -16,7 +16,7 @@ Table of Contents
    basic_example
    python/sequence
    epics/index
-   arduino_code
+   install
 
 
 Indices and tables

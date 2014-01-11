@@ -2,6 +2,8 @@
 
 .. index:: example; Python program
 
+.. _python_sequence:
+
 ========================================
 Example: Python program ``sequence.py``
 ========================================

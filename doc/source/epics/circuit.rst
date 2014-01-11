@@ -6,11 +6,17 @@
 Electronic Circuit
 =================================================
 
-To demonstrate how the **cmd_response** sketch works, we construct
+The **cmd_response** sketch is very general with respect 
+to the ANALOG IN and DIGITAL I/O of the Arduino boards.
+We can use it to read a wide variety of sensors from 
+remote computer systems.  This was shown previously in the
+Python code example: :ref:`python_sequence`.
+
+To further demonstrate how the **cmd_response** sketch works, we construct
 some simple sensor circuits.  The goal of these circuits is to
 first demonstrate how they work with the Arduino.
 Then, we show how to integrate the Arduino with EPICS.
-Finally, we work with PID controls, where a chosen value of
+Finally, we work with EPICS PID controls, where a chosen value of the
 Arduino's photocell signal is maintained by adjusting 
 the Arduino's LED brightness using a PID loop in EPICS.
 
