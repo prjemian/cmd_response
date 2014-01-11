@@ -13,6 +13,7 @@ Table of Contents
    theory
    commands
    errors
+   circuit/index
    basic_example
    python/sequence
    epics/index

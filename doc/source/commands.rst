@@ -3,7 +3,7 @@
 .. _commands:
 
 USB command interface
-++++++++++++++++++++++
++++++++++++++++++++++
 
 When present, "#" refers to the Arduino pin number used in the operation
   
@@ -47,7 +47,7 @@ notes:
 
 .. rubric:: commands
 
-.. note:: Note about examples
+.. note:: Note about code examples below
 
    In all code examples below, command input to the Arduino
    is shown as:: 
@@ -75,7 +75,7 @@ notes:
 .. _get_ai:
 
 ``?ai``
-----------------
+-------
 
 :purpose: read an ANALOG IN channel value
 :command:  ``?ai pin``
@@ -92,7 +92,7 @@ notes:
 .. _watch_ai:
 
 ``!ai:watch``
-----------------
+-------------
 
 :purpose: 
    Enables (or disables) signal averaging for
@@ -109,7 +109,7 @@ notes:
 .. _ai_mean:
 
 ``?ai:mean``
-----------------
+------------
 
 :purpose: read a time-averaged ANALOG IN channel value
 :command:  ``?ai:mean pin``
@@ -151,7 +151,7 @@ notes:
 .. _get_bi:
 
 ``?bi``
-----------------
+-------
 
 :purpose: 
    Reads the digital input *pin* specified in the first argument.
@@ -168,7 +168,7 @@ notes:
 .. _set_bo:
 
 ``!bo``
-----------------
+-------
 
 :purpose: 
    Sets the digital output *pin* specified in the first argument
@@ -195,7 +195,7 @@ notes:
 .. _set_pwm:
 
 ``!pwm``
-----------------
+--------
 
 :purpose: 
    Sets the PWM-enabled digital output *pin* specified in the first argument
@@ -218,7 +218,7 @@ notes:
 .. _set_pin:
 
 ``!pin``
-----------------
+--------
 
 :purpose: 
    Configures the digital output *pin* specified in the first argument
@@ -248,7 +248,7 @@ notes:
 .. _set_period:
 
 ``!t``
-----------------
+------
 
 :purpose: 
    Sets the length of the averaging period (milliseconds).
@@ -271,7 +271,7 @@ notes:
 .. _get_period:
 
 ``?t``
-----------------
+------
 
 :purpose: Read the length of the averaging period (milliseconds).
 :command: ``?t``
@@ -285,7 +285,7 @@ notes:
 .. _get_period_min:
 
 ``?t:min``
-----------------
+----------
 
 :purpose: 
    Returns :math:`t_l`, the minimum permitted length of the
@@ -304,7 +304,7 @@ notes:
 .. _get_period_max:
 
 ``?t:max``
-----------------
+----------
 
 :purpose: 
    Returns :math:`t_h`, the maximum permitted length of the
@@ -322,7 +322,7 @@ notes:
 .. _set_k:
 
 ``!k``
-----------------
+------
 
 :purpose: 
    Sets the multiplier to use when reporting
@@ -342,7 +342,7 @@ notes:
 .. _get_k:
 
 ``?k``
-----------------
+------
 
 :command:  ``?k``
 :returns: multiplier :math:`k` used when reporting averaged AI values
@@ -356,7 +356,7 @@ notes:
 .. _get_k_min:
 
 ``?k:min``
-----------------
+----------
 
 :purpose: 
    Returns :math:`k_l`, the minimum permitted multiplier used
@@ -373,7 +373,7 @@ notes:
 .. _get_k_max:
 
 ``?k:max``
-----------------
+----------
 
 :purpose: 
    Returns :math:`k_h`, the maximum permitted multiplier used
@@ -391,7 +391,7 @@ notes:
 .. _get_rate:
 
 ``?rate``
-----------------
+---------
 
 :purpose: How many ADC readings per second?
 :command:  ``?rate``
@@ -415,7 +415,7 @@ notes:
 .. _get_version:
 
 ``?v``
-----------------
+------
 
 :command:  ``?v``
 :returns: Returns the software version number.
@@ -429,7 +429,7 @@ example:
 .. _get_id:
 
 ``?id``
-----------------
+-------
 
 :command:  ``?id``
 :returns: Returns the software identifying string.
@@ -441,7 +441,7 @@ cmd_response
 
 
 Example Commands
-------------------------
+----------------
 
 1. Read analog input from pin 0:
 
@@ -467,7 +467,7 @@ ERROR_UNKNOWN_COMMAND:!pwm11 128
 .. _comm_parms:
 
 Communications Parameters
-----------------------------------------
+-------------------------
 
 ======================   ========
 term                     value
@@ -480,7 +480,7 @@ command length (chars)   16
 
 
 file: ``cmd_reponse.ino``
-------------------------------
+-------------------------
 
 The full Arduino ``cmd_response.ino``
 code listing is too large for this documentation.

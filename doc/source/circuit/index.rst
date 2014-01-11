@@ -2,26 +2,28 @@
 
 .. _epid_circuit:
 
-=================================================
+==================
 Electronic Circuit
-=================================================
+==================
 
 The **cmd_response** sketch is very general with respect 
 to the ANALOG IN and DIGITAL I/O of the Arduino boards.
 We can use it to read a wide variety of sensors from 
-remote computer systems.  This was shown previously in the
-Python code example: :ref:`python_sequence`.
+remote computer systems.
 
-To further demonstrate how the **cmd_response** sketch works, we construct
-some simple sensor circuits.  The goal of these circuits is to
-first demonstrate how they work with the Arduino.
-Then, we show how to integrate the Arduino with EPICS.
-Finally, we work with EPICS PID controls, where a chosen value of the
-Arduino's photocell signal is maintained by adjusting 
-the Arduino's LED brightness using a PID loop in EPICS.
+First, we demonstrate how the Arduino **cmd_response** 
+sketch works, we construct some simple sensor circuits
+and then communicate with our Arduino with a Python
+program (see: :ref:`python_sequence`).
+
+Later, we integrate the Arduino with EPICS (see: :ref:`epics`).  
+Finally, we maintain a constant sensor value (photocell)
+by adjusting an LED's brightness using a PID loop in EPICS 
+(see: :ref:`epid_example`).
+
 
 photocell
-----------
+---------
 
 The photocell is a cadmium-sulfide photosensitive resistor.  [#]_
 It is an inexpensive device that measures the amount of light
@@ -92,7 +94,7 @@ then :math:`i_{LED}=15` mA.
 .. [#] LED Fading: http://arduino.cc/en/Tutorial/Fade
 
 Complete circuit
---------------------
+----------------
 
 .. _fig.epid_schematic:
 
@@ -115,7 +117,7 @@ Complete circuit
     (:download:`LED_sensor_bb.png`)
 
 Reduce background light
-------------------------
+-----------------------
 
 .. couple of photos of the circuit here
 
@@ -129,7 +131,7 @@ Reduce background light
 
 
 Fritzing layout
-----------------
+---------------
 
 The circuit was layed out using the Fritzing software
 (http://fritzing.org).  

@@ -4,9 +4,9 @@
 
 .. _epics:
 
-==================================
+========================
 Example: EPICS interface
-==================================
+========================
 
 .. sidebar::  EPICS jargon approaching!
 
@@ -52,13 +52,12 @@ the Arduino with an EPICS IOC) consists of three files:
 * :ref:`IOC.commands`
 
 Contents
----------
+--------
 
 .. toctree::
    :maxdepth: 1
    :glob:
    
-   circuit
    streams
    database
    ioc

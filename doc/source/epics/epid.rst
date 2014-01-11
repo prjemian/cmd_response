@@ -2,9 +2,11 @@
 
 .. index:: example; EPICS epid record
 
-=================================================
+.. _epid_example:
+
+===========================================
 Example: Feedback using the ``epid`` record
-=================================================
+===========================================
 
 .. note: this page is under construction
 
@@ -34,7 +36,7 @@ of the UMich documentation into terms of the *epid* record.
 .. index:: PID theory
 
 Basic PID Theory
-==================
+================
 
 .. index:: process error
 
@@ -61,7 +63,7 @@ general PID equation ([#UMich]_):
   Y_n = K_P \epsilon(t) + K_P K_I \sum_i {\epsilon_i \delta t_i} + K_P K_D {\epsilon_n - \epsilon_{n-1} \over \delta t_n}
 
 Outline
-============
+=======
 
 * define the example
 * describe the variables
@@ -70,7 +72,7 @@ Outline
 * measure the system response
 
 Definition of Terms
-=====================
+===================
 
 ====================== =================================================================
 term                   description
