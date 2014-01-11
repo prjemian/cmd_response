@@ -13,8 +13,8 @@ Table of Contents
    theory
    commands
    errors
-   circuit/index
    basic_example
+   circuit/index
    python/sequence
    epics/index
    install

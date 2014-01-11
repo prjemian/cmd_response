@@ -14,12 +14,18 @@ Example: Feedback using the ``epid`` record
 
 This example builds on the previous example where a sensor 
 creating a *signal* was connected to the Arduino and monitored 
-from EPICS.  An additional sensor was connected to the Arduino to 
+from EPICS.  An LED was connected to the Arduino to 
 *control* (or modify) the first signal.
+
+.. index:: mood lighting
+
+This example will control the output of the LED based on the signal from the sensor.
+We'll test our controls by changing the background lighting levels and the
+desired signal level from the sensor.  In effect, we are building **mood lighting**.
 
 Requirements:
 
-* Arduino system with specified electronics circuit (:ref:`epid_circuit`)
+* Arduino system with specified electronics circuit (:ref:`example_circuit`)
 * Linux computer with Arduino interface
 * EPICS IOC configured to communicate with Arduino
 * CSS BOY client for EPICS [#]_
@@ -28,7 +34,8 @@ The EPICS *epid* record [#epid]_ is used to continuously update the
 *control* based on updates to the *signal* with the goal of 
 driving the signal to a desired *set point*.  The *epid* record 
 provides an extended Proportional-Integral-Derivative controller 
-(see, for example, these documents from the University of 
+(for more information about PID control, see, for example, 
+these documents from the University of 
 Michigan: [#]_, [#]_, [#UMich]_) to a process configured by EPICS PVs. 
 Additional equations are sketched out [#]_ that convert the terms 
 of the UMich documentation into terms of the *epid* record.

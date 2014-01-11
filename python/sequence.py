@@ -53,9 +53,10 @@ def measure(port, pwm, reps=1):
   port.receive()
   for _ in range(reps):
     time.sleep(PERIOD_ms*0.0011)
-    ai = int(port.request('?ai 0'))
-    mean = float(port.request('?ai:mean 0'))/1000.
-    print "%d %d %.3f" % (pwm, ai, mean)
+    V_led_raw = int(port.request('?ai 0'))
+    V_led = float(port.request('?ai:mean 0'))/1000.
+    V_P   = float(port.request('?ai:mean 1'))/1000.
+    print "%d %d %.3f %.3f" % (pwm, V_led_raw, V_led, V_P)
 
 
 def main():
@@ -66,7 +67,7 @@ def main():
   cr.request('!ai:watch 0 1')
   cr.request('!pin 11 1')
 
-  if False:
+  if False:         # development use
     for _ in ('?id', '?v', '?t', '?k', '?rate'):
       cr.report(_)
  
@@ -76,6 +77,7 @@ def main():
     print cr.request('?t')
     print cr.request('?ai 0')
     print cr.request('?ai:mean 0')
+    print cr.request('?ai:mean 1')
 
   for pwm in range(0, 256, 5):
     measure(cr, pwm)
