@@ -45,7 +45,7 @@ as R2 tends towards zero.
 
 .. figure:: photocell-schem.png
        :alt: fig.photocell-schem
-       :width: 50%
+       :width: 70%
        :align: center
 
        Voltage divider circuit with the photocell
@@ -69,7 +69,7 @@ using pulse-width modulation and the ``analogWrite()`` function.  [#]_
 
  .. figure:: LED_schem.png
        :alt: fig.LED_schem
-       :width: 50%
+       :width: 80%
        :align: center
 
        Lighting an LED with an applied voltage.
