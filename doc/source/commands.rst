@@ -309,11 +309,11 @@ notes:
 :purpose: 
    Returns :math:`t_h`, the maximum permitted length of the
    averaging period (milliseconds).  The maximum length
-   is fixed, somewhat arbitrarily, to ~20 minutes.
+   is fixed, somewhat arbitrarily, to ~1 hour.
    Is any longer really necessary?
 :command:  ``?t:max``
 :returns: maximum allowed value of averaging period (ms)
-:default: ``1000000``
+:default: ``3600000``
 :example:
    >>> 
    1000000

@@ -20,7 +20,7 @@
 
 #define PERIOD_DEFAULT_ms  1000
 #define PERIOD_MIN_ms      5
-#define PERIOD_MAX_ms      1000000
+#define PERIOD_MAX_ms      3600000
 
 #define MULTIPLIER_DEFAULT  1000
 #define MULTIPLIER_MIN      1
