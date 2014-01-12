@@ -93,6 +93,19 @@ record(ai, "$(P)ai2:mean") {
     field(LOPR, "0")
 }
 
+record(ai, "$(P)ai3:mean") {
+    field(DESC, "V_ref for thermistor")
+    field(EGU,  "VDC")
+    field(PREC, "5")
+    field(DTYP, "stream")
+    field(INP,  "@cmd_response.proto ai_mean(3) $(PORT)")
+    field(SCAN, ".1 second")
+    field(AOFF, "0")
+    field(ASLO, "0.000004887585532746823069403714565")  # 5 VDC / 1023 ADC units / 1000 multiplier
+    field(HOPR, "5")
+    field(LOPR, "0")
+}
+
 # record(ao, "$(P)pwm6") {
 #     field(DESC, "PWM output 6")
 #     field(EGU,  "VDC")

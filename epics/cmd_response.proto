@@ -32,7 +32,7 @@ bi {
   # configure the digital pin for digital input
   @init{
     #ExtraInput = Ignore;
-    out "!pin \$1 1"; in "Ok"; 
+    out "!pin \$1 0"; in "Ok"; 
   }
 }
 

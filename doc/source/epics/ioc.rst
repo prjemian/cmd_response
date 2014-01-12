@@ -2,12 +2,14 @@
 
 .. _IOC.commands:
 
-==================================
+==========================
 EPICS IOC startup commands
-==================================
+==========================
 
-* describe how to configure the IOC for this
-* describe the prerequisites!
+.. caution:: TODO
+
+   * describe how to configure the IOC for this
+   * describe the prerequisites!
 
 Make these two soft links in the ``$(TOP)/iocBoot/$(IOC)`` directory::
 
@@ -36,7 +38,7 @@ In the same file, modify the IOC prefix to fit, such as this changeset::
 
 
 file: ``cmd_reponse.cmd``
-------------------------------
+-------------------------
 
 The file is too large for this documentation.
 
