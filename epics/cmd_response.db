@@ -184,9 +184,9 @@ record(epid, "$(P)epid") {
 
 
 ########### SVN repository information ###################
-# $Date: 2013-07-20 09:13:52 -0500 (Sat, 20 Jul 2013) $
-# $Author: jemian $
-# $Revision: 1916 $
-# $URL: http://svn.jemian.org/svn/regitte/arduino/led_cascade/led_cascade.db $
-# $Id: led_cascade.db 1916 2013-07-20 14:13:52Z jemian $
+# $Date$
+# $Author$
+# $Revision$
+# $URL$
+# $Id$
 ########### SVN repository information ###################

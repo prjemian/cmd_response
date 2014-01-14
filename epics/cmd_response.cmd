@@ -1,16 +1,15 @@
-
 ########### SVN repository information ###################
-# $Date: 2013-07-20 09:13:52 -0500 (Sat, 20 Jul 2013) $
-# $Author: jemian $
-# $Revision: 1916 $
-# $URL: http://svn.jemian.org/svn/regitte/arduino/led_cascade/led_cascade.cmd $
-# $Id: led_cascade.cmd 1916 2013-07-20 14:13:52Z jemian $
+# $Date$
+# $Author$
+# $Revision$
+# $URL$
+# $Id$
 ########### SVN repository information ###################
 
 # BEGIN serial.cmd for cmd_response  project ------------------------------------------------------------
 
-epicsEnvSet("CMD_RESPONSE","/home/prjemian/sketchbook/cmd_response/epics")
-cd $(CMD_RESPONSE)
+#epicsEnvSet("CMD_RESPONSE","/home/prjemian/sketchbook/cmd_response/epics")
+#cd $(CMD_RESPONSE)
 
 # Set up 1 local serial port(s)
 
@@ -34,6 +33,7 @@ dbLoadTemplate("asynRecord.substitutions")
 
 # send impromptu message to serial device, parse reply
 # (was serial_OI_block)
-dbLoadRecords("$(CMD_RESPONSE)/cmd_response.db","P=como:cr:,PORT=usb0")
+#dbLoadRecords("$(CMD_RESPONSE)/cmd_response.db","P=$(IOC_PREFIX)cr:,PORT=usb0")
+dbLoadRecords("cmd_response.db","P=$(IOC_PREFIX)cr:,PORT=usb0")
 
 # END serial.cmd --------------------------------------------------------------
