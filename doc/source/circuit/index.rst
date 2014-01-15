@@ -21,6 +21,7 @@ Finally, we maintain a constant sensor value (photocell)
 by adjusting an LED's brightness using a PID loop in EPICS 
 (see: :ref:`epid_example`).
 
+.. index:: photocell; light sensor, signal; photocell
 
 photocell
 ---------
@@ -57,6 +58,8 @@ as R2 tends towards zero.
 .. [#] photocell: http://en.wikipedia.org/wiki/Photoresistor
 .. [#] Take :math:`V_{cc}` from the Arduino's 5 VDC supply.
 
+.. index:: LED; light generator, signal; LED
+
 LED
 ---
 
@@ -92,6 +95,9 @@ allowing more current through the LED.  Try this for yourself.
    We'll connect :math:`V_{LED}` to DIGITAL (pwm) channel D11.
 
 .. [#] LED Fading: http://arduino.cc/en/Tutorial/Fade
+
+
+.. index:: circuit
 
 Complete circuit
 ----------------

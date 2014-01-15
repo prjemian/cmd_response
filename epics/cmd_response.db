@@ -9,11 +9,11 @@
 # ===== ============================
 
 
-# record(stringout, "$(P)cmd") {
-#     field(DESC, "command interface")
-#     field(DTYP, "stream")
-#     field(OUT,  "@cmd_response.proto debug $(PORT)")
-# }
+record(stringout, "$(P)cmd") {
+    field(DESC, "command interface")
+    field(DTYP, "stream")
+    field(OUT,  "@cmd_response.proto debug $(PORT)")
+}
 
 record(ai, "$(P)ai0") {
     field(DESC, "V_photocell, raw")
@@ -21,7 +21,7 @@ record(ai, "$(P)ai0") {
     field(PREC, "3")
     field(DTYP, "stream")
     field(INP,  "@cmd_response.proto ai(0) $(PORT)")
-    field(SCAN, ".1 second")
+    field(SCAN, ".5 second")
     field(AOFF, "0")
     field(ASLO, "0.004887585532746823069403714565")  # 5 VDC / 1023 ADC units
     field(HOPR, "5")
@@ -34,7 +34,7 @@ record(ai, "$(P)ai0:mean") {
     field(PREC, "5")
     field(DTYP, "stream")
     field(INP,  "@cmd_response.proto ai_mean(0) $(PORT)")
-    field(SCAN, ".1 second")
+    field(SCAN, ".5 second")
     field(AOFF, "0")
     field(ASLO, "0.000004887585532746823069403714565")  # 5 VDC / 1023 ADC units / 1000 multiplier
     field(HOPR, "5")
@@ -47,7 +47,7 @@ record(ai, "$(P)ai1") {
     field(PREC, "3")
     field(DTYP, "stream")
     field(INP,  "@cmd_response.proto ai(1) $(PORT)")
-    field(SCAN, ".1 second")
+    field(SCAN, ".5 second")
     field(AOFF, "0")
     field(ASLO, "0.004887585532746823069403714565")  # 5 VDC / 1023 ADC units
     field(HOPR, "5")
@@ -60,7 +60,7 @@ record(ai, "$(P)ai1:mean") {
     field(PREC, "5")
     field(DTYP, "stream")
     field(INP,  "@cmd_response.proto ai_mean(1) $(PORT)")
-    field(SCAN, ".1 second")
+    field(SCAN, ".5 second")
     field(AOFF, "0")
     field(ASLO, "0.000004887585532746823069403714565")  # 5 VDC / 1023 ADC units / 1000 multiplier
     field(HOPR, "5")
@@ -73,7 +73,7 @@ record(ai, "$(P)ai2") {
     field(PREC, "3")
     field(DTYP, "stream")
     field(INP,  "@cmd_response.proto ai(2) $(PORT)")
-    field(SCAN, ".1 second")
+    field(SCAN, ".5 second")
     field(AOFF, "0")
     field(ASLO, "0.004887585532746823069403714565")  # 5 VDC / 1023 ADC units
     field(HOPR, "5")
@@ -86,7 +86,7 @@ record(ai, "$(P)ai2:mean") {
     field(PREC, "5")
     field(DTYP, "stream")
     field(INP,  "@cmd_response.proto ai_mean(2) $(PORT)")
-    field(SCAN, ".1 second")
+    field(SCAN, ".5 second")
     field(AOFF, "0")
     field(ASLO, "0.000004887585532746823069403714565")  # 5 VDC / 1023 ADC units / 1000 multiplier
     field(HOPR, "5")
@@ -99,7 +99,7 @@ record(ai, "$(P)ai3:mean") {
     field(PREC, "5")
     field(DTYP, "stream")
     field(INP,  "@cmd_response.proto ai_mean(3) $(PORT)")
-    field(SCAN, ".1 second")
+    field(SCAN, ".5 second")
     field(AOFF, "0")
     field(ASLO, "0.000004887585532746823069403714565")  # 5 VDC / 1023 ADC units / 1000 multiplier
     field(HOPR, "5")
@@ -139,12 +139,13 @@ record(ai, "$(P)rate") {
     field(EGU,  "1/s")
     field(DTYP, "stream")
     field(INP,  "@cmd_response.proto rate $(PORT)")
-    field(SCAN, ".1 second")
+    field(SCAN, ".5 second")
 }
 
 record(ao, "$(P)period") {
     field(DESC, "averaging period")
-    field(VAL,  "0.1")
+    field(VAL,  "0.5")
+    field(PREC, "2")
     field(PINI, "1")
     field(EGU,  "s")
     field(DTYP, "stream")
@@ -176,12 +177,18 @@ record(epid, "$(P)epid") {
   field(KP, "0.1")
   field(KI, "5")
   field(KD, "0")
-  field(SCAN, ".1 second")
+  field(SCAN, ".5 second")
 
   field(DRVL, "0")
   field(DRVH, "5")
+  field(PREC, "4")
 }
 
+
+#  simple monitoring program:
+#  setenv P prj:
+#  export P=como:
+#  pvview ${P}cr:{pwm11,ai{0,1,2}:mean,{rate,period},cmd}{.DESC,} &
 
 ########### SVN repository information ###################
 # $Date$

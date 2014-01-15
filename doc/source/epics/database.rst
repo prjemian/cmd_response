@@ -1,5 +1,7 @@
 .. $Id$
 
+.. index:: EPICS; database
+
 .. _pv.database:
 
 EPICS database
@@ -8,8 +10,8 @@ EPICS database
 An EPICS database file is used to create specific record instances
 that will be used by an IOC.  It declares them by defining the name
 and EPICS record type.  The name can be fully declared, such as *time*
-or can be completed later by expoansion of a macro definition, such as 
-*$(P)version*.  The value of the macro will be specified in the IOC 
+or can be completed later by expansion of a macro definition, such as 
+*$(P)cmd*.  The value of the macro will be specified in the IOC 
 startup script, either through a call to *dbLoadRecords()* or *dbLoadTemplate()*.
 
 This file is written to be used by more than one IOC, so it uses
@@ -23,20 +25,21 @@ we'll call this database file as (noting *P* is set to ``como:cr:``)::
 record instances
 ****************
 
-================  ====  ==========================================================================
-name              RTYP  description
-================  ====  ==========================================================================
-``$(P)ai0``       ai    read the raw photocell sensor, :math:`V_P`
-``$(P)ai0:mean``  ai    photocell sensor, :math:`V_P`
-``$(P)ai1``       ai    read the LED's PWM "voltage", :math:`V_{LED}`
-``$(P)ai1:mean``  ai    read LED "voltage", :math:`V_{LED}`
-``$(P)ai2:mean``  ai    read temperature sensor, :math:`V_T` (see :ref:`temperature_sensor`)
-``$(P)ai2:mean``  ai    read reference voltage, :math:`V_{cc}` (see :ref:`temperature_sensor`)
-``$(P)pwm11``     ao    set the LED brightness (effectively: set :math:`V_{LED}`)
-``$(P)rate``      ai    read the update rate
-``$(P)period``    ao    set the averaging period, s
-``$(P)epid``      epid  Feedback control (see :ref:`epid_example`)
-================  ====  ==========================================================================
+================  =========  ==========================================================================
+name              RTYP       description
+================  =========  ==========================================================================
+``$(P)ai0``       ai	     read the raw photocell sensor, :math:`V_P`
+``$(P)ai0:mean``  ai	     photocell sensor, :math:`V_P`
+``$(P)ai1``       ai	     read the LED's PWM "voltage", :math:`V_{LED}`
+``$(P)ai1:mean``  ai	     read LED "voltage", :math:`V_{LED}`
+``$(P)ai2:mean``  ai	     read temperature sensor, :math:`V_T` (see :ref:`temperature_sensor`)
+``$(P)ai2:mean``  ai	     read reference voltage, :math:`V_{cc}` (see :ref:`temperature_sensor`)
+``$(P)pwm11``     ao	     set the LED brightness (effectively: set :math:`V_{LED}`)
+``$(P)rate``      ai	     read the update rate
+``$(P)period``    ao	     set the averaging period, s
+``$(P)epid``      epid	     Feedback control (see :ref:`epid_example`)
+``$(P)cmd``       stringout  send command directly to Arduino and read response
+================  =========  ==========================================================================
 
 * *RTYP*: EPICS record type
 
@@ -70,7 +73,7 @@ The file is too large for this documentation.
    :download:`cmd_response.db <../../../epics/cmd_response.db>`
 
 
-.. index:: thermistor; temperature sensor
+.. index:: thermistor; temperature sensor, signal; thermistor
 
 .. _temperature_sensor:
 

@@ -1,16 +1,26 @@
 .. $Id$
 
+
+.. index:: !goals
+
+.. _theory:
+
 ==============================================
-Theory of Operations
+Project Goals
 ==============================================
 
+Main Goals
+-------------
 The main goal of this project is to present
-the Arduino as an I/O controller using a 
+the **Arduino as an I/O controller** using a 
 command-response communications language
 over the USB port.  The code should run on
 any Arduino with a USB port.  The code
 should provide access to the basic I/O 
 capabilities of the Arduino.
+
+conserve SRAM
++++++++++++++++++++
 
 To fit the code into the smaller SRAM space of 
 Arduino models such as the Uno R3 (a 2k space), 
@@ -18,6 +28,9 @@ all strings were coded as ``char *`` rather
 than use ``String`` [#]_ objects.
 
 .. [#] http://arduino.cc/en/Reference/StringObject
+
+short commands
++++++++++++++++
 
 One objective of **cmd_response**
 was to make basic read and write commands
@@ -31,18 +44,24 @@ The USB commands have this form::
   // char* baseCmd (lower case)
   // long arg1, arg2 (no octal or hex interpreted)
 
+additional rules for the interface
+++++++++++++++++++++++++++++++++++++++++
+
 Additionally, these rules were used to 
 build the interface:
 
 * Commands either **get** (start with ``?``) 
   or **set** (start with ``!``) a value.
-* All commands received should return a response.
+* All :ref:`commands <commands>` received should return a response.
 * No automatic command echo is provided.
 * All **set** commands return "Ok" or an error message.
 * All **get** commands return a value or an error message.
 * All :ref:`errors` start with the text: ``ERROR_``
 * Most error messages will return the command text as a diagnostic.
-* The device provides a useful message on startup.
+* The device provides a useful message on :ref:`startup <is.our.sketch.running>`.
+* A software :ref:`identifier <get_id>` can be queried.
+* A software :ref:`version <get_version>` can be queried.
+* The version should be a string rather than an integer.
 
 
 .. _basics:
@@ -62,6 +81,8 @@ The commands which support these basic operations are:
 :ref:`get_bi`, :ref:`set_pin`, :ref:`set_bo`,
 and :ref:`set_pwm`.
 
+
+.. index:: !signal averaging, averaging
 
 .. _averaging:
 
@@ -97,6 +118,8 @@ to optimize for speed.
    configured (with :ref:`watch_ai`) 
    before calling :ref:`ai_mean`.
 
+.. index:: multiplier
+
 The average for each channel is obtained by
 accumulating measurements of the analog input,
 :math:`a_i` until the update period has elapsed,
@@ -119,6 +142,8 @@ will apply automatically pre-configured scaling
 factors to place the number into engineering units, 
 such as *VDC*.
 
+.. index:: !multiplier
+
 Here, a positive multiplier, :math:`k`, is used
 to scale the average value so that its limit 
 of precision can be expressed as a *long* integer.
@@ -127,10 +152,11 @@ To request the value of :math:`k`, use :ref:`set_k`.
 Limits of :math:`k` are found by requesting
 :ref:`get_k_min` and :ref:`get_k_max`.
 
-All *watched* channels are accumulated during each
-period.  The averages (for just the watched channels)
-and update rate are 
-recomputed at the end of each period.
+.. index:: watched channels, averages
+
+All **watched channels** are accumulated during each
+averaging period.  The averages (for just the watched channels)
+and update rate are recomputed *only* at the end of each period.
 
 
 Startup
@@ -174,23 +200,25 @@ this software (:ref:`get_id`) and
 version (:ref:`get_version`).
 
 
+.. index:: epicsduino
+
 .. _epicsduino:
 
 epicsduino
 --------------
 
 .. epicsduino is behind the APS firewall.
-   It should be posted publicly for better access.
+   It could be posted publicly for better access.
 
 The **epicsduino** project of Keenan Lang
 at the Advanced Photon Source [#]_
 is *very* similar to this project as it was developed in parallel to 
 this project.
-In the **epicsduino** project, SCPI [#SCPI]_ are provided using String
-objects.  This interface consumes significant SRAM and thus limits
-the features which can be implemented in the interface language
-and also limits the Arduino models on which the sketch can be used.
-Also, the SCPI commands are verbose, which take more time to parse.
+In the **epicsduino** project, an SCPI command interface [#SCPI]_ is 
+constructed using String objects.  This interface consumes significant 
+SRAM and thus limits the features which can be implemented in the interface 
+language and also limits the Arduino models on which the sketch can be used.
+Also, the SCPI commands are longer, and take more time to parse.
 
 .. [#] **epicsduino**: https://subversion.xray.aps.anl.gov/bcdaioc/projects/epicsduino
 .. [#SCPI] SCPI: http://www.ivifoundation.org/scpi/default.aspx

@@ -1,6 +1,10 @@
 .. $Id$
 
-.. index:: EPICS
+.. index:: !EPICS
+.. index:: example; EPICS mood lighting
+
+.. The concept of mood lighting may be catchy but misleading.
+   Think of something much better.
 
 .. _epics:
 
@@ -38,12 +42,17 @@ EPICS is scalable, allowing for multiple servers and clients,
 and can easily integrate the signals
 from the Arduino as part of such a control system.
 
-.. index:: technology stack
+.. index:: !technology stack
 
 An EPICS system consists of many layers of components.
 Let's visualize this *technology stack* with the Arduino at the root:
 
 .. TODO: make this a figure?  No, the list is just as clear.  KISS applies.
+
+.. index:: 
+   single: EPICS; IOC
+   single: EPICS; OPI
+   single: EPICS; Channel Access
 
 * you
 * EPICS OPI (operator/programmer interface) client computer(s)

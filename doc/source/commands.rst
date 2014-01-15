@@ -6,32 +6,32 @@ USB command interface
 +++++++++++++++++++++
 
 When present, "#" refers to the Arduino pin number used in the operation
-  
-================  ========  =====================================================================
-command           value     action
-================  ========  =====================================================================
-``?#ai``          int       returns NUM_ANALOG_INPUTS
-``?ai pin``       0..1023   returns current value of numbered analog input
-``!ai:watch``     0..1 	    sets up ai pin for averaging
-``?ai:mean``      long 	    returns ``<ai>*k``
-``?#bi``          int       returns NUM_DIGITAL_PINS
-``?bi pin``       0..1      returns current value of numbered digital input
-``!bo pin v``     0..1      sets numbered digital output to value v
-``!pwm pin v``    0..255    sets numbered PWM digital output to value v
-``!pin pin v``    0..1      sets mode of digital pin to value v (value: 1=OUTPUT, not 1=INPUT)
-``!t``            long      sets averaging time, ms
-``?t``            long      returns averaging time, ms
-``?t:min``        long 	    returns minimum allowed averaging time, ms
-``?t:max``        long 	    returns maximum allowed averaging time, ms
-``!k``            long 	    sets averaging factor (``k``)
-``?k``            long 	    returns averaging factor (``k``)
-``?k:min``        long 	    returns minimum allowed averaging factor (``k``)
-``?k:max``        long 	    returns maximum allowed averaging factor (``k``)
-``?v``            long 	    returns version number
-``?id``           0         returns identification string
-``?rate``         long 	    returns number of updates (technically: loops) per second
-other             ..        returns "ERROR_UNKNOWN_COMMAND:text"
-================  ========  =====================================================================
+
+========================  ========  =====================================================================
+command 		  value     action
+========================  ========  =====================================================================
+:ref:`num_ai`		  int	    returns NUM_ANALOG_INPUTS
+:ref:`get_ai`		  0..1023   returns current value of numbered analog input
+:ref:`watch_ai` 	  0..1      sets up ai pin for averaging
+:ref:`ai_mean`		  long      returns ``<ai>*k``
+:ref:`num_bi`		  int	    returns NUM_DIGITAL_PINS
+:ref:`get_bi`		  0..1      returns current value of numbered digital input
+:ref:`set_bo`		  0..1      sets numbered digital output to value v
+:ref:`set_pwm`		  0..255    sets numbered PWM digital output to value v
+:ref:`set_pin`		  0..1      sets mode of digital pin to value v (value: 1=OUTPUT, not 1=INPUT)
+:ref:`set_period`	  long      sets averaging time, ms
+:ref:`get_period`	  long      returns averaging time, ms
+:ref:`get_period_min`     long      returns minimum allowed averaging time, ms
+:ref:`get_period_max`     long      returns maximum allowed averaging time, ms
+:ref:`set_k`		  long      sets averaging factor (``k``)
+:ref:`get_k`		  long      returns averaging factor (``k``)
+:ref:`get_k_min`	  long      returns minimum allowed averaging factor (``k``)
+:ref:`get_k_max`	  long      returns maximum allowed averaging factor (``k``)
+:ref:`get_version`	  string    returns version string
+:ref:`get_id`		  0	    returns identification string
+:ref:`get_rate` 	  long      returns number of updates (technically: loops) per second
+other			  ..	    returns "ERROR_UNKNOWN_COMMAND:text"
+========================  ========  =====================================================================
 
 notes: 
 
@@ -89,6 +89,9 @@ notes:
    171
 
 
+
+.. index:: !watched channels
+
 .. _watch_ai:
 
 ``!ai:watch``
@@ -104,6 +107,12 @@ notes:
 :example:
    >>> !ai:watch 0 1
    Ok
+
+To optimize the time to process the Arduino's *loop()* function,
+only those ANALOG IN channels to be averaged will be **watched**.
+By default, when the Arduino sketch starts, no channels are watched.
+(That is, the configuration of watched channels is not stored in
+persistent memory on the Arduino.)
 
 
 .. _ai_mean:
@@ -319,6 +328,8 @@ notes:
    1000000
 
 
+.. index:: multiplier
+
 .. _set_k:
 
 ``!k``
@@ -418,12 +429,14 @@ notes:
 ------
 
 :command:  ``?v``
-:returns: Returns the software version number.
+:returns: Returns the software version string.
 
 example:
 
 >>> ?v
-2
+2013-12-01
+
+(Actual value will be different than shown.)
 
 
 .. _get_id:

@@ -3,7 +3,7 @@
  * simple command/response access via USB to Arduino's I/O capabilities
  */
 
-#define SOFTWARE_VERSION       2
+#define SOFTWARE_VERSION       "2014-01-15"
 #define SOFTWARE_ID            "cmd_response"
 
 #define BUFFER_LENGTH          40

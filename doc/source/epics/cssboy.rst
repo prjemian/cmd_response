@@ -1,6 +1,6 @@
 .. $Id$
 
-.. index:: CSS BOY
+.. index:: CSS BOY, EPICS; graphical interface
 
 .. _cssboy:
 

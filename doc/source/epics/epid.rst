@@ -10,7 +10,7 @@ Example: Feedback using the ``epid`` record
 
 .. note: this page is under construction
 
-.. index:: EPICS
+.. index:: EPICS; epid
 
 This example builds on the previous example where a sensor 
 creating a *signal* was connected to the Arduino and monitored 
@@ -45,7 +45,7 @@ of the UMich documentation into terms of the *epid* record.
 Basic PID Theory
 ================
 
-.. index:: process error
+.. index:: !process error, following error
 
 At its heart, PID control is implemented to maintain a time-dependent, 
 measured signal, :math:`M(t)`, at a desired value, :math:`D(t)` 
@@ -69,6 +69,9 @@ general PID equation ([#UMich]_):
 
   Y_n = K_P \epsilon(t) + K_P K_I \sum_i {\epsilon_i \delta t_i} + K_P K_D {\epsilon_n - \epsilon_{n-1} \over \delta t_n}
 
+.. note:: The process error, :math:`\epsilon(t)`, is also
+   known as various other names, such as *following error*.
+
 Outline
 =======
 
@@ -81,6 +84,12 @@ Outline
 Definition of Terms
 ===================
 
+.. index::
+   single: Kp - proportional gain
+   single: Ki - integral gain
+   single: Kd - derivative gain
+   single: process error
+
 ====================== =================================================================
 term                   description
 ====================== =================================================================
@@ -88,7 +97,7 @@ term                   description
 :math:`M(t)`           measured input **signal** as a function of time
 :math:`D(t)`           **set point** (desired value of **signal**) as a function of time
 :math:`Y(t)`           chosen **control** output as a function of time
-:math:`\epsilon(t)`    **following error**: :math:`\epsilon(t) = M(t) - D(t)`
+:math:`\epsilon(t)`    **process error**: :math:`\epsilon(t) = M(t) - D(t)`
 :math:`K`              generalized process **gain**:  :math:`K = {\hbox{change in output} \over \hbox{change in input}}`
 :math:`K_c`            process **gain** constant (from theory, to be determined empirically)
 :math:`T_i`            process integral coefficient (from theory, to be determined empirically)
@@ -98,6 +107,7 @@ term                   description
 :math:`K_D`            derivative gain coefficient (EPICS user input):  :math:`K_D = K_C T_d`
 :math:`\tau`           time for response to complete
 :math:`\tau_d`         dead time before system starts to respond
+:math:`\delta t`       time between samples
 ====================== =================================================================
 
 

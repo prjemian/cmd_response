@@ -1,15 +1,19 @@
 .. $Id$
 
+.. index:: EPICS; Stream Device
+
 .. _streams.protocol:
 
 ================
-Streams protocol
+Stream protocol
 ================
 
 The Arduino is interfaced to EPICS through a USB connection (with *asyn* [#]_)
 and uses the **cmd_response** sketch to define the interface language.
 Software must be written in EPICS to communicate in this new language.
 One easy method is to develop a Stream Device protocol. [#]_
+
+.. index:: technology stack
 
 The communication between the Arduino and the EPICS IOC 
 goes through several layers,  Expanding part of the 

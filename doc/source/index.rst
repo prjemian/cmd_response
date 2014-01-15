@@ -4,18 +4,17 @@
 cmd_response
 ==============================================
 
+---------------------------------------------------------------------
+simple command/response access via USB to Arduino's I/O capabilities
+---------------------------------------------------------------------
+
+:author: Pete R. Jemian <prjemian gmail com>
+:contributors:  Keenan Lang
+
 .. toctree::
    :hidden:
    
    contents
-
-simple command/response access via USB to Arduino's I/O capabilities
-====================================================================
-
-.. rst2pdf -o cmd_response.pdf \
-   --header="$Id$" \
-   --footer="Page ###Page###" \
-   cmd_response.rst
 
 The Arduino family of microcontrollers possess a reasonable
 collection of input and output capabilities.  While there are
@@ -53,7 +52,3 @@ This project is only useful for those Arduino boards
 which have an USB port.
 
 .. [#] http://www.aps.anl.gov/epics
-
-------
-
-documentation built: |today|

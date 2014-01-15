@@ -3,82 +3,92 @@
 #
 # soft link this file to the IOC's boot directory to be found at run time
 
-#Terminator = LF;
-#Terminator = CR;
-#Terminator = CR LF;
+InTerminator = CR LF;
+OutTerminator = LF;
+#ReplyTimeout = 10;
+#LockTimeout = 500;
 
-# TODO: handle error response from Arduino
+# silence most error messages
+ERROR_RESPONSE = "ERROR_.*";
+@mismatch { in $ERROR_RESPONSE; }
+ExtraInput = Ignore;
+
+#     turn on diagnostics with these IOC shell commands:
+#       asynSetTraceIOMask "usb0" 0 2
+#       asynSetTraceMask   "usb0" 0 9
 
 # ai
 ai {
-    out "?ai \$1"; in "%d";
+    out "?ai \$1\n"; 
+    in "%d";
+    
 }
 
 # longout
 ai_mean {
-  out "?ai:mean \$1"; in "%d";
+  out "?ai:mean \$1"; 
+  in "%d";
 
   # configure the digital pin for ADC signal averaging
   @init{ 
-     #ExtraInput = Ignore;
-     out "!ai:watch \$1 1"; in "Ok"; 
+     out "!ai:watch \$1 1"; 
+     in "Ok"; 
   }
 }
 
 # bi
 bi {
-  out "?bi \$1"; in "%d";
+  out "?bi \$1\n"; 
+  in "%d";
 
   # configure the digital pin for digital input
   @init{
-    #ExtraInput = Ignore;
-    out "!pin \$1 0"; in "Ok"; 
+    out "!pin \$1 0"; 
+    in "Ok"; 
   }
 }
 
 # bo
 bo {
-  out "!bo \$1 %d"; in "Ok";
+  out "!bo \$1 %d"; 
+  in "Ok";
 
   # configure the digital pin for PWM/digital output
   @init{
-    #ExtraInput = Ignore;
-    out "!pin \$1 1"; in "Ok"; 
+    out "!pin \$1 1"; 
+    in "Ok"; 
   }
 }
 
 # longout
 pwm {
-  out "!pwm \$1 %d"; in "Ok";
+  out "!pwm \$1 %d"; 
+  in "Ok";
 
   # configure the digital pin for PWM/digital output
   @init{
-    #ExtraInput = Ignore;
-    out "!pin \$1 1"; in "Ok"; 
+    out "!pin \$1 1"; 
+    in "Ok"; 
   }
 }
 
 # ao
 period {
-  out "!t %d"; in "Ok";
+  out "!t %d"; 
+  in "Ok";
 }
 
 # ai
 rate {
-  ExtraInput = Ignore;
-  out "?rate"; in "%d";
-
-  #@mismatch{ in "{ERROR_}%*" }
+  out "?rate"; 
+  in "%d";
 }
 
-# debug
-# {
-#     ExtraInput = Ignore;
-#     out "%s";
-#     in "%39c";
-#
-#     @mismatch{ in "%*{ERROR_}%*" }
-# }
+debug {
+    ExtraInput = Error;
+    out "%s";
+    in "%39c";
+}
 
 ########### SVN repository information ###################
 # $Date$

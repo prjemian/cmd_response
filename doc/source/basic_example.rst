@@ -29,6 +29,7 @@ your Arduino will not respond to your typed commands.)
    Response from the Arduino appears on the next line.
    When entering commands, do not type the ">>>" symbols.
 
+.. _is.our.sketch.running:
 
 Is our sketch running?
 --------------------------
@@ -60,7 +61,7 @@ What is our software version?
 The software version number of the sketch is available:
 
 >>> ?v
-2
+2013-12-01
 
 This number is set in the sketch.
 

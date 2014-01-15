@@ -17,7 +17,7 @@
     </graph_settings>
     <scroll>true</scroll>
     <update_period>3.0</update_period>
-    <start>-13.38 min</start>
+    <start>-12 hours 0.0 seconds</start>
     <end>now</end>
     <time_axis>
         <axis>
@@ -29,8 +29,8 @@
                 <green>33</green>
                 <blue>33</blue>
             </color>
-            <min>1.389565741774E12</min>
-            <max>1.389566543774E12</max>
+            <min>1.389777077848E12</min>
+            <max>1.389820277848E12</max>
             <log_scale>false</log_scale>
             <autoscale>false</autoscale>
             <visible>true</visible>
@@ -58,7 +58,7 @@
     <archive_rescale>NONE</archive_rescale>
     <axes>
         <axis>
-            <name>como:cr:ai0:mean</name>
+            <name>prj:cr:ai0:mean</name>
             <font>1|Sans|9.0|1|GTK|1|</font>
             <scale_font>1|Sans|9.0|0|GTK|1|</scale_font>
             <color>
@@ -66,10 +66,10 @@
                 <green>21</green>
                 <blue>196</blue>
             </color>
-            <min>-0.10199718395259044</min>
-            <max>1.19797165200391</max>
+            <min>0.0</min>
+            <max>5.0</max>
             <log_scale>false</log_scale>
-            <autoscale>true</autoscale>
+            <autoscale>false</autoscale>
             <visible>true</visible>
             <grid_line>
                 <show_grid_line>false</show_grid_line>
@@ -91,8 +91,8 @@
     </annotations>
     <pvlist>
         <pv>
-            <name>como:cr:epid.CVAL</name>
-            <display_name>como:cr:epid.VAL</display_name>
+            <name>prj:cr:epid.VAL</name>
+            <display_name>V_photocell Set Point</display_name>
             <visible>true</visible>
             <axis>0</axis>
             <linewidth>2</linewidth>
@@ -108,8 +108,8 @@
             <request>OPTIMIZED</request>
         </pv>
         <pv>
-            <name>como:cr:ai1:mean</name>
-            <display_name>como:cr:ai1:mean</display_name>
+            <name>prj:cr:ai1:mean</name>
+            <display_name>measured V_led</display_name>
             <visible>true</visible>
             <axis>0</axis>
             <linewidth>2</linewidth>
@@ -125,8 +125,8 @@
             <request>OPTIMIZED</request>
         </pv>
         <pv>
-            <name>como:cr:ai0:mean</name>
-            <display_name>como:cr:ai0:mean</display_name>
+            <name>prj:cr:ai0:mean</name>
+            <display_name>V_photocell</display_name>
             <visible>true</visible>
             <axis>0</axis>
             <linewidth>2</linewidth>

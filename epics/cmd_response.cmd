@@ -6,7 +6,10 @@
 # $Id$
 ########### SVN repository information ###################
 
-# BEGIN serial.cmd for cmd_response  project ------------------------------------------------------------
+# BEGIN cmd_response.cmd ------------------------------------------------------------
+
+# http://www.aps.anl.gov/epics/modules/soft/asyn/R4-18/asynDriver.html
+
 
 #epicsEnvSet("CMD_RESPONSE","/home/prjemian/sketchbook/cmd_response/epics")
 #cd $(CMD_RESPONSE)
@@ -15,25 +18,37 @@
 
 # USB 0 connected to Arduino at 115200 baud
 #drvAsynSerialPortConfigure("portName","ttyName",priority,noAutoConnect, noProcessEos)
-drvAsynSerialPortConfigure("usb0", "/dev/ttyUSB0", 0, 0, 0)
-asynSetOption(usb0,0,baud,115200)
-
 #asynOctetSetInputEos(const char *portName, int addr, const char *eosin,const char *drvInfo)
-asynOctetSetInputEos("usb0",0,"\r\n")
-
-# asynOctetSetOutputEos(const char *portName, int addr, const char *eosin,const char *drvInfo)
-asynOctetSetOutputEos("usb0",0,"\n")
+#asynOctetSetOutputEos(const char *portName, int addr, const char *eosin,const char *drvInfo)
 
 # Make port available from the iocsh command line
-#asynOctetConnect(const char *entry, const char *port, int addr, int timeout, int buffer_len, const char *drvInfo)
-asynOctetConnect("usb0", "usb0")
+#asynOctetConnect(const char *entry, const char *port, int addr, int timeout_ms, int buffer_len, const char *drvInfo)
 
-# Load asynRecord records on all ports
-dbLoadTemplate("asynRecord.substitutions")
+# define the serial port and connect it with asyn
+#dbLoadRecords("$(ASYN)/db/asynRecord.db","P=$(IOC_PREFIX)cr:,PORT=usb0,R=asyn_1,ADDR=0,OMAX=256,IMAX=256")
 
-# send impromptu message to serial device, parse reply
-# (was serial_OI_block)
-#dbLoadRecords("$(CMD_RESPONSE)/cmd_response.db","P=$(IOC_PREFIX)cr:,PORT=usb0")
+# define specific Arduino I/O to be used
+#dbLoadRecords("cmd_response.db","P=$(IOC_PREFIX)cr:,PORT=usb0")
+
+
+drvAsynSerialPortConfigure("usb0", "/dev/ttyUSB0", 0, 0, 0)
+asynSetOption(usb0, 0, baud, 115200)
+asynOctetSetInputEos("usb0", 0, "\r\n")
+asynOctetSetOutputEos("usb0", 0, "\n")
+
+asynOctetConnect("usb0", "usb0", 0, 10)
+
+# ask device to report device ID string
+asynOctetWriteRead("usb0","?id\n")
+
+# ask device to report device software version
+asynOctetWriteRead("usb0","?v\n")
+
+dbLoadRecords("$(ASYN)/db/asynRecord.db","P=$(IOC_PREFIX)cr:,PORT=usb0,R=asyn_1,ADDR=0,OMAX=256,IMAX=256")
 dbLoadRecords("cmd_response.db","P=$(IOC_PREFIX)cr:,PORT=usb0")
 
-# END serial.cmd --------------------------------------------------------------
+# turn on diagnostics:
+#   asynSetTraceIOMask "usb0" 0 2
+#   asynSetTraceMask   "usb0" 0 9
+
+# END cmd_response.cmd --------------------------------------------------------------
