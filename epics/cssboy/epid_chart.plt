@@ -17,7 +17,7 @@
     </graph_settings>
     <scroll>true</scroll>
     <update_period>3.0</update_period>
-    <start>-12 hours 0.0 seconds</start>
+    <start>-5 minutes 0.0 seconds</start>
     <end>now</end>
     <time_axis>
         <axis>
@@ -29,8 +29,8 @@
                 <green>33</green>
                 <blue>33</blue>
             </color>
-            <min>1.389777077848E12</min>
-            <max>1.389820277848E12</max>
+            <min>1.389845780838E12</min>
+            <max>1.389846080838E12</max>
             <log_scale>false</log_scale>
             <autoscale>false</autoscale>
             <visible>true</visible>
@@ -58,7 +58,7 @@
     <archive_rescale>NONE</archive_rescale>
     <axes>
         <axis>
-            <name>prj:cr:ai0:mean</name>
+            <name>ino:cr:ai0:mean</name>
             <font>1|Sans|9.0|1|GTK|1|</font>
             <scale_font>1|Sans|9.0|0|GTK|1|</scale_font>
             <color>
@@ -91,7 +91,7 @@
     </annotations>
     <pvlist>
         <pv>
-            <name>prj:cr:epid.VAL</name>
+            <name>ino:cr:epid.VAL</name>
             <display_name>V_photocell Set Point</display_name>
             <visible>true</visible>
             <axis>0</axis>
@@ -108,7 +108,7 @@
             <request>OPTIMIZED</request>
         </pv>
         <pv>
-            <name>prj:cr:ai1:mean</name>
+            <name>ino:cr:ai1:mean</name>
             <display_name>measured V_led</display_name>
             <visible>true</visible>
             <axis>0</axis>
@@ -125,7 +125,7 @@
             <request>OPTIMIZED</request>
         </pv>
         <pv>
-            <name>prj:cr:ai0:mean</name>
+            <name>ino:cr:ai0:mean</name>
             <display_name>V_photocell</display_name>
             <visible>true</visible>
             <axis>0</axis>
