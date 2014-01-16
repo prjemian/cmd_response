@@ -17,7 +17,7 @@
     </graph_settings>
     <scroll>true</scroll>
     <update_period>3.0</update_period>
-    <start>-5 minutes 0.0 seconds</start>
+    <start>-10 minutes 0.0 seconds</start>
     <end>now</end>
     <time_axis>
         <axis>
@@ -29,8 +29,8 @@
                 <green>33</green>
                 <blue>33</blue>
             </color>
-            <min>1.389845780838E12</min>
-            <max>1.389846080838E12</max>
+            <min>1.389893716454E12</min>
+            <max>1.389894316454E12</max>
             <log_scale>false</log_scale>
             <autoscale>false</autoscale>
             <visible>true</visible>
