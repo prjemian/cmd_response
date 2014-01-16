@@ -3,7 +3,7 @@
   <auto_zoom_to_fit_all>false</auto_zoom_to_fit_all>
   <macros>
     <include_parent_macros>true</include_parent_macros>
-    <IOC>prj:cr:</IOC>
+    <IOC>ino:cr:</IOC>
   </macros>
   <wuid>-852aef4:1437ad69c4f:-7ffe</wuid>
   <boy_version>3.2.10.20131106</boy_version>

@@ -44,8 +44,8 @@ asynOctetWriteRead("usb0","?id\n")
 # ask device to report device software version
 asynOctetWriteRead("usb0","?v\n")
 
-dbLoadRecords("$(ASYN)/db/asynRecord.db","P=$(IOC_PREFIX)cr:,PORT=usb0,R=asyn_1,ADDR=0,OMAX=256,IMAX=256")
-dbLoadRecords("cmd_response.db","P=$(IOC_PREFIX)cr:,PORT=usb0")
+dbLoadRecords("$(ASYN)/db/asynRecord.db","P=$(INO)cr:,PORT=usb0,R=asyn_1,ADDR=0,OMAX=256,IMAX=256")
+dbLoadRecords("cmd_response.db","P=$(INO)cr:,PORT=usb0")
 
 # turn on diagnostics:
 #   asynSetTraceIOMask "usb0" 0 2
