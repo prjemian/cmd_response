@@ -17,11 +17,12 @@ creating a *signal* was connected to the Arduino and monitored
 from EPICS.  An LED was connected to the Arduino to 
 *control* (or modify) the first signal.
 
-.. index:: mood lighting
+.. index:: constant lighting
 
 This example will control the output of the LED based on the signal from the sensor.
 We'll test our controls by changing the background lighting levels and the
-desired signal level from the sensor.  In effect, we are building **mood lighting**.
+desired signal level from the sensor.  In effect, we are building 
+**constant lighting** (maintaining a constant level of illumination).
 
 Requirements:
 
@@ -75,11 +76,7 @@ general PID equation ([#UMich]_):
 Outline
 =======
 
-* define the example
-* describe the variables
-* describe the *epid* configuration (starting with default)
-* set an initial value of :math:`K_p`
-* measure the system response
+.. define the example
 
 Definition of Terms
 ===================
@@ -110,6 +107,93 @@ term                   description
 :math:`\delta t`       time between samples
 ====================== =================================================================
 
+
+.. _epid.configuration:
+
+Configuration of *epid*
+=====================================
+
+.. describe the *epid* configuration (starting with default)
+
+-tba-
+
+
+.. _adjust.pid.terms:
+
+Adjusting :math:`K_p`, :math:`K_i`, and :math:`K_d`
+==========================================================
+
+.. set an initial value of :math:`K_p`
+
+-tba-
+
+
+.. _measure.system.response:
+
+Measure the System Response
+===========================
+
+Once the PID parameters are adjusted for the local particulars,
+the performance can be demonstrated by charting :math:`D(t)`,
+:math:`M(t)`, and :math:`Y(t)`.  The next figure shows such
+a chart for a few days in January, Chicago area.
+
+.. figure:: CSSBOY_epid_chart.png
+   :alt: fig.CSSBOY_epid_chart
+   :width: 50%
+   :align: center
+   
+   Example operation of *epid* feedback for several days
+   (:download:`CSSBOY_epid_chart.png`).  Colors:
+   :math:`D(t)` (set point, blue),
+   :math:`M(t)` (photocell, red),
+   :math:`Y(t)` (LED, green)
+
+.. sidebar:: Average :math:`Y(t)`
+
+   Here, we say :math:`Y(t)` when we actually refer the
+   time-averaged :math:`\left<Y(t)\right>` reported as *mean V_LED, VDC*.
+   The instantaneous V_LED takes the values of 0 or :math:`V_{cc}`
+   as the PWM modulates the apparent brightness of the LED.
+   
+   :PWM: 
+      * http://arduino.cc/en/Tutorial/PWM
+      * http://arduino.cc/en/Tutorial/SecretsOfArduinoPWM
+
+The chart, at first, shows steady-state operations of a tuned PID loop.
+With :math:`M(t)=\mbox{1.3}`, the loop varies the LED brightness (:math:`Y(t)`)
+to hold :math:`M(t)` steady.  At night, the LED is brightest.  During the day,
+the LED brightness is reduced to maintain the chosen set point.  
+
+Some time on 01-28, the *epid* feedback was turned off (manually) and
+:math:`Y(t)` was set to zero.  In this case, the ambient light level 
+is recorded by :math:`M(t)`.  On 01-29, :math:`D(t)` was also set to zero.
+Since the *epid* loop was off, this change had not effect.  Note that in 
+the overnight period, the sensor was not able to detect variations in
+the ambient darkness.  Selection of different resistors would improve the 
+nighttime sensitivity but that is for a different project.  With the 
+feedback on, the signal is within range of both the photocell and the
+LED such that :math:`Y(t)` can be used to correlate lighting conditions
+at any time of day or night.
+
+Later on 01-29, the *epid* feedback was resumed and the loop locked in 
+within the charted sampling period.  Actual time for lockin with the terms
+shown was within 10 seconds.
+
+.. Note that :math:`Y(t)` has much less apparent
+   jitter than :math:`Y(t)`.
+
+Spikes in the photocell signal, :math:`M(t)`, appear on 01-30 and are
+likely due to USB communications errors between EPICS and the Arduino.
+The short-lived spikes have no obvious effect on the *epid* operations.
+
+The variations of :math:`Y(t)` on 01-30 correlate with ambient conditions
+on that day (reflections from passing traffic, lighting, weather) and indicate
+the response of the *epid* controls to changing conditions as it
+maintains the chosen set point.
+
+When *epid* feedback is turned on, the lighting level is held constant.
+At this point, we declare *success* and finish this document.
 
 References
 ==========

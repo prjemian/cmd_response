@@ -1,15 +1,11 @@
 .. $Id$
 
-.. index:: !EPICS
-.. index:: example; EPICS mood lighting
-
-.. The concept of mood lighting may be catchy but misleading.
-   Think of something much better.
+.. index:: !EPICS constant lighting
 
 .. _epics:
 
-Example: Mood Lighting with EPICS
-#################################
+Example: Constant Lighting with EPICS
+###############################################
 
 .. sidebar::  EPICS jargon approaching!
 
@@ -30,7 +26,10 @@ Example: Mood Lighting with EPICS
 Our goal here is to integrate the Arduino into EPICS
 using the **cmd_response** and demonstrate it as a 
 sensor interface using PID controls.  
-We'll make *mood lighting*.
+We'll make *constant lighting* (maintain a constant level of lighting).
+Is this a useful thing to do?  It's useful here to demonstrate
+how PID works in a very safe way; no moving parts, all contacts 
+are low voltage and pose no significant electrical hazard.
 
 In our earlier Python example (see :ref:`python_sequence`),
 the live information from the Arduino was only available
