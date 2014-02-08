@@ -1,5 +1,3 @@
-.. $Id$
-
 .. index:: !EPICS constant lighting
 
 .. _epics:

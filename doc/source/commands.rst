@@ -1,5 +1,3 @@
-.. $Id$
-
 .. _commands:
 
 USB command interface

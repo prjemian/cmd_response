@@ -1,5 +1,3 @@
-.. $Id$
-
 .. index:: EPICS; IOC startup
 
 .. _IOC.commands:

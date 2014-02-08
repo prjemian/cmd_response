@@ -1,5 +1,3 @@
-.. $Id$
-
 .. index:: example; Python program
 
 .. _python_sequence:

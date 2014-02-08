@@ -89,11 +89,3 @@ debug {
     out "%s";
     in "%39c";
 }
-
-########### SVN repository information ###################
-# $Date$
-# $Author$
-# $Revision$
-# $URL$
-# $Id$
-########### SVN repository information ###################

@@ -1,5 +1,3 @@
-.. $Id$
-
 .. index:: EPICS; database
 
 .. _pv.database:

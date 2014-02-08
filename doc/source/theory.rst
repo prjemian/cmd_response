@@ -1,6 +1,3 @@
-.. $Id$
-
-
 .. index:: !goals
 
 .. _theory:

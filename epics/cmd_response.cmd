@@ -1,16 +1,10 @@
-########### SVN repository information ###################
-# $Date$
-# $Author$
-# $Revision$
-# $URL$
-# $Id$
-########### SVN repository information ###################
 
 # BEGIN cmd_response.cmd ------------------------------------------------------------
 
 # http://www.aps.anl.gov/epics/modules/soft/asyn/R4-18/asynDriver.html
 
 
+############ documentation for the IOC commands #################################
 #epicsEnvSet("CMD_RESPONSE","/home/prjemian/sketchbook/cmd_response/epics")
 #cd $(CMD_RESPONSE)
 
@@ -29,6 +23,7 @@
 
 # define specific Arduino I/O to be used
 #dbLoadRecords("cmd_response.db","P=$(IOC_PREFIX)cr:,PORT=usb0")
+############################################################################
 
 
 drvAsynSerialPortConfigure("usb0", "/dev/ttyUSB0", 0, 0, 0)

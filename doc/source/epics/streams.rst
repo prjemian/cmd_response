@@ -1,5 +1,3 @@
-.. $Id$
-
 .. index:: EPICS; Stream Device
 
 .. _streams.protocol:

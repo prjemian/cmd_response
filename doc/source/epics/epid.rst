@@ -1,5 +1,3 @@
-.. $Id$
-
 .. index:: example; EPICS epid record
 
 .. _epid_example:

@@ -189,11 +189,3 @@ record(epid, "$(P)epid") {
 #  setenv P ino:
 #  export P=ino:
 #  pvview ${P}cr:{pwm11,ai{0,1,2}:mean,{rate,period},cmd}{.DESC,} &
-
-########### SVN repository information ###################
-# $Date$
-# $Author$
-# $Revision$
-# $URL$
-# $Id$
-########### SVN repository information ###################
