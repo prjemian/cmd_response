@@ -4,7 +4,8 @@
 Installation, Downloads, Licensing
 ==================================
 
-This project is available on github.com.
+:URL: http://prjemian.github.io/cmd_response
+:git: https://github.com/prjemian/cmd_response
 
 
 
@@ -15,7 +16,15 @@ This project is available on github.com.
 Installation
 ----------------
 
-TODO
+On Linux::
+
+  cd ~/sketchbook
+  git clone https://github.com/prjemian/cmd_response
+
+On Windows:
+
+   Clone the same GitHub repository into the User's
+   *Documents/Arduino* directory.
 
 
 
@@ -26,7 +35,7 @@ TODO
 Downloads
 ----------------
 
-TODO
+See GitHub clone procedure above.
 
 
 .. index:: license

@@ -54,7 +54,7 @@ copyright = u'2013,2014 Pete R Jemian'
 # built documents.
 #
 # The short X.Y version.
-version = '2014_01'
+version = '2014.02.21'
 # The full version, including alpha/beta/rc tags.
 release = version
 

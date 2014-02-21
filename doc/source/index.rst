@@ -9,6 +9,8 @@ simple command/response access via USB to I/O capabilities of Arduino Microcontr
 
 :author: Pete R. Jemian <prjemian gmail com>
 :contributors:  Keenan Lang
+:URL: http://prjemian.github.io/cmd_response
+:git: https://github.com/prjemian/cmd_response
 
 .. toctree::
    :hidden:

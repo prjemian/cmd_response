@@ -9,11 +9,8 @@ simple command/response access via USB to I/O capabilities of Arduino Microcontr
 
 :author: Pete R. Jemian <prjemian gmail com>
 :contributors:  Keenan Lang
-
-.. toctree::
-   :hidden:
-   
-   contents
+:URL: http://prjemian.github.io/cmd_response
+:git: https://github.com/prjemian/cmd_response
 
 The Arduino family of microcontrollers possess a reasonable
 collection of input and output capabilities.  While there are
@@ -34,8 +31,6 @@ to operate properly using these Arduino boards:
 
 I/O System Interface
 ====================
-
-.. index:: EPICS
 
 The Arduino can contribute its collection of
 I/O capabilities to an external control system, 
