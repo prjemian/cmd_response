@@ -155,6 +155,60 @@ All **watched channels** are accumulated during each
 averaging period.  The averages (for just the watched channels)
 and update rate are recomputed *only* at the end of each period.
 
+How well does Signal Averaging work?
+++++++++++++++++++++++++++++++++++++++
+
+In the next figure [#]_ are plotted (vs. time) the instantaneous 
+signal (green), sampled regularly at twice per second and the
+time-averaged signal (red) as described.  Here, the averaging period
+is 0.5 seconds.  The sensor is a light-dependent resistor 
+(photoresistor) sensing a slowly decreasing signal (the 
+afternoon sun light intensity, also known as *ambient 
+solar intensity*).
+
+..	figure:: signal-averaging.png
+	:alt: fig.signal-averaging
+	:width: 70%
+	:align: center
+
+	Ambient solar intensity vs. time.  
+	Green: instantaneous signal sampled at 2 Hz.
+	Red: time-average signal with 0.5 second averaging time.
+	(:download:`signal-averaging.png`)
+
+Observe how the time-averaged signal does not vary smoothly
+with the slowly decreasing light level.  Instead, it follows 
+more closely a smooth step-wise descent.  The steps correlate
+with the discrete values of the 10-bit ADC channel (see the 
+green curve).
+
+About 15:43, the averaging period was changed to 1.0 seconds.
+The chart is shown again, with both older and newer data.
+Note the effect of passing clouds on the signal at 15:50 and 16:02.
+
+..	figure:: signal-averaging-longer.png
+	:alt: fig.signal-averaging-longer
+	:width: 70%
+	:align: center
+
+	Ambient solar intensity vs. time.  
+	Green: instantaneous signal sampled at 2 Hz.
+	Red: time-average signal with 0.5 second averaging time
+	(1.0 second averaging after 15:43).
+	(:download:`signal-averaging-longer.png`)
+
+We conclude that the signal averaging method used here smooths
+the signal quite a bit but favors values close to the native 
+precision of the ADC.  
+The general trend of decreasing ambient solar intensity with time
+is apparent but we have gained an artefact that suggests the
+intensity is slowly oscillating.  This is not a natural phenomenon.
+For all our effort, we improved 
+our immunity to the noise and variation of single ADC measurements,
+with only a modest increase in the precision of our measurement.
+
+.. [#] These charts are created using the EPICS system 
+   we describe later.  See: :ref:`cssboy`.
 
 Startup
 -----------------
