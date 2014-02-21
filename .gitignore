@@ -11,4 +11,6 @@
 *.lai
 *.la
 *.a
-/.pydevproject
+
+*.pyc
+doc/build

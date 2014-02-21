@@ -64,6 +64,7 @@ stack (*Arduino* and *USB*).
 Moving upwards, our EPICS interface (where we integrate
 the Arduino with an EPICS IOC) consists of three files:
 
+* :ref:`installing.epics`
 * :ref:`streams.protocol`
 * :ref:`pv.database`
 * :ref:`IOC.commands`
@@ -81,6 +82,7 @@ Finally, we describe the PID controls:
    :glob:
    :hidden:
    
+   installing
    streams
    database
    ioc
