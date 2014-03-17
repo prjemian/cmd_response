@@ -6,7 +6,7 @@
 
 ############ documentation for the IOC commands #################################
 #epicsEnvSet("CMD_RESPONSE","/home/prjemian/sketchbook/cmd_response/epics")
-#cd $(CMD_RESPONSE)
+#cd ${CMD_RESPONSE}
 
 # Set up 1 local serial port(s)
 
