@@ -62,6 +62,14 @@ This shows the effectiveness of signal averaging.  [#]_
 .. automodule:: sequence
     :members: 
 
+Program Source Code
+-------------------
+
+The full python program relies on the additional package *pyserial*:
+
+.. literalinclude:: ../../../python/sequence.py
+   :linenos:
+
 Program Output
 --------------
 
