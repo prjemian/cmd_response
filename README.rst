@@ -11,6 +11,10 @@ simple command/response access via USB to I/O capabilities of Arduino Microcontr
 :contributors:  Keenan Lang
 :URL: http://prjemian.github.io/cmd_response
 :git: https://github.com/prjemian/cmd_response
+:citation: 
+    .. image:: https://zenodo.org/badge/16655053.svg
+       :target: https://zenodo.org/badge/latestdoi/16655053
+       :alt:  DOI: 10.5281/zenodo.1471693
 
 The Arduino family of microcontrollers possess a reasonable
 collection of input and output capabilities.  While there are
