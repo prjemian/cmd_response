@@ -16,6 +16,19 @@ EPICS on RaspberryPi
 
 This document is an update to http://prjemian.github.io/epicspi/
 
+.. sidebar:: What is EPICS?
+
+   For those who haven’t heard, EPICS (https://epics.anl.gov) is an
+   open-source control system used worldwide for the routine operation and
+   control of many particle accelerators such as FermiLab and SLAC, for the
+   operation of scientific telescopes such as the Gemini and Keck
+   telescopes, X-ray synchrotrons such as the Advanced Photon Source and
+   the Diamond Light Source, neutron diffraction facilities such as the
+   Spallation Neutron Source, and lots of other neat stuff. The system is
+   scalable and runs on lots of different hardware. Here, we show you how
+   to run EPICS on the Raspberry Pi!
+
+
 Overview
 --------
 
@@ -42,19 +55,6 @@ has Python, we’ll work with that:
 -  `PyEpics <https://cars9.uchicago.edu/software/python/pyepics3/>`__ is
    an EPICS binding to the Python language, allowing us to build a
    simple client and interact with our server.
-
-What is EPICS?
---------------
-
-For those who haven’t heard, EPICS (https://epics.anl.gov) is an
-open-source control system used worldwide for the routine operation and
-control of many particle accelerators such as FermiLab and SLAC, for the
-operation of scientific telescopes such as the Gemini and Keck
-telescopes, X-ray synchrotrons such as the Advanced Photon Source and
-the Diamond Light Source, neutron diffraction facilities such as the
-Spallation Neutron Source, and lots of other neat stuff. The system is
-scalable and runs on lots of different hardware. Here, we show you how
-to run EPICS on the Raspberry Pi!
 
 Prepare the RaspberryPi (RPi)
 -----------------------------
