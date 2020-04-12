@@ -83,6 +83,7 @@ Finally, we describe the PID controls:
    :hidden:
    
    installing
+   rpi_epics
    streams
    database
    ioc
