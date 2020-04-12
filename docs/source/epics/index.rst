@@ -3,7 +3,7 @@
 CONTENTS
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :glob:
    
    installing
