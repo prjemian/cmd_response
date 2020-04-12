@@ -280,12 +280,13 @@ guide, I show the single CPU build:
 
 This process took different times on different RPi models as shown:
 
-============  =============  ==========================================
-model         time, minutes  ``grep "model name" /proc/cpuinfo``
-============  =============  ==========================================
-Model B v1.1  82             ``ARMv7 Processor rev 4 (v7l)``
-Zero W        266            ``ARMv6-compatible processor rev 7 (v6l)``
-============  =============  ==========================================
+============  =======  =============  ==========================================
+model         options  time, minutes  ``grep "model name" /proc/cpuinfo``
+============  =======  =============  ==========================================
+Model 3 B     `-j2`    34             ``ARMv7 Processor rev 4 (v7l)``
+Model B v1.1           82             ``ARMv7 Processor rev 4 (v7l)``
+Zero W                 266            ``ARMv6-compatible processor rev 7 (v6l)``
+============  =======  =============  ==========================================
 
 (For comparison, this same process to build the same version of EPICS
 base on a linux-x86_64 host with 8 cores at 1.6HGz/3.1GHz using
@@ -392,12 +393,13 @@ Next, build *synApps*:
 
 This process took different times on different RPi models as shown:
 
-============  =============  ==========================================
-model         time, minutes  ``grep "model name" /proc/cpuinfo``
-============  =============  ==========================================
-Model B v1.1  TODO           ``ARMv7 Processor rev 4 (v7l)``
-Zero W        TODO           ``ARMv6-compatible processor rev 7 (v6l)``
-============  =============  ==========================================
+============  =======  =============  ==========================================
+model         options  time, minutes  ``grep "model name" /proc/cpuinfo``
+============  =======  =============  ==========================================
+Model 3 B     `-j2`    TODO           ``ARMv7 Processor rev 4 (v7l)``
+Model B v1.1           TODO           ``ARMv7 Processor rev 4 (v7l)``
+Zero W                 283            ``ARMv6-compatible processor rev 7 (v6l)``
+============  =======  =============  ==========================================
 
 (For comparison, this same process to build the same version of EPICS
 base on a linux-x86_64 host with 8 cores at 1.6HGz/3.1GHz using

@@ -7,7 +7,6 @@ CONTENTS
    :glob:
    
    installing
-   rpi_epics
    streams
    database
    ioc
