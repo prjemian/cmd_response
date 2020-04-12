@@ -1,6 +1,20 @@
-.. index:: !EPICS constant lighting
-
 .. _epics:
+
+CONTENTS
+
+.. toctree::
+   :maxdepth: 1
+   :glob:
+   
+   installing
+   rpi_epics
+   streams
+   database
+   ioc
+   cssboy
+   epid
+
+.. index:: !EPICS constant lighting
 
 Example: Constant Lighting with EPICS
 ###############################################
@@ -76,16 +90,3 @@ Then we describe the tool to simplify observation of this system:
 Finally, we describe the PID controls:
 
 * :ref:`epid_example`
-
-.. toctree::
-   :maxdepth: 1
-   :glob:
-   :hidden:
-   
-   installing
-   rpi_epics
-   streams
-   database
-   ioc
-   cssboy
-   epid
