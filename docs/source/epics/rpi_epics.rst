@@ -1,7 +1,7 @@
 .. _rpi_epics:
 
-EPICS on RaspberryPi
-====================
+Installing EPICS on RaspberryPi
+===============================
 
 .. caution: work-in-progress
 
