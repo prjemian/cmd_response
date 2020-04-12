@@ -3,10 +3,16 @@
 EPICS on RaspberryPi
 ====================
 
-date: 2020-04-10 models: any (but older ones are much slower)
-requirements: 16GB SD card (micro for most models), networking
-optional: display, keyboard, mouse (only needed for initial setup)
-shell: ``/bin/bash``
+.. caution: work-in-progress
+
+:date:
+  2020-04-10 models: any (but older ones are much slower)
+:requirements:
+  16GB SD card (micro for most models), networking
+:optional:
+  display, keyboard, mouse (only needed for initial setup)
+:shell:
+  ``/bin/bash``
 
 This document is an update to http://prjemian.github.io/epicspi/
 
