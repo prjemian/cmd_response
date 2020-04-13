@@ -63,8 +63,8 @@ has Python, we’ll work with that:
 Prepare the RaspberryPi (RPi)
 -----------------------------
 
-1. OS: download latest OS image from one of the Raspbian
-   Mirrors](https://www.raspbian.org/RaspbianMirrors)
+1. OS: download latest OS image from one of the `Raspbian
+   Mirrors <https://www.raspbian.org/RaspbianMirrors>`__
 2. flash the OS to a 16GB microSD card using `Balena
    Etcher <https://www.balena.io/etcher/>`__ (or some other tool)
 3. prepare the RPi
@@ -630,6 +630,7 @@ EPICS area detector    https://cars9.uchicago.edu/software/epics/areaDetector.ht
 EPICS synApps          https://www.aps.anl.gov/BCDA/synApps
 PyEpics                https://cars9.uchicago.edu/software/python/pyepics3/
 Raspbian OS            https://www.raspbian.org
+Raspbian OS Mirrors    https://www.raspbian.org
 Raspberry Pi           https://www.raspberrypi.org
 VSCode                 https://pimylifeup.com/raspberry-pi-visual-studio-code/
 Touchscreen rotation   https://raspberrypiprojects.com/raspberry-pi-rotate-touch-screen/
