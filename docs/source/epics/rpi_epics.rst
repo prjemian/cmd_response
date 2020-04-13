@@ -130,8 +130,8 @@ C-like language to provide programming used by other *synApps* modules.
 additional libraries for EPICS area detector
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-These packages must be added to build GraphicsMagick for EPICS area
-detector.
+These packages must be added to build *GraphicsMagick* for 
+*EPICS area detector*.
 
 ::
 
