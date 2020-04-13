@@ -12,5 +12,9 @@
 *.la
 *.a
 
+# Python
 *.pyc
 docs/build
+
+# Microsoft VSCode editor
+.vscode/
