@@ -6,9 +6,13 @@ Installing EPICS on RaspberryPi
 .. caution: work-in-progress
 
 :date:
-  2020-04-10 models: any (but older ones are much slower)
+  2020-04-10
+:RPi models:
+  any (but older ones are much slower)
 :requirements:
   16GB SD card (micro for most models), networking
+:Raspberry Pi OS:
+  Raspbian Buster
 :optional:
   display, keyboard, mouse (only needed for initial setup)
 :shell:
@@ -621,12 +625,12 @@ References
 software               URL
 =====================  ==================================
 Balena Etcher          https://www.balena.io/etcher
+EPICS                  https://epics.anl.gov/
 EPICS area detector    https://cars9.uchicago.edu/software/epics/areaDetector.html
 EPICS synApps          https://www.aps.anl.gov/BCDA/synApps
-EPICS                  https://epics.anl.gov/
 PyEpics                https://cars9.uchicago.edu/software/python/pyepics3/
-RaspberryPi            https://www.raspberrypi.org
 Raspbian OS            https://www.raspbian.org
+Raspberry Pi           https://www.raspberrypi.org
 VSCode                 https://pimylifeup.com/raspberry-pi-visual-studio-code/
-Touschscreen rotation  https://raspberrypiprojects.com/raspberry-pi-rotate-touch-screen/
+Touchscreen rotation   https://raspberrypiprojects.com/raspberry-pi-rotate-touch-screen/
 =====================  ==================================
