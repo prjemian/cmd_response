@@ -400,7 +400,7 @@ This process took different times on different RPi models as shown:
 ============  =======  =============  ==========================================
 model         options  time, minutes  ``grep "model name" /proc/cpuinfo``
 ============  =======  =============  ==========================================
-Model 3 B     `-j2`    TODO           ``ARMv7 Processor rev 4 (v7l)``
+Model 3 B     `-j2`    40             ``ARMv7 Processor rev 4 (v7l)``
 Model B v1.1           TODO           ``ARMv7 Processor rev 4 (v7l)``
 Zero W                 283            ``ARMv6-compatible processor rev 7 (v6l)``
 ============  =======  =============  ==========================================
