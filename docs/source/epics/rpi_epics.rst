@@ -403,7 +403,7 @@ Next, build *synApps*:
 
 ::
 
-   cd /usr/local/epics/$(SYNAPPS_DIR)/support
+   cd /usr/local/epics/${SYNAPPS_DIR}/support
    logmake &
    tail -f makelog.txt
 
@@ -412,9 +412,9 @@ This process took different times on different RPi models as shown:
 ==============  =======  =============  ==========================================
 model           options  time, minutes  ``grep "model name" /proc/cpuinfo``
 ==============  =======  =============  ==========================================
-Model 4 B 4GB   ``-j2``  TODO           ``ARMv7 Processor rev 4 (v7l)``
+Model 4 B 4GB   ``-j2``  21             ``ARMv7 Processor rev 4 (v7l)``
 Model 3 B       ``-j2``  40             ``ARMv7 Processor rev 4 (v7l)``
-2 Model B v1.1           TODO           ``ARMv7 Processor rev 4 (v7l)``
+2 Model B v1.1  ``-j2``  TODO           ``ARMv7 Processor rev 4 (v7l)``
 Zero W                   283            ``ARMv6-compatible processor rev 7 (v6l)``
 ==============  =======  =============  ==========================================
 
