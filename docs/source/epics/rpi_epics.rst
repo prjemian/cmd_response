@@ -288,15 +288,16 @@ guide, I show the single CPU build:
 
 This process took different times on different RPi models (and ``make`` options) as shown:
 
-==============  =======  =============  ==========================================
-model           options  time, minutes  ``grep "model name" /proc/cpuinfo``
-==============  =======  =============  ==========================================
-Model 4 B 4GB   ``-j2``  18             ``ARMv7 Processor rev 4 (v7l)``
-Model 4 B 4GB            32             ``ARMv7 Processor rev 4 (v7l)``
-Model 3 B       ``-j2``  34             ``ARMv7 Processor rev 4 (v7l)``
-Model B v1.1             82             ``ARMv7 Processor rev 4 (v7l)``
-Zero W                   266            ``ARMv6-compatible processor rev 7 (v6l)``
-==============  =======  =============  ==========================================
+================  =======  =============  ==========================================
+model             options  time, minutes  ``grep "model name" /proc/cpuinfo``
+================  =======  =============  ==========================================
+Model 4 B 4GB     ``-j2``  18             ``ARMv7 Processor rev 4 (v7l)``
+Model 4 B 4GB              32             ``ARMv7 Processor rev 4 (v7l)``
+Model 3 B         ``-j2``  34             ``ARMv7 Processor rev 4 (v7l)``
+2 Model B v1.1    ``-j2``  82             ``ARMv7 Processor rev 4 (v7l)``
+2 Model B v1.1             110            ``ARMv7 Processor rev 4 (v7l)``
+Zero W                     266            ``ARMv6-compatible processor rev 7 (v6l)``
+================  =======  =============  ==========================================
 
 (For comparison, this same process to build the same version of EPICS
 base on a linux-x86_64 host with 8 cores at 1.6HGz/3.1GHz using
@@ -631,6 +632,9 @@ use shell expansion with parentheses as the delimiters, such as:
 References
 ----------
 
+Software
+~~~~~~~~
+
 =====================  ==================================
 software               URL
 =====================  ==================================
@@ -644,11 +648,26 @@ Raspbian OS Mirrors    https://www.raspbian.org
 Raspberry Pi           https://www.raspberrypi.org
 VSCode                 https://pimylifeup.com/raspberry-pi-visual-studio-code/
 Touchscreen rotation   https://raspberrypiprojects.com/raspberry-pi-rotate-touch-screen/
-Wikipedia              https://en.wikipedia.org/wiki/Raspberry_Pi#Generations_of_released_models
 =====================  ==================================
 
+
+Hardware
+~~~~~~~~
+
+References for the Raspberry Pi models shown above:
+
+==============  =================
+hardware        URL
+==============  =================
+Model 4 B 4GB   https://www.raspberrypi.org/products/raspberry-pi-4-model-b/
+Model 3 B       https://www.raspberrypi.org/products/raspberry-pi-3-model-b/
+2 Model B v1.1  https://www.raspberrypi.org/products/raspberry-pi-2-model-b/
+Zero W          https://www.raspberrypi.org/products/raspberry-pi-zero-w/
+Wikipedia       https://en.wikipedia.org/wiki/Raspberry_Pi#Generations_of_released_models
+==============  =================
+
 Facilities
-----------
+~~~~~~~~~~
 
 These facilities are some of the many that use EPICS (https://epics-controls.org/):
 
