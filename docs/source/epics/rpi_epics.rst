@@ -646,3 +646,20 @@ VSCode                 https://pimylifeup.com/raspberry-pi-visual-studio-code/
 Touchscreen rotation   https://raspberrypiprojects.com/raspberry-pi-rotate-touch-screen/
 Wikipedia              https://en.wikipedia.org/wiki/Raspberry_Pi#Generations_of_released_models
 =====================  ==================================
+
+Facilities
+----------
+
+These facilities are some of the many that use EPICS (https://epics-controls.org/):
+
+==============================  ===================
+EPICS facility                  URL
+==============================  ===================
+Advanced Photon Source          https://www.aps.anl.gov
+Diamond Light Source            https://diamond.ac.uk
+FermiLab                        https://fnal.gov
+Gemini telescope                https://gemini.edu
+Keck telescope                  https://keckobservatory.org
+SLAC                            https://slac.standford.edu
+Spallation Neutron Source       https://neutrons.ornl.gov/sns
+==============================  ===================
