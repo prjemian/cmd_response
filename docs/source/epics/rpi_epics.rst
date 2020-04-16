@@ -399,7 +399,7 @@ Next, build *synApps*:
 
 ::
 
-   cd /usr/local/epics/synApps/support
+   cd /usr/local/epics/$(SYNAPPS_DIR)/support
    logmake &
    tail -f makelog.txt
 
