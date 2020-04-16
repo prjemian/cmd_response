@@ -291,12 +291,12 @@ This process took different times on different RPi models (and ``make`` options)
 ==============  =======  =============  ==========================================
 model           options  time, minutes  ``grep "model name" /proc/cpuinfo``
 ==============  =======  =============  ==========================================
-Model 4 B 4GB   `-j2`    TODO           ``ARMv7 Processor rev 4 (v7l)``
+Model 4 B 4GB   ``-j2``  18             ``ARMv7 Processor rev 4 (v7l)``
 Model 4 B 4GB            32             ``ARMv7 Processor rev 4 (v7l)``
-Model 3 B       `-j2`    34             ``ARMv7 Processor rev 4 (v7l)``
+Model 3 B       ``-j2``  34             ``ARMv7 Processor rev 4 (v7l)``
 Model B v1.1             82             ``ARMv7 Processor rev 4 (v7l)``
 Zero W                   266            ``ARMv6-compatible processor rev 7 (v6l)``
-============    =======  =============  ==========================================
+==============  =======  =============  ==========================================
 
 (For comparison, this same process to build the same version of EPICS
 base on a linux-x86_64 host with 8 cores at 1.6HGz/3.1GHz using
@@ -409,8 +409,8 @@ This process took different times on different RPi models as shown:
 ==============  =======  =============  ==========================================
 model           options  time, minutes  ``grep "model name" /proc/cpuinfo``
 ==============  =======  =============  ==========================================
-Model 4 B 4GB   `-j2`    TODO           ``ARMv7 Processor rev 4 (v7l)``
-Model 3 B       `-j2`    40             ``ARMv7 Processor rev 4 (v7l)``
+Model 4 B 4GB   ``-j2``  TODO           ``ARMv7 Processor rev 4 (v7l)``
+Model 3 B       ``-j2``  40             ``ARMv7 Processor rev 4 (v7l)``
 Model B v1.1             TODO           ``ARMv7 Processor rev 4 (v7l)``
 Zero W                   283            ``ARMv6-compatible processor rev 7 (v6l)``
 ==============  =======  =============  ==========================================
