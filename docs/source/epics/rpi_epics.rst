@@ -89,6 +89,8 @@ For me, I paste these lines into the end of ``/boot/config.txt``:
 
 ::
 
+   #--------------------------
+   # 7" touch display screen rotation
    # default
    # lcd_rotate=0
    # rotate 90 degrees clockwise
