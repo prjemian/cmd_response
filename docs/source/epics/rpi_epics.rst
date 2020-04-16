@@ -128,6 +128,8 @@ C-like language to provide programming used by other *synApps* modules.
 ::
 
    sudo apt-get install re2c
+   # you _might_ already have these installed, but to be sure...
+   sudo apt-get install libnet-dev libpcap-dev libusb-1.0-0-dev
 
 additional libraries for EPICS area detector
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -273,9 +275,9 @@ standard EPICS tools on the command line, such as: ``caget``, ``caput``,
 
 Next, compile EPICS base (write the build output, including any errors,
 to a file using `logmake <#add-logmake-to-bashaliase>`__). If you
-have a multicpu RPi, you can use more than one CPU to run make. (Careful! 
+have a multi-CPU RPi, you can use more than one CPU to run make. (Careful! 
 If you try this with older models, such as the RPi A, it will
-just as likely force an automatic system crash.) My Raspberry Pi Model B
+just as likely force an automatic system crash.) My Raspberry Pi 2 Model B
 v1.1 has four CPUs. Experience guides me to not use more than 2, so I
 use ``logmake -j2 &``. My Raspberry Pi Zero W has one CPU. With this
 guide, I show the single CPU build:
