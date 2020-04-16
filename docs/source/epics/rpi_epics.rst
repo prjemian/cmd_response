@@ -298,6 +298,9 @@ Zero W                 266            ``ARMv6-compatible processor rev 7 (v6l)``
 base on a linux-x86_64 host with 8 cores at 1.6HGz/3.1GHz using
 ``logmake -j4 &`` took about 3 minutes.)
 
+Wikipedia has a table describing the different RPi hardware:
+https://en.wikipedia.org/wiki/Raspberry_Pi#Generations_of_released_models
+
 Install synApps
 ---------------
 
@@ -636,4 +639,5 @@ Raspbian OS Mirrors    https://www.raspbian.org
 Raspberry Pi           https://www.raspberrypi.org
 VSCode                 https://pimylifeup.com/raspberry-pi-visual-studio-code/
 Touchscreen rotation   https://raspberrypiprojects.com/raspberry-pi-rotate-touch-screen/
+Wikipedia              https://en.wikipedia.org/wiki/Raspberry_Pi#Generations_of_released_models
 =====================  ==================================
