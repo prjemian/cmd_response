@@ -160,12 +160,12 @@ available:
 
    function logmake
    {
-       echo '#-----------------------------------------' >> makelog.txt 2>&1
-       date >> makelog.txt 2>&1
-       echo '#begin CMD: make' $@ >> makelog.txt 2>&1
-       make $@ >> makelog.txt 2>&1
-       echo '#done CMD: make' $@ >> makelog.txt 2>&1
-       date >> makelog.txt 2>&1
+       echo '#-----------------------------------------' >> makelog.txt
+       date >> makelog.txt
+       echo '#begin CMD: make' $@ >> makelog.txt
+       make $@ 2>&1 >> makelog.txt
+       echo '#done CMD: make' $@ >> makelog.txt
+       date >> makelog.txt
    }
 
 It also records time stamps so you can see how long the operation took.
